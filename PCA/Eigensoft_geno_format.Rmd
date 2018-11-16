@@ -1,0 +1,186 @@
+---
+title: "Format files for Eigensoft"
+author: "Laura Tibbs"
+date: "November 15, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Goal: 
+Edit genotype data to match that required for Eigensoft 3.0.
+
+Set working directory CHANGE ME:
+```{r}
+setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/final project")
+```
+
+Load libraries:
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+Import original genotype data from paper:
+```{r}
+full.geno <- read_csv("supplemental/Suppl_Table_2.csv")
+``` 
+
+## Make genotype file formatted for Eigensoft
+According to the README on Eigensoft GitHub, this format is:
+  "The genotype file contains 1 line per SNP.
+  Each line contains 1 character per individual:
+  0 means zero copies of reference allele.
+  1 means one copy of reference allele.
+  2 means two copies of reference allele.
+  9 means missing data."
+
+Inspect the data to see current format:
+```{r}
+head(full.geno)
+```
+
+Currently, each individual is in its own row, with its genotype at each of the SNPs recorded in the columns of that row as a pair of letters (e.g., "GG").
+
+First, then, the tibble needs to be transposed so that each row contains one SNP rather than one individual.
+```{r}
+tr.geno <- as_tibble(cbind(SNPs=colnames(full.geno), t(full.geno))) # transpose full.geno and cbind the SNP names to it
+colnames(tr.geno) <- tr.geno[1,] # add the column names since they were moved to row 1 by t()
+tr.geno <- tr.geno[-1,] # remove row 1 now that column names are where they should be
+head(tr.geno) # visually inspect transposed geno file
+```
+
+Next, I need to find the reference allele for each SNP.
+```{r}
+num.geno <- tr.geno %>%
+  unite(united, -1, sep="", remove=F) %>%
+  mutate(count.A=str_count(united, "A"), # count each nucleotide in the SNPs
+         count.C=str_count(united,"C"),
+         count.G=str_count(united, "G"),
+         count.T=str_count(united,"T"),
+         max.count=pmax(count.A, count.C, count.G, count.T), # find the max count of any NT for a given SNP
+         ref.allele=ifelse(count.A==max.count, "A", # set the reference allele
+                           ifelse(count.C==max.count, "C",
+                                  ifelse(count.G==max.count, "G", "T")))
+  ) %>%
+  group_by(ref.allele) # group by reference allele value
+```
+
+And re-code the genotype data as the numeric 0,1,2, or 9.
+```{r}
+# split the genotype data into tibbles each with the same reference allele, and store these in a list
+split.num.geno <- split(num.geno, num.geno$ref.allele)
+
+# loop through each tibble in the list to replace homozygous reference as 2, het as 1, missing as 9, and other as 0:
+for (i in 1:length(split.num.geno)) {
+  ref <- unique(split.num.geno[[i]]$ref.allele) # save ref allele
+  stopifnot(length(ref)==1) # check that there was only one ref allele in the table
+  geno.index <- ncol(split.num.geno[[i]])-6 # store the index of the last column with genotype data
+  
+  # make string of heterozygous genotypes to match (code idea from https://stackoverflow.com/questions/35366803/how-to-use-gsub-for-the-list-of-multiple-patterns-in-r)
+  het.list <- list(paste(ref, "A", sep=""), paste(ref, "C", sep=""), paste(ref, "G", sep=""), paste(ref, "T", sep=""),
+                   paste("A", ref, sep=""), paste("C", ref, sep=""), paste("G", ref, sep=""), paste("T", ref, sep="")) # list possible het genotypes (refref genotype will also occur in this list, but will not be matched because that pattern will be replaced first)
+  het.string <- paste(unlist(het.list), collapse="|") # convert this list into a string separated by | to match any of these patterns
+  
+  split.num.geno[[i]] <- split.num.geno[[i]] %>% # in the following lines, use c(2:geno.index) to make replacements only in the coluns containing genotype data
+  mutate_at(c(2:geno.index), funs(replace(., is.na(.), "9"))) %>% # replace missing data with 9
+    mutate_at(c(2:geno.index), funs(str_replace_all(., paste(ref, ref, sep=""), "2"))) %>% # replace homozygous ref genotypes with 2
+    mutate_at(c(2:geno.index), funs(str_replace_all(., het.string, "1"))) %>% # replace het genotypes with 1
+    mutate_at(c(2:geno.index), funs(str_replace_all(., "[[:upper:]]{2}", "0"))) %>% # replace all remaining genotypes with 0
+    select(-count.A, -count.C, -count.T, -count.G, -united, -max.count) # remove non-genotype columns
+}
+```
+
+Now, combine the split tibbles from the list and output genotype file for Eigensoft.
+```{r}
+eigensoft.geno <- do.call("rbind", split.num.geno) %>% # combine tibbles in list
+  ungroup() %>%
+  select(-ref.allele, -X1) # remove unneeded columns
+
+# save the full dataset in eigensoft format
+full.eigensoft.geno <- unite(eigensoft.geno, united, sep="", remove=T) # collapse all SNPs into one line
+
+# output file
+write_tsv(full.eigensoft.geno, "full.eigensoft.geno", col_names = F)
+```
+
+## Make individual file formatted for Eigensoft
+According to the README on Eigensoft GitHub, this format is:
+  "The indiv file contains 1 line per individual.  There are 3 columns:
+  1st column is sample ID.  Length is limited to 39 characters, including
+    the family name if that will be concatenated.
+  2nd column is gender (M or F).  If unknown, ok to set to U for Unknown.
+  3rd column is a label which might refer to Case or Control status, or
+    might be a population group label.  If this entry is set to "Ignore", 
+    then that individual and all genotype data from that individual will be
+    removed from the data set in all convertf output."
+    
+Read in the individuals' data:
+```{r}
+full.indiv <- read_tsv("12864_2015_1444_MOESM1_ESM.txt") # this file was attached as a ".csv" in the paper's supplemental data, but inspecting the file showed that it was actually a tsv file, so I manually changed the file extension
+head(full.indiv)
+```
+
+Construct a file with the accession or line name (the column names of `eigensoft.geno`) in the first column, and U for unknown gender in the second column. Building this from the `eigensoft.geno` file ensures that these files are in the same order:
+```{r}
+pre.indiv <- tibble(line=colnames(eigensoft.geno), gender=c(rep("U", length(colnames(eigensoft.geno)))))
+```
+
+In Figure 1 of Blanca et al., the accessions are identified as one of SP, SC, SG, SLC, SLL, or mixture in the PC plot. These classifications are found in the `species` column of `full.indv`. This information can be put in the third column of the `.indiv` file, so join this information to the table:
+```{r}
+indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
+plyr::count(is.na(indiv.join$species)) # but not everything joined; why?
+
+# After manual inspection, some of the problems seem to be: 
+# different cases (upper vs lower; lowercase in pre.indiv),
+# periods vs commas (periods in pre.indiv), 
+# and spaces vs underscores (underscores in pre.indiv)
+
+# So, manually edit full.indiv so that it will match pre.indiv:
+full.indiv$Sample <- gsub("\\,", "\\.", full.indiv$Sample) # switch commas to periods
+
+# try to join now:
+indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
+plyr::count(is.na(indiv.join$species)) # but not everything joined; why?
+
+#Now only 3 are not joined, so manually edit these to match:
+full.indiv$Sample <- gsub("PAS16398", "pas16398", full.indiv$Sample) # change case
+full.indiv$Sample <- gsub("PAS16401", "pas16401", full.indiv$Sample) # change case
+full.indiv$Sample <- gsub("PI 379051", "PI_379051", full.indiv$Sample) # change space to underscore
+
+# try to join now:
+indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
+plyr::count(is.na(indiv.join$species)) # Now everything has joined
+stopifnot(sum(is.na(indiv.join$species))==0) # sanity check--stop if not everything has joined
+
+```
+
+Now, trim the file so that only the three needed columns are present, and output for Eigensoft.
+```{r}
+# extract needed columns
+full.eigensoft.indiv <- indiv.join %>%
+  select(line, gender, species) 
+
+# output file
+write_tsv(full.eigensoft.indiv, "full.eigensoft.indiv", col_names = F)
+```
+
+
+#####DELETE ME####
+For practice, make a fake SNP file and see if I can run eigensoft or not
+"The snp file contains 1 line per SNP.  There are 6 columns (last 2 optional):
+  1st column is SNP name
+  2nd column is chromosome.  X chromosome is encoded as 23.
+    Also, Y is encoded as 24, mtDNA is encoded as 90, and XY is encoded as 91.
+    Note: SNPs with illegal chromosome values, such as 0, will be removed
+  3rd column is genetic position (in Morgans).  If unknown, ok to set to 0.0.
+  4th column is physical position (in bases)
+  Optional 5th and 6th columns are reference and variant alleles.
+    For monomorphic SNPs, the variant allele can be encoded as X (unknown)."
+```{r}
+practice.snp <- tibble(num.geno$X1, c(rep("1", length(num.geno$X1))), c(rep(0.0, length(num.geno$X1))), c(1:length(num.geno$X1)))
+
+write_tsv(practice.snp, "practice.snp", col_names = F)
+```
