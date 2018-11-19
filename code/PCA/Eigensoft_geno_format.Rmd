@@ -14,7 +14,7 @@ Edit genotype data to match that required for Eigensoft 3.0.
 
 Set working directory CHANGE ME:
 ```{r}
-setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/final project")
+setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/BCB546X_MadMaize_final/code/PCA")
 ```
 
 Load libraries:
@@ -25,7 +25,7 @@ library(readxl)
 
 Import original genotype data from paper:
 ```{r}
-full.geno <- read_csv("supplemental/Suppl_Table_2.csv")
+full.geno <- read_csv("../../data/Suppl_Table_2.csv")
 ``` 
 
 ## Make genotype file formatted for Eigensoft
@@ -56,10 +56,11 @@ Next, I need to find the reference allele for each SNP.
 ```{r}
 num.geno <- tr.geno %>%
   unite(united, -1, sep="", remove=F) %>%
-  mutate(count.A=str_count(united, "A"), # count each nucleotide in the SNPs
-         count.C=str_count(united,"C"),
-         count.G=str_count(united, "G"),
-         count.T=str_count(united,"T"),
+  mutate(united_noNA=str_replace_all(united, "NA", ""), # remove NA values
+         count.A=str_count(united_noNA, "A"), # count each nucleotide in the SNPs
+         count.C=str_count(united_noNA,"C"),
+         count.G=str_count(united_noNA, "G"),
+         count.T=str_count(united_noNA,"T"),
          max.count=pmax(count.A, count.C, count.G, count.T), # find the max count of any NT for a given SNP
          ref.allele=ifelse(count.A==max.count, "A", # set the reference allele
                            ifelse(count.C==max.count, "C",
@@ -89,7 +90,7 @@ for (i in 1:length(split.num.geno)) {
     mutate_at(c(2:geno.index), funs(str_replace_all(., paste(ref, ref, sep=""), "2"))) %>% # replace homozygous ref genotypes with 2
     mutate_at(c(2:geno.index), funs(str_replace_all(., het.string, "1"))) %>% # replace het genotypes with 1
     mutate_at(c(2:geno.index), funs(str_replace_all(., "[[:upper:]]{2}", "0"))) %>% # replace all remaining genotypes with 0
-    select(-count.A, -count.C, -count.T, -count.G, -united, -max.count) # remove non-genotype columns
+    select(-count.A, -count.C, -count.T, -count.G, -united, -united_noNA, -max.count) # remove non-genotype columns
 }
 ```
 
@@ -119,7 +120,7 @@ According to the README on Eigensoft GitHub, this format is:
     
 Read in the individuals' data:
 ```{r}
-full.indiv <- read_tsv("12864_2015_1444_MOESM1_ESM.txt") # this file was attached as a ".csv" in the paper's supplemental data, but inspecting the file showed that it was actually a tsv file, so I manually changed the file extension
+full.indiv <- read_tsv("../../data/12864_2015_1444_MOESM1_ESM.txt") # this file was attached as a ".csv" in the paper's supplemental data, but inspecting the file showed that it was actually a tsv file, so I manually changed the file extension
 head(full.indiv)
 ```
 
