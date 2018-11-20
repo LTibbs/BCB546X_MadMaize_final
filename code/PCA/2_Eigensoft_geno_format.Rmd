@@ -28,7 +28,9 @@ Import original genotype data from paper:
 full.geno <- read_csv("../../data/Suppl_Table_2.csv")
 ``` 
 
-## Make genotype file formatted for Eigensoft
+## Prepare data for Fig. 1: PCA on all accessions
+
+### Make genotype file formatted for Eigensoft
 According to the README on Eigensoft GitHub, this format is:
   "The genotype file contains 1 line per SNP.
   Each line contains 1 character per individual:
@@ -83,7 +85,7 @@ for (i in 1:length(split.num.geno)) {
   # make string of heterozygous genotypes to match (code idea from https://stackoverflow.com/questions/35366803/how-to-use-gsub-for-the-list-of-multiple-patterns-in-r)
   het.list <- list(paste(ref, "A", sep=""), paste(ref, "C", sep=""), paste(ref, "G", sep=""), paste(ref, "T", sep=""),
                    paste("A", ref, sep=""), paste("C", ref, sep=""), paste("G", ref, sep=""), paste("T", ref, sep="")) # list possible het genotypes (refref genotype will also occur in this list, but will not be matched because that pattern will be replaced first)
-  het.string <- paste(unlist(het.list), collapse="|") # convert this list into a string separated by | to match any of these patterns
+  het.string <- paste(unlist(het.list), collapse="|") # convert this list into a string separated by | (logical or) to match any of these patterns
   
   split.num.geno[[i]] <- split.num.geno[[i]] %>% # in the following lines, use c(2:geno.index) to make replacements only in the coluns containing genotype data
   mutate_at(c(2:geno.index), funs(replace(., is.na(.), "9"))) %>% # replace missing data with 9
@@ -107,7 +109,7 @@ full.eigensoft.geno <- unite(eigensoft.geno, united, sep="", remove=T) # collaps
 write_tsv(full.eigensoft.geno, "full.eigensoft.geno", col_names = F)
 ```
 
-## Make individual file formatted for Eigensoft
+### Make individual file formatted for Eigensoft
 According to the README on Eigensoft GitHub, this format is:
   "The indiv file contains 1 line per individual.  There are 3 columns:
   1st column is sample ID.  Length is limited to 39 characters, including
@@ -185,3 +187,72 @@ practice.snp <- tibble(num.geno$X1, c(rep("1", length(num.geno$X1))), c(rep(0.0,
 
 write_tsv(practice.snp, "practice.snp", col_names = F)
 ```
+
+## Prepare data for Fig. 2: PCA on SP, SLC, SLL, and SLL Mesoamerica + SLC subgroups
+
+### Make individual files:
+
+Fig. 2A contains SP lines (identified in `indiv.join$species`), colored by their subgroup membership (as shown in Table 2, Blanca et al 2015). Subgroups are found in `indiv.join$group2`. Similarly, Fig 2B contains SLC accessions and Fig 2C contains SLL accessions. and Fig 2D contains both SLC and SLL accessions, again colored by subgoup. According to the labels on Fig 2D, the groups in this figure are SLC Ecuador 3, SLC vintage, SLC Colombia, SLC Costa Rica, SLC Mesoamerica, SLL Mesoamerica, SLC world, SLC Peru 1, and SLC Peru 2. Looking at the data, these groups are found in `indiv.join$group2`, though with underscores substituted for spaces. 
+
+So, I need to extract the individuals used to make each part of Figure 2 from the `indiv.join` dataset created above and use these to make new `.indiv` files.
+
+```{r}
+#Fig 2a: SP
+SP.indiv <- indiv.join %>% 
+  filter(species=="SP") %>% # filter SP lines
+  select(line, gender, group2) # keep group2 to use to color the points in the figure later
+write_tsv(SP.indiv, "SP.indiv", col_names=FALSE) # write file
+
+# Fig 2b: SLC
+SLC.indiv <- indiv.join %>% 
+  filter(species=="SLC") %>% # filter SLC lines
+  select(line, gender, group2) # keep group2 for later
+write_tsv(SLC.indiv, "SLC.indiv", col_names=FALSE) # write file
+
+# Fig 2c: SLL
+SLL.indiv <- indiv.join %>% 
+  filter(species=="SLL") %>% # filter SLL lines
+  select(line, gender, group2) # keep group2 for later
+write_tsv(SLL.indiv, "SLL.indiv", col_names=FALSE) # write file
+
+# Fig 2d: SLL Mesoamerica and SLC groups
+Fig2d.indiv <- indiv.join %>% 
+  filter(group2 %in% c("SLC_Ecuador_3", "SLC_vintage", "SLC_Colombia", "SLC_Costa_Rica", 
+                       "SLC_Mesoamerica", "SLL_Mesoamerica", "SLC_world", "SLC_Peru_1", "SLC_Peru_2")) %>% # filter lines
+  select(line, gender, group2) # keep group2 for later
+write_tsv(Fig2d.indiv, "Fig2d.indiv", col_names=FALSE) # write file
+
+```
+
+### Make genotype files:
+
+Now, need to make genotype files that contain the same individuals as these four individual files do.
+
+Do this by filtering out the individuals from the `eigensoft.geno` file created earlier.
+
+```{r}
+# Fig 2a: SP
+SP.geno <- eigensoft.geno %>%
+  select(SP.indiv$line)%>% # select those accessions in the indiv file
+  unite(united, sep="", remove=T) # collapse all sNPs into one line
+write_tsv(SP.geno, "SP.geno", col_names=F) # output file
+
+# Fig 2b: SLC
+SLC.geno <- eigensoft.geno %>%
+  select(SLC.indiv$line) %>% # select those accessions in the indiv file
+  unite(united, sep="", remove=T) # collapse all sNPs into one line
+write_tsv(SLC.geno, "SLC.geno", col_names=F) # output file
+
+# Fig 2c: SLL
+SLL.geno <- eigensoft.geno %>%
+  select(SLL.indiv$line)%>% # select those accessions in the indiv file
+  unite(united, sep="", remove=T) # collapse all sNPs into one line
+write_tsv(SLL.geno, "SLL.geno", col_names=F) # output file
+
+# Fig 2d: SLL Mesoamerica and SLC groups
+Fig2d.geno <- eigensoft.geno %>%
+  select(Fig2d.indiv$line)%>% # select those accessions in the indiv file
+  unite(united, sep="", remove=T) # collapse all sNPs into one line
+write_tsv(Fig2d.geno, "Fig2d.geno", col_names=F) # output file
+```
+
