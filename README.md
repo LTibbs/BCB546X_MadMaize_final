@@ -2,7 +2,7 @@
 Final project for BCB546X, MadMaize project group: Laura Tibbs, Ben Cortes, Qi Mu, Jialu Wei, and Andy Herr
 
 
-##NOTES on required parts of the project/GitHub formatting (delete later):
+## NOTES on required parts of the project/GitHub formatting (delete later):
 
 ### Required parts:
 1. Downloading, inspecting, and describing the data utilized in the study.
