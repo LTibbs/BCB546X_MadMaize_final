@@ -225,17 +225,7 @@ write_tsv(final_SNPs, "output_tests/final_snps.tsv")
 
 ```
 
-Go through and remove duplicate accessions (lines of tomatoes that were genotyped twice) from the text file 12864_2015_1444_MOESM1_ESM. According to the authors 
-
-"When an accession was genotyped more than once and both genotypes were inconsistent (e.g., both samples were classified in different subgroups in the PCA) all data for the accession was removed from the analysis (see Additional file 1: Table S1), unless it was clear based on the passport information, which genotype was correct (e.g., two entries from the same SLC accession collected in Peru, one grouping with other Peruvian accessions and another grouping with the mixture group). In total 8 genotypes out of the 1,008 were removed due to inconsistent data."
-
-What exactly "unless it was clear based on the passport information" means could vary from the provided example depending on the situation, so we decided that the best thing to do would be to go through the data manually after arranging it. The following workflow was used in Excel.
-
-1. Duplicates in the Accesion column were found by selecting the column, then choosing conditional formatting for duplicates.
-2. The accession duplicates were checked for inconsistencies in the group1 and group2 columns.
-2. If there were no inconsistencies found, the accession was noted for one of the copies to be deleted at random.
-3. If inconsistencies were found, the passport and geographic data columns were assessed to determine which accession was "correct." We took "conflicting classification" to indicate that it was impossible to tell which was "correct."
-4. Like the authors, we deleted 8 accessions. The final list of accessions, good_accessions.txt, was then used to remove the unwanted accessions from the data.
+Go through and remove duplicate accessions (lines of tomatoes that were genotyped twice) from the text file 12864_2015_1444_MOESM1_ESM containing the passport data. The names of the accessions in this file differ from their names in the raw SNP datafile, so Laura's code was used to change the names in the passport file to those of the SNP file.
 
 ```{r}
 
@@ -246,35 +236,63 @@ colnames(tran_final_snps)[1] <- "Accession"
 tran_final_snps <- arrange(tran_final_snps, as.character(Accession))
 write_tsv(tran_final_snps, "output_tests/tran_final_snps.tsv")
 
-# import list of accessions that has been purged of duplicates. Merge the list of good accessions with the transposed final SNPs file, resulting in a tibble where all pertinent SNPs have been removed and all the appropriate, duplicated accessions have been removed.
+# import passport data and begin changing accession names
 
-good_accessions <- as.tibble(read_tsv("good_accessions.txt"))
-final_data <- semi_join(tran_final_snps, good_accessions, by = c("Accession" = "Accession"))
-# final_data <- final_data[, -c(2:8)]
+passport_data <- as.tibble(read_tsv("../../data/12864_2015_1444_MOESM1_ESM.txt"))
+
+# start Laura's code, variable names modified:
+# After manual inspection, some of the problems seem to be: 
+# different cases (upper vs lower; lowercase in pre.indiv),
+# periods vs commas (periods in pre.indiv), 
+# and spaces vs underscores (underscores in pre.indiv)
+# So, manually edit full.indiv so that it will match pre.indiv:
+
+passport_data$Sample <- gsub("\\,", "\\.", passport_data$Sample) # switch commas to periods
+
+# Now only 3 are not joined, so manually edit these to match:
+passport_data$Sample <- gsub("PAS16398", "pas16398", passport_data$Sample) # change case
+passport_data$Sample <- gsub("PAS16401", "pas16401", passport_data$Sample) # change case
+passport_data$Sample <- gsub("PI 379051", "PI_379051", passport_data$Sample) # change space to underscore
+
+write_tsv(passport_data, "passport_data.tsv")
+
+```
+
+According to the authors 
+
+"When an accession was genotyped more than once and both genotypes were inconsistent (e.g., both samples were classified in different subgroups in the PCA) all data for the accession was removed from the analysis (see Additional file 1: Table S1), unless it was clear based on the passport information, which genotype was correct (e.g., two entries from the same SLC accession collected in Peru, one grouping with other Peruvian accessions and another grouping with the mixture group). In total 8 genotypes out of the 1,008 were removed due to inconsistent data."
+
+What exactly "unless it was clear based on the passport information" means could vary from the provided example depending on the situation, so we decided that the best thing to do would be to go through the data manually after arranging it. The following workflow was used in Excel.
+
+1. Duplicates in the Accesion column were found by selecting the column, then choosing conditional formatting for duplicates.
+2. The accession duplicates were checked for inconsistencies in the group1 and group2 columns.
+3. If there were no inconsistencies found, the accession was noted for one of the copies to be deleted at random.
+4. If inconsistencies were found, the passport and geographic data columns were assessed to determine which accession was "correct." We took "conflicting classification" to indicate that it was impossible to tell which was "correct."
+5. Like the authors, we deleted 8 accessions. The final list of accessions, good_accessions.txt, was then used to remove the unwanted accessions from the data.
+
+```{r}
+
+# import list of accessions that are to be removed. Antijoin the list of accessions to be removed with the transposed final SNPs file, resulting in a tibble where all pertinent SNPs have been removed and all the appropriate, duplicated accessions have been removed.
+
+remove_accessions <- as.tibble(read_tsv("removed_accessions.tsv"))
+final_data <- anti_join(tran_final_snps, remove_accessions, by = c("Accession" = "Sample"))
+write_csv(final_data, "../../data/final_data.csv")
 
 ```
 
 
 ```{r}
 
-# write final data tibble as a tsv
-
-write_tsv(final_data, "final_dataset.tsv")
-
 # need to also create a csv for the rarefaction and LD analysis in which SNPs with greater than 10% missing data and greater than 95% allelic frequency have been removed (tomato_snps_first_cull). Also need to remove the duplicated accessions from this rarefaction/LD dataset. Start by transposing tomato_snps_first_cull
 
 write_tsv(tomato_snps_first_cull, "temp.tsv")
-tran_tomato_snps_first_cull <- transpose_headed_file("temp.tsv")
-
-# use list of good accessions to remove the appropriate duplicate accessions from the rarefaction/LD dataset
-
-rarefaction_LD_data <- left_join(good_accessions, tran_tomato_snps_first_cull, by = c("Accession" = "Sample"))
-rarefaction_LD_data <- rarefaction_LD_data[, -c(2:8)]
-
-# write the rarefaction/LD dataset as a csv and remove the temp file used during transposition
-
-write_csv(rarefaction_LD_data, "rarefaction_LD_data.csv")
+tran_tomato_snps_first_cull <- as.tibble(transpose_headed_file("temp.tsv", read_tsv))
 unlink("temp.tsv")
+
+# use list of good accessions to remove the appropriate duplicate accessions from the rarefaction/LD dataset. Then write the rarefaction/LD dataset as a csv
+
+rarefaction_LD_data <- anti_join(tran_tomato_snps_first_cull, remove_accessions, by = c("Sample" = "Sample"))
+write_csv(rarefaction_LD_data, "../../data/rarefaction_LD_data.csv")
 
 ```
 
