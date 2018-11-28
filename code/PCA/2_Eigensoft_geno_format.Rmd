@@ -25,7 +25,7 @@ library(readxl)
 
 Import original genotype data from paper:
 ```{r}
-full.geno <- read_csv("../../data/Suppl_Table_2.csv")
+full.geno <- read_csv("../../data/final_data.csv")
 ``` 
 
 ## Prepare data for Fig. 1: PCA on all accessions
@@ -136,7 +136,7 @@ In Figure 1 of Blanca et al., the accessions are identified as one of SP, SC, SG
 indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
 plyr::count(is.na(indiv.join$species)) # but not everything joined; why?
 
-# After manual inspection, some of the problems seem to be: 
+# Some will not join because there were samples removed in the data processing script. Other than that,a ater manual inspection, some of the problems seem to be: 
 # different cases (upper vs lower; lowercase in pre.indiv),
 # periods vs commas (periods in pre.indiv), 
 # and spaces vs underscores (underscores in pre.indiv)
@@ -170,6 +170,16 @@ full.eigensoft.indiv <- indiv.join %>%
 write_tsv(full.eigensoft.indiv, "full.eigensoft.indiv", col_names = F)
 ```
 
+###
+"The snp file contains 1 line per SNP.  There are 6 columns (last 2 optional):
+  1st column is SNP name
+  2nd column is chromosome.  X chromosome is encoded as 23.
+    Also, Y is encoded as 24, mtDNA is encoded as 90, and XY is encoded as 91.
+    Note: SNPs with illegal chromosome values, such as 0, will be removed
+  3rd column is genetic position (in Morgans).  If unknown, ok to set to 0.0.
+  4th column is physical position (in bases)
+  Optional 5th and 6th columns are reference and variant alleles.
+    For monomorphic SNPs, the variant allele can be encoded as X (unknown)."
 
 #####DELETE ME####
 For practice, make a fake SNP file and see if I can run eigensoft or not
