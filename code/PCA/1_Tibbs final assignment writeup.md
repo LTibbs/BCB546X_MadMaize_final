@@ -23,7 +23,7 @@ Eigensoft 3.0 is available through a GitHub repository. I ran the following code
 ## Step 2: Format data for Eigensoft 3.0: `2_Eigensoft_geno_format.Rmd`
 I used R to format the SNP data for the Eigensoft 3.0 program. This code is found in `2_Eigensoft_geno_format.Rmd` and the associated `html` file. See that file for code and workflow for this step.
 
-## Step 3: Run Eigensoft
+## Step 3: Run Eigensoft: `3_Eigensoft_PCA.perl`
 First, copy the output files from Step 2 to the directory `eigensoft/EIGENSTRAT` in order to use the Eigensoft program on them.
 
 	#in the BCB546X_MadMaize_final/code/PCA directory, run:
@@ -47,7 +47,7 @@ Use Eigensoft's CONVERTF functionality to create `.pheno` files from the `.indiv
 	./ind2pheno.perl ../EIGENSTRAT/SLC.indiv ../EIGENSTRAT/SLC.pheno
 	./ind2pheno.perl ../EIGENSTRAT/Fig2d.indiv ../EIGENSTRAT/Fig2d.pheno
 
-This does output the warning `WARNING: no cases` and `WARNING: no controls` but that is fine because this paper did not have accessions labelled as cases or controls. According to the documentation, the program will still work without these labels.
+This does output the warning `WARNING: no cases` and `WARNING: no controls` but that is fine because this paper did not have accessions labelled as cases or controls; instead, we labelled them according to species or group. According to the documentation, the program will still work without these labels.
 	
 Then, using the `example.perl` file as a template, I wrote a `.perl` script to run Eigensoft on the full and subset data (that is, `full.eigensoft`, `SP`, `SLC`, `SLL`, and `Fig2d`). This is in the file `3_Eigensoft_PCA.perl`.	Run this code as follows:
 
@@ -57,7 +57,7 @@ Then, using the `example.perl` file as a template, I wrote a `.perl` script to r
 	# in the eigensoft/EIGENSTRAT directory, run:
 	perl 3_Eigensoft_PCA.perl
 
-The error "OOPs bad phenotype" is thrown by this process, but all required output is created (the error occurs after the PCA itself), so can move on despite this error.
+The error "OOPs bad phenotype ..." is thrown by this process, but all required output is created (the error occurs after the PCA itself), so can move on despite this error.
 
 Now, use Eigensoft's native `ploteig` function to plot these PC graphs. However, from information on a known issue on GitHub (https://github.com/DReichLab/EIG/issues/13), I first had to use vi to comment out the call to `fixgreen` within the `ploteig` file. Then, I could run ploteig as follows:
 
@@ -81,9 +81,9 @@ Now that output files from the PCA and associated graphs have been made, move th
 	# move output files to GitHub; run in eigensoft/EIGENSTRAT directory:
 	cp full.eigensoft.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
 	cp SP.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
-	cp SLC.eigensoft.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
-	cp SLL.eigensoft.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
-	cp Fig2d.eigensoft.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
+	cp SLC.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
+	cp SLL.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
+	cp Fig2d.pca.evec ../../BCB546X_MadMaize_final/code/PCA/eigensoft/
 	cp Fig1_Eigensoft_ploteig.pdf ../../BCB546X_MadMaize_final/code/PCA/figures/
 	cp Fig2-SP-ploteig.pdf ../../BCB546X_MadMaize_final/code/PCA/figures/
 	cp Fig2-SLC-ploteig.pdf ../../BCB546X_MadMaize_final/code/PCA/figures/

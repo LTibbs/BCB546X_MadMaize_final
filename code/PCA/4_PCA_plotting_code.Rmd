@@ -27,15 +27,91 @@ library(tidyverse)
 ## Fig 1:
 Reproduce Fig 1: PCA using all uniquely named accessions.
 
-The Eigensoft package produced a plot (`Fig1_Eigensoft_ploteig.pdf`) that is very similar to Fig. 1 in the paper, but it differs in that the percentage of variability explained by each PC is shown in Fig 1 but not in the output from Eigensoft; also, PC 1 is on the x axis and PC 2 is on the y axis in Eigensoft's figure, but this is reversed in Fig 1. So, I will graph the data from Eigensoft using R to make these changes.
+The Eigensoft package produced a plot (`Fig1_Eigensoft_ploteig.pdf`) that is very similar to Fig. 1 in the paper, but it differs in that the percentage of variability explained by each PC is shown in Fig 1 but not in the output from Eigensoft; also, it appears that Fig 1 has flipped the signs on PC1 and PC2 so that all values that were positive in my output are negative in their figure and vice versa. So, I will graph the data from Eigensoft using R to make these changes.
 
 Load data and tidy it:
 ```{r}
 # read data
-fig1 <- read.table("eigensoft/full.eigensoft.pca.evec")
+fig1 <- as.tibble(read.table("eigensoft/full.eigensoft.pca.evec", comment.char="", row.names=NULL))
 
-# 
+# Currently, the eigenvalues are part of the column names; tidy the data to fix this:
+
+# extract the eigenvalues
+evals <- colnames(fig1)
+evals <- gsub("X", "", evals)
+evals <- evals[-c(1,2)]
+evals <- as.numeric(evals)
+
+# calculate percent of variance explained by each PC
+# For a given PC, this is 100 x the eigenvalue for that PC divided by the sum of all the eigenvalues found by the PCA
+pct.var <- 100*evals/sum(evals)
+stopifnot(near(sum(pct.var), 100)) # sanity check that percentages add to 100
+pct.var <- round(pct.var, digits = 2)
+
+# rename the columns
+PC.names <- character()
+for (i in 1:(ncol(fig1)-2)) {PC.names[i] <- paste("PC", i, sep="")}
+colnames(fig1) <- c("Sample", PC.names, "group")
+
+# edit group Schm:
+# when comparing to the paper, it looks like they called the group "Schm" "SC". Change that here.
+fig1$group <- gsub("Schm", "SC", fig1$group)
+
 ```
+
+Now, plot this data. Try to more closely replicate the figure found in the paper by changing the axes titles to include the percent of variance explained by each PC on the graph.
+
+```{r}
+ggplot(data= fig1, mapping=aes(PC1, PC2, color=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep=""))
+
+
+```
+ 
+However, although the overall shape of the PC plot is similar, it appears that the version in the paper had the signs of both PC1 and PC2 flipped; that is, an accession that had positive PC values in both PC1 and PC2 in the Blanca et al. paper has negative values here, and vice versa. Because changing the sign of a PC does not affect the interpretation of the PCA (as long as the signs of ALL PCs are flipped), I will change the signs on my data in order to more closely replicate their figure.
+
+```{r}
+ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep=""))
+```
+
+ Now, make some cosmetic changes to more closely reproduce the figure's appearance: 
+ 
+```{r}
+# make group into factor to control order:
+fig1$group <- factor(fig1$group, levels= c("SP", "SC", "SG", "SLC", "SLL", "mixture", "SN"))
+
+plot1 <- ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group, shape=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep="")) +
+  xlim(c(-0.12,0.04)) + # change axis limits
+  ylim(c(-0.10, 0.08)) +
+  scale_shape_manual(values=c(16,16,16,17,15,4,18)) + # set shape to match Fig 1
+  scale_color_manual(values=c("green", "gray", "black", "blue", "red", "gray", "gray")) + # set color to match
+  theme_classic() # remove background grid 
+  # labs(caption="Replicated Fig 1 using 950 unique accessions & 2959 markers") +
+  # theme(plot.caption=element_text(hjust=-.2)) + # add caption
+
+print(plot1)
+
+###START HERE ####
+# save figure:
+# jpeg("figures/Fig1_R.jpg")
+# print(plot1)
+# # while (!is.null(dev.list()))  dev.off()
+```
+ 
+  
+Of course, some cosmetic differences remain between these figures, including the location of the . However, some differences in content are also present. 
+
+-SN not in theirs
+-bit different scale
+-different pct variation
 
 ## Fig 2:
 for plotting circles around stuff--look at https://stackoverflow.com/questions/13577918/plotting-a-curve-around-a-set-of-points
