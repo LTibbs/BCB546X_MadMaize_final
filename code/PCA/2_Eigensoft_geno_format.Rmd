@@ -215,26 +215,36 @@ sim.snps <- sim.snps %>%
 # join with our snp file--looks like the Alt.SNP column is the one we need
 full.snp <- left_join(pre.snp, sim.snps, by=c("SNP"="Alt.SNP"))
 stopifnot(sum(is.na(full.snp$chr))==0) # check that it fully joined
+
+# inspect and tidy the joined file:
 plyr::count(full.snp$chr)
+# there are SNPs with unknown chromosomes and positions; to format for Eigensoft, set all these chromosomes to 0
+full.snp$pos[full.snp$chr=="Unknown"] <- 0 # if chr is unknown, set pos = 0
+full.snp$chr[full.snp$chr=="Unknown"] <- 0 # if chr is unknown, set chr = 0 
+# make columns numeric:
+full.snp$chr <- as.numeric(full.snp$chr) 
+full.snp$pos <- as.numeric(full.snp$pos) 
+# keep only needed columns
+full.snp <- select(full.snp, SNP, chr, cM, pos)
+
+# sanity check: all cells have data?
+stopifnot(sum(is.na(full.snp))==0)
 
 ```
 
-#####DELETE ME####
-For practice, make a fake SNP file and see if I can run eigensoft or not
-"The snp file contains 1 line per SNP.  There are 6 columns (last 2 optional):
-  1st column is SNP name
-  2nd column is chromosome.  X chromosome is encoded as 23.
-    Also, Y is encoded as 24, mtDNA is encoded as 90, and XY is encoded as 91.
-    Note: SNPs with illegal chromosome values, such as 0, will be removed
-  3rd column is genetic position (in Morgans).  If unknown, ok to set to 0.0.
-  4th column is physical position (in bases)
-  Optional 5th and 6th columns are reference and variant alleles.
-    For monomorphic SNPs, the variant allele can be encoded as X (unknown)."
+Finally, format and output the data for Eigensoft. The file must have the columns in order as SNP name, chromosome, map position in Morgans, and physical position in bases. However, the physical position read in from the Sims et al. paper was in Mbp, not in bases. Therefore, I need to convert this column. One Mbp (mega base pair) is equal to 1,000,000 base pairs. I will also need to remove the column headers and save as a tab-delimited `.snp` file.
+
 ```{r}
-practice.snp <- tibble(num.geno$X1, c(rep("1", length(num.geno$X1))), c(rep(0.0, length(num.geno$X1))), c(1:length(num.geno$X1)))
+# format data
+full.snp <- full.snp %>%
+  mutate(pos.bases=1000000*pos) %>% # convert position to bases
+  select(SNP, chr, cM, pos.bases) # select needed columns
 
-write_tsv(practice.snp, "practice.snp", col_names = F)
+# write file for Eigensoft
+write_tsv(full.snp, "eigensoft.snp", col_names = F)
+
 ```
+
 
 ## Prepare data for Fig. 2: PCA on SP, SLC, SLL, and SLL Mesoamerica + SLC subgroups
 
@@ -304,3 +314,6 @@ Fig2d.geno <- eigensoft.geno %>%
 write_tsv(Fig2d.geno, "Fig2d.geno", col_names=F) # output file
 ```
 
+### SNP files:
+
+The same SNP file will be used for all Eigensoft runs, because all groups use the same SNPs. Therefore, there is no need to make separate files for each part of Figure 2.

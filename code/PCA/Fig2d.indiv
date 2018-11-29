@@ -5,7 +5,6 @@ BGV005912	U	SLC_Ecuador_3
 PI92866	U	SLC_world
 BGV007859	U	SLC_Mesoamerica
 BGV007906	U	SLC_Mesoamerica
-LA2843_r1	U	SLC_Peru_1
 LA2843_r2	U	SLC_Peru_1
 LA2208	U	SLC_Peru_1
 PI438556	U	SLC_Mesoamerica
@@ -17,7 +16,6 @@ BGV003120	U	SLC_world
 VIR3494	U	SLL_Mesoamerica
 LA2664	U	SLC_world
 BGV003115	U	SLC_world
-LA1622	U	SLC_world
 CATIE9073	U	SLC_Costa_Rica
 VIR3507	U	SLL_Mesoamerica
 LA2278	U	SLC_Peru_2
@@ -35,7 +33,6 @@ BGV007942	U	SLC_Mesoamerica
 PI387854	U	SLC_vintage
 CATIE11106	U	SLC_Mesoamerica
 BGV000250	U	SLC_Peru_2
-LA2312_comav	U	SLC_Peru_1
 LA1291	U	SLC_Peru_2
 LA2251	U	SLC_Peru_1
 VIR3847	U	SLL_Mesoamerica
@@ -104,7 +101,6 @@ LA1464	U	SLC_Mesoamerica
 LA1512	U	SLC_Mesoamerica
 LA1542	U	SLC_Costa_Rica
 LA1545	U	SLC_Mesoamerica
-LA1549	U	SLC_Peru_2
 LA1569	U	SLC_Peru_2
 LA1620	U	SLC_Mesoamerica
 LA1621	U	SLC_Mesoamerica
@@ -113,8 +109,6 @@ LA1654	U	SLC_Peru_2
 LA1703	U	SLC_Mesoamerica
 LA1712	U	SLC_Costa_Rica
 LA2077	U	SLC_world
-LA2078	U	SLC_Peru_2
-LA2131	U	SLC_vintage
 LA2308	U	SLC_Peru_2
 LA2312	U	SLC_Peru_1
 LA2411	U	SLC_world
@@ -135,25 +129,20 @@ CR086	U	SLL_Mesoamerica
 CR089	U	SLC_world
 CR091	U	SLC_Mesoamerica
 CR092	U	SLC_world
-CR094	U	SLL_Mesoamerica
 CR096	U	SLC_world
 CR099	U	SLC_Peru_2
 CR100	U	SLL_Mesoamerica
 CR103	U	SLC_Mesoamerica
 CR104	U	SLC_vintage
 CR105	U	SLC_world
-CR119	U	SLC_Colombia
 CR121	U	SLC_world
 CR139	U	SLC_world
-CR144	U	SLC_Costa_Rica
 CR145	U	SLC_world
-CR146	U	SLC_Mesoamerica
 CR147	U	SLC_world
 CR148	U	SLC_Peru_2
 CR149	U	SLC_vintage
 CR150	U	SLC_vintage
 CR152	U	SLC_Peru_2
-CR153	U	SLC_Peru_2
 CR155	U	SLC_Peru_2
 CR199	U	SLC_Mesoamerica
 CR202	U	SLC_Costa_Rica
@@ -161,7 +150,6 @@ CR235	U	SLC_world
 CR238	U	SLC_Colombia
 CR241	U	SLC_world
 CR243	U	SLC_world
-CR244	U	SLC_world
 CR247	U	SLC_world
 CR248	U	SLC_world
 CR262	U	SLC_world
@@ -181,7 +169,6 @@ CR289	U	SLC_world
 CR291	U	SLC_world
 CR293	U	SLC_Costa_Rica
 CR295	U	SLC_world
-LA1388_inra	U	SLC_Peru_2
 LA0767	U	SLL_Mesoamerica
 LA2845	U	SLC_Peru_1
 Voyage	U	SLL_Mesoamerica

@@ -85,7 +85,6 @@ BGV007896	U	SLL_processing_1_1
 BGV007900	U	SLL_Mesoamerica
 BGV007899	U	SLL_Mesoamerica
 BGV000931	U	SLL_vintage/fresh
-Money_0	U	SLL_early_breed
 MERLIN	U	SLL_vintage/fresh
 VIR3180	U	SLL_Mesoamerica
 ARG77	U	SLL_fresh_1
@@ -319,7 +318,6 @@ PI_281553	U	SLL_vintage_1
 PI_65023	U	SLL_vintage_1
 Piedmont	U	SLL_fresh_1
 RioGrande	U	SLL_1
-Severianin	U	SLL_vintage_1
 Siletz	U	SLL_vintage/fresh
 Summit	U	SLL_fresh_1
 T-5	U	SLL_vintage/fresh
@@ -350,7 +348,6 @@ Juane_Flammee	U	SLL_early_breed
 King_Humbert	U	SLL_vintage_1
 LYC1903	U	SLL_vintage_1
 Marglobe	U	SLL_vintage/fresh
-Moneymaker	U	SLL_early_breed
 Opalka	U	SLL_vintage_1
 Orange_Strawberry	U	SLL_vintage_1
 Oxheart	U	SLL_vintage_1
@@ -364,7 +361,6 @@ T1693	U	SLL_vintage_1
 T1697	U	SLL_vintage_1
 Tres_Cantos	U	SLL_vintage/fresh
 White_Queen	U	SLL_vintage_1
-Yellow_Stuffer	U	SLL_vintage_1
 Ailsa_Craig	U	SLL_early_breed
 Ponderosa	U	SLL_Mesoamerica
 1091-Chonto_21	U	SLL_vintage/fresh
@@ -412,9 +408,7 @@ SG07-335	U	SLL_vintage/fresh
 SG08-423	U	SLL_processing_1_2
 SG08-426	U	SLL_processing_1_2
 Anastasia_F1	U	SLL_1
-money_2	U	SLL_early_breed
 money_3	U	SLL_early_breed
-money_1	U	SLL_early_breed
 LC116	U	SLL_vintage_1
 MLE345	U	SLL_vintage/fresh
 MLE344	U	SLL_vintage_1
@@ -425,26 +419,20 @@ CR002	U	SLL_early_breed
 CR003	U	SLL_1
 CR011	U	SLL_fresh_1
 CR020	U	SLL_vintage_1
-CR021	U	SLL_1
 CR022	U	SLL_vintage_1
 CR030	U	SLL_vintage_1
 CR051	U	SLL_vintage_1
-CR055	U	SLL_early_breed
 CR075	U	SLL_Mesoamerica
 CR078	U	SLL_vintage_2
-CR079	U	SLL_vintage_1
 CR086	U	SLL_Mesoamerica
 CR087	U	SLL_vintage_1
-CR094	U	SLL_Mesoamerica
 CR100	U	SLL_Mesoamerica
 CR126	U	SLL_vintage/fresh
-CR129	U	SLL_early_breed
 CR135	U	SLL_vintage_1
 CR138	U	SLL_vintage_1
 CR270	U	SLL_early_breed
 CR272	U	SLL_vintage_1
 CR302	U	SLL_vintage_1
-CR317	U	SLL_processing_1_1
 CR319	U	SLL_vintage/fresh
 CR324	U	SLL_vintage_1
 CR351	U	SLL_vintage_1
@@ -485,7 +473,6 @@ LYC473	U	SLL_vintage_1
 OH7536	U	SLL_processing_1_2
 OH97L97	U	SLL_1
 Old_Brooks	U	SLL_vintage_1
-RioGrande_david	U	SLL_1
 T1173	U	SLL_vintage_1
 T1708	U	SLL_vintage/fresh
 T909	U	SLL_vintage/fresh
@@ -496,7 +483,5 @@ Yellow_Stuffer_david	U	SLL_vintage_1
 Zapotec_Pink_Ribbed	U	SLL_Mesoamerica
 cc37-2	U	SLL_vintage_1
 cc39-2	U	SLL_Mesoamerica
-cc4	U	SLL_early_breed
 cc7	U	SLL_early_breed
 cc9	U	SLL_Mesoamerica
-SLL_koenig	U	SLL_processing_1_2
