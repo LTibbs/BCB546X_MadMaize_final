@@ -1,0 +1,41 @@
+---
+title: "4_PCA_plotting_code"
+author: "Laura Tibbs"
+date: "November 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Goal:
+Plot PC output from Eigensoft to approximately reproduce Fig 1-2 from Blanca, et al. 2015.
+
+Set working directory to the location of this `.Rmd` file:
+```{r}
+# This needs to be changed to reflect the location of the GitHub repository and this code within it on any given computer that runs the code. 
+# In my case, this is:
+# setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/BCB546X_MadMaize_final/code/PCA")
+```
+
+Load libraries:
+```{r}
+library(tidyverse)
+```
+
+## Fig 1:
+Reproduce Fig 1: PCA using all uniquely named accessions.
+
+The Eigensoft package produced a plot (`Fig1_Eigensoft_ploteig.pdf`) that is very similar to Fig. 1 in the paper, but it differs in that the percentage of variability explained by each PC is shown in Fig 1 but not in the output from Eigensoft; also, PC 1 is on the x axis and PC 2 is on the y axis in Eigensoft's figure, but this is reversed in Fig 1. So, I will graph the data from Eigensoft using R to make these changes.
+
+Load data and tidy it:
+```{r}
+# read data
+fig1 <- read.table("eigensoft/full.eigensoft.pca.evec")
+
+# 
+```
+
+## Fig 2:
+for plotting circles around stuff--look at https://stackoverflow.com/questions/13577918/plotting-a-curve-around-a-set-of-points
