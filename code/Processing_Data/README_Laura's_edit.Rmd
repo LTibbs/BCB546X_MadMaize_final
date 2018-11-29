@@ -598,10 +598,19 @@ write_csv(passport.data.dup, "duplicate_accessions.csv")
 # after the above workflow in Excel, read the data in:
 new.passport.data.dup <- read_csv("duplicate_accessions_new.csv") 
 
-remove <- filter(new.passport.data.dup, `keep? (1 for yes, 0 for no)`==0) 
+remove <- filter(new.passport.data.dup, `keep? (1 for yes, 0 for no)`==0) %>%
+  select(Sample)
+remove <- remove[[1]]
+
+# However, at this point, also noticed in the original data file that there is another individual with "conflicting classification" which is not a duplicate, but should also be removed: LA2076. Add this to remove.
+remove <- c(remove, "LA2076")
 
 # remove the samples to be removed from the dataset tran.final.snps:
-final.data <- filter(tran.final.snps, !(Sample %in% remove$Sample))
+final.data <- filter(tran.final.snps, !(Sample %in% remove))
+
+test <- left_join(final.data, new.passport.data.dup, by="Sample") %>%
+  filter(!(`keep? (1 for yes, 0 for no)`==0)) %>%
+  select(Sample, group2)
 
 # write the final dataset:
 write_csv(final.data, "../../data/final_data.csv")
@@ -609,7 +618,6 @@ write_csv(final.data, "../../data/final_data.csv")
 
 
 ```{r}
-
 # import list of accessions that are to be removed. Antijoin the list of accessions to be removed with the transposed final SNPs file, resulting in a tibble where all pertinent SNPs have been removed and all the appropriate, duplicated accessions have been removed.
 
 remove_accessions <- as.tibble(read_tsv("removed_accessions.tsv"))
@@ -631,7 +639,7 @@ LD.data <- LD.data[-1,] # remove row 1 now that column names are where they shou
 head(LD.data) # visually inspect transposed geno file
 
 # remove duplicates
-final.LD.data <- filter(LD.data, !(Sample %in% remove$Sample))
+final.LD.data <- filter(LD.data, !(Sample %in% remove))
 
 # write data to file
 write_csv(final.LD.data, "../../data/rarefaction_LD_data.csv")

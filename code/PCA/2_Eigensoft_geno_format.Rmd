@@ -47,9 +47,9 @@ Inspect the data to see current format:
 head(full.geno)
 ```
 
-Currently, each individual is in its own row, with its genotype at each of the SNPs recorded in the columns of that row as a pair of letters (e.g., "GG").
+Currently, each individual sample is in its own row, with its genotype at each of the SNPs recorded in the columns of that row as a pair of letters (e.g., "GG").
 
-First, then, the tibble needs to be transposed so that each row contains one SNP rather than one individual.
+First, then, the tibble needs to be transposed so that each row contains one SNP rather than one sample.
 ```{r}
 tr.geno <- as_tibble(cbind(SNPs=colnames(full.geno), t(full.geno))) # transpose full.geno and cbind the SNP names to it
 colnames(tr.geno) <- tr.geno[1,] # add the column names since they were moved to row 1 by t()
@@ -129,7 +129,7 @@ full.indiv <- read_tsv("../../data/12864_2015_1444_MOESM1_ESM.txt") # this file 
 head(full.indiv)
 ```
 
-Construct a file with the accession or line name (the column names of `eigensoft.geno`) in the first column, and U for unknown gender in the second column. Building this from the `eigensoft.geno` file ensures that these files are in the same order:
+Construct a file with the sample name (the column names of `eigensoft.geno`) in the first column, and U for unknown gender in the second column. Building this from the `eigensoft.geno` file ensures that these files are in the same order:
 ```{r}
 pre.indiv <- tibble(line=colnames(eigensoft.geno), gender=c(rep("U", length(colnames(eigensoft.geno)))))
 ```
@@ -139,7 +139,7 @@ In Figure 1 of Blanca et al., the accessions are identified as one of SP, SC, SG
 indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
 plyr::count(is.na(indiv.join$species)) # but not everything joined; why?
 
-# 57 of the individual samples from full.indiv are NOT expected to join with our current dataset because they were removed as duplicates in data processing (see script in `code/Processing_Data`). This accounts for the 1008 samples in full.indiv vs 951 in pre.indiv (1008-951=57)
+# 58 of the individual samples from full.indiv are NOT expected to join with our current dataset because they were removed as duplicates in data processing (see script in `code/Processing_Data`). This accounts for the 1008 samples in full.indiv vs 950 in pre.indiv (1008-950=58)
 
 # After manual inspection, some of the other problems seem to be: 
 # different cases (upper vs lower; lowercase in pre.indiv),
@@ -317,3 +317,4 @@ write_tsv(Fig2d.geno, "Fig2d.geno", col_names=F) # output file
 ### SNP files:
 
 The same SNP file will be used for all Eigensoft runs, because all groups use the same SNPs. Therefore, there is no need to make separate files for each part of Figure 2.
+

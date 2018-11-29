@@ -34,6 +34,7 @@ First, copy the output files from Step 2 to the directory `eigensoft/EIGENSTRAT`
 	cp SLL.indiv ../../../eigensoft/EIGENSTRAT/
 	cp Fig2d.geno ../../../eigensoft/EIGENSTRAT/
 	cp Fig2d.indiv ../../../eigensoft/EIGENSTRAT/
+	cp eigensoft.snp ../../../eigensoft/EIGENSTRAT/
 
 Use Eigensoft's CONVERTF functionality to create `.pheno` files from the `.indiv` files:
 
@@ -47,6 +48,9 @@ This does output the warning `WARNING: no cases` and `WARNING: no controls` but 
 	
 Then, using the `example.perl` file as a template, I wrote a `.perl` script to run Eigensoft on the full and subset data (that is, `full.eigensoft`, `SP`, `SLC`, `SLL`, and `Fig2d`). This is in the file `3_Eigensoft_PCA.perl`.	Run this code as follows:
 
+	# move the script to the necessary directory; in the BCB546X_MadMaize_final/code/PCA directory, run:
+	cp full.eigensoft.indiv ../../../eigensoft/EIGENSTRAT/
+	
 	# in the eigensoft/EIGENSTRAT directory, run:
 	perl 3_Eigensoft_PCA.perl
 
