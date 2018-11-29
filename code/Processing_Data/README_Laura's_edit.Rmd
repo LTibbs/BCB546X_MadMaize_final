@@ -1,12 +1,13 @@
 ---
 title: "README"
-author: "Ben Cortes"
+author: "Ben Cortes and Laura Tibbs"
 date: "November 16, 2018"
 output: html_document
 ---
 
 ```{r}
 library(tidyverse)
+library(readxl)
 ```
 
 Transpose function that works on tables with headers. First imports table with headers as part of the table, then transposes, then removes the top row and makes it the new headers. Transpose SNP source file (SNPs as rows)
@@ -36,7 +37,7 @@ tran_tomatosnps <- transpose_headed_file("../../data/Suppl_Table_2.csv", read_cs
 
 ```{r}
 # Laura's version--transpose--
-# NOTE FOR BEN--this result is just like yours, so you can keep your work here if you want :)
+# NOTE FOR BEN--this result is just like yours, so you can keep your work here if you want :) Mine's faster, though, so at least remember it for future reference?
 full.geno <- read_csv("../../data/Suppl_Table_2.csv")
 tran_tomatosnps.L <- as_tibble(cbind(SNPs=colnames(full.geno), t(full.geno))) # transpose full.geno and cbind the SNP names to it
 colnames(tran_tomatosnps.L) <- tran_tomatosnps.L[1,] # add the column names since they were moved to row 1 by t()
@@ -77,8 +78,9 @@ tomato_snps_no_missing.L <- tomato_snps_no_missing.L %>%
   select(-num.missing)
 
 # check if this is the same as Ben's:
-stopifnot(all.equal(tomato_snps_no_missing$Sample, tomato_snps_no_missing.L$X1))
-# NOTE FOR BEN--this result is just like yours, so you can keep your work here too :)
+# stopifnot(all.equal(tomato_snps_no_missing$Sample, tomato_snps_no_missing.L$X1))
+# NOTE FOR BEN--when not commented out, this shows that my result is just like yours, so you can keep your work here too :)
+# also, you can use this format to check if your stuff is actually the same as mine--all.equal is useful for that
 
 ```
 
@@ -118,7 +120,7 @@ write_tsv(tomato_snps_first_cull, "output_tests/tomatosnps_first_cull.tsv")
 
 ```{r}
 # Laura's version: remove SNPs with major allele frequency >0.95, aka minor allele frequency <= 0.05
-##NOTE: working with the dataset with missing data already removed, different from Ben ###
+
 
 ###NOTE FOR BEN: there's no need to join the two datasets, and by doing so you're introducing errors. INSTEAD, just need to do the removal of the maf > 0.95 as a second step on the data from which you already removed missing data
 
@@ -145,12 +147,8 @@ stopifnot(num.geno$major.af <=1)
 stopifnot(num.geno$major.af >= 0.5)
 plyr::count(is.na(num.geno$ref.allele))
 
-# checking something--
-num.geno %>%
-  filter(major.af==0.5)
-####NOTE--at this point there are 5 snps with maf =0.5, and therefore we don't know what the reference allele here is! Need to see what to do if they remain in the dataset...
 
-# remove snps with maf > 0.95 (that is, keep those with maf <= 0.95); remove unneeded columns and rename others
+# remove snps with major allele freq > 0.95 (that is, keep those with minor allele freq <= 0.95); remove unneeded columns and rename others
 tomato_snps_first_cull.L <- num.geno %>%
   filter(major.af<=0.95) %>%
   select(-united_noNA, -united, -count.A, -count.C, -count.G, -count.T, -max.count, -ref.allele, -major.af) %>%
@@ -356,7 +354,7 @@ map_merger.L <- function(EXPEN.df, EXPIM.df) {
 # sanity check--are both input lists the same size?
 stopifnot(length(split.EXPEN)==length(split.EXPIM))
 
-### NOTE FOR BEN-- because I stored my data in lists rather than having to read it back in (see my version of dataprocessing for LPmerge, above), I don't have to make the manual EXPEN_list and EXIM_list like you did to run the loop. Again, this wasn't wrong, but I just changed it to make it easier and as a double-check
+### NOTE FOR BEN-- because I stored my data in lists rather than having to read it back in (see my version of dataprocessing for LPmerge, above), I don't have to make the manual EXPEN_list and EXIM_list like you did to run the loop. Again, this is a place yours wasn't wrong, but I just changed it to make it easier and more coded rather than manual, and as a double-check
 
 # Use the function above to run LPmerge on all chromosomes
 merged_maps.L <- list()
@@ -368,7 +366,7 @@ for (i in 1:length(split.EXPEN)) {
 # manually inspect the output to determine which of the four consensus maps generated for each chromosome is the best.
 # the criteria, according to the LPmerge tutorial (at https://potatobreeding.cals.wisc.edu/wp-content/uploads/sites/161/2014/01/LPmerge_tutorial.pdf): choose the lowest mean RMSE, and break ties using the lowest sd for RMSE.
 
-# NOTE for BEN--making a vector of the best consensus maps makes it a little more code-friendly if you want to try that. Again, not wrong, just a change.
+# NOTE for BEN--making a vector of the best consensus maps makes it a little more code-friendly if you want to try that. Again, this part is not wrong, just a change.
 
 # After doing so, the results for the best consensus maps are, for chromosomes 1-12 in order:
 best <- c(1,2,4,1,1,1,3,4,3,3,1,2)
@@ -415,10 +413,9 @@ write_tsv(millimorgan_snps, "output_tests/millimorgansnps.tsv")
 
 ### NOTE FOR BEN-- there's a problem here. We need to address it. See below for how I did. ####
 
-# PROBLEM: as seen below, not all SNPs in my data are even in the consensus map. In fact, there are SNPs that are in only the consensus map AND SNPs that are in only the Blanca paper data.
-# Checking the original paper from which the consensus maps came, we are in fact using the most complete map; these other SNPs that are in our dataset simply are not mapped. 
-# The text of the methods of the Blanca, et al. paper said that "SNPs that mapped closer than 0.1 cM were removed". So, I will proceed under the assumption that the SNPs that ARE found in the map were filtered following this criteria, but that then the SNPs that were not in the map were simply retained, because they are not known to map closer than 0.1 cM.
+# There is a problem here; not all SNPs in my data are in the consensus map. In fact, there are 6471 SNPs in my data but only 5296 SNPs in the consensus map.
 
+# compare SNPs in consensus map with those in our dataset
 map.markers <- S8_map.L$marker
 my.markers <- tomato_snps_first_cull.L$marker
 
@@ -429,28 +426,35 @@ my.only <- my.markers[!(my.markers %in% map.markers)]
 # there are 4206 shared snps + 1090 only in map = 5296 in map. OK.
 # there are 4206 shared snps + 2265 only in mine = 6471 in my markers. OK.
 
-# Now, why are these different?
+# However, looking at the Sim et al. paper, their Table S1 contains alternative names for all the SNPs, which we have downloaded and placed in the `data` folder as `S1_SNPs_Sim_etal.xlsx`. Are these the names that were used in our paper, and could this increase the number of shared SNPs? Check for this.
+# read in file and tidy:
+sim.snps <- read_xlsx("../../data/S1_SNPs_Sim_etal.xlsx")
+# based on manual inspection of original file, column names have been moved to the first row. Fix this.
+colnames(sim.snps) <- sim.snps[1,]
+sim.snps <- sim.snps[-1,]
+# select and rename needed columns
+sim.snps <- sim.snps %>%
+  select(SNP=`SNP Name`, Alt.SNP=`SolCAP SNP ID`)
 
-# several in the map seem to have prefixes before the "solcap_..." that are not present in my data. Remove the prefixes:
-map.markers <- gsub("^.*?solcap", "solcap", map.markers)
-shared <- map.markers[map.markers %in% my.markers]
+# check if these other names agree
+test <- left_join(consensus.map, sim.snps, by=c("marker"="SNP")) %>%
+  rename(marker.map=marker) # rename marker to know which df this "marker" came from
+stopifnot(sum(is.na(test$chr))==0)
+test2 <- left_join(test, tomato_snps_first_cull.L, by=c("Alt.SNP"="marker"))
+stopifnot(sum(is.na(test2$chr)))
 
-map.only <- map.markers[!(map.markers %in% my.markers)]
-my.only <- my.markers[!(my.markers %in% map.markers)]
-# this increased the total to 4422 shared entries out of 5296 in the map
+# This worked! All 5296 SNPs in the consensus map can now be matched to those in the Blanca paper data. However, there are still more SNPs in the Blanca data than in the consensus map. Checking the original paper from which the consensus maps came, we are in fact using the most complete map; these other SNPs that are in our dataset simply are not mapped. 
 
-# there are now quite a few snps with names formatted as "solcap_snp_sl_..." that should match those in my data, if they are present, but they are not. So, remove these to focus on other remaining problems:
-map.only <- gsub("^.*solcap_snp_sl_.*", "REMOVE", map.only)
-map.only <- map.only[map.only!="REMOVE"]
+# make new consensus map with the SNPs named the same as in Blanca et al:
+new.consensus.map <- test2 %>%
+  select(marker=Alt.SNP, chr, cM) #extract and rename relevant columns
 
-
-# After visual inspection, NONE of the remaining SNPs show any obvious way of connecting the entries from the two lists to one another. So, will have to proceed knowing that only some of the SNPs in the Blanca, et al. dataset are actually represented in the map.
-# make a new, subset consensus map containing ONLY those SNPs that are shared with the Blanca paper:
-consensus.map$marker <- gsub("^.*?solcap", "solcap", consensus.map$marker) 
-new.consensus.map <- consensus.map[consensus.map$marker %in% shared,]
+# remove unneeded files
+rm(test, test2)
 
 # Now, thin these based on the 0.1 cM criteria:
-# The paper did not say how they decided which SNP out of a group of nearby SNPs to remove, so we will arbitrarily choose to keep the first SNP found and then exclude all SNPs found within the next 0.1 cM, then repeat the process from the next SNP that is outside that region. 
+# The text of the methods of the Blanca, et al. paper said that "SNPs that mapped closer than 0.1 cM were removed". So, I will proceed under the assumption that the SNPs that ARE found in the map were filtered following this criteria, but that then the SNPs that were not in the map were simply retained, because they cannot be KNOWN to map closer than 0.1 cM.
+# Also, the paper did not say how they decided which SNP out of a group of nearby SNPs to remove, so we will arbitrarily choose to keep the first SNP found and then exclude all SNPs found within the next 0.1 cM, then repeat the process from the next SNP that is outside that region. 
 
 # find distance between SNPs and keep if they are >=0.1 cM from one another
 consensus.map.thinned <- new.consensus.map %>%
@@ -467,15 +471,19 @@ check <- consensus.map.thinned %>%
   mutate(new.distance.lag = cM-lag(cM),
          inspect= ifelse((new.distance.lag<=0.1 & new.distance.lag >0),"YES","-")) 
 sum(check$inspect=="YES", na.rm=T)
-# There are only 11 cases where this problem could potentially occur. Although a larger data set could make this solution intractable, for this small dataset I will manually inspect the data to find if any of these SNPs should in fact be included.
+# There are only 17 cases where this problem could potentially occur. Although a larger data set could make this solution intractable, for this small dataset I will manually inspect the data to find if any of these SNPs should in fact be included.
 
-# After manual inspection, this situation did occur 3 times. To solve, need to manually include the following SNPs:
+# After manual inspection, this situation did occur 5 times. To solve, need to manually include the following SNPs:
 # solcap_snp_sl_25987
+# solcap_snp_sl_100795
 # solcap_snp_sl_25442
+# solcap_snp_sl_43223
 # solcap_snp_sl_19031
 # also want to manually keep the first SNP (currently, KEEP==NA for that snp): solcap_snp_sl_15058
 consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_25987"] <- TRUE
+consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_100795"] <- TRUE
 consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_25442"] <- TRUE
+consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_43223"] <- TRUE
 consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_19031"] <- TRUE
 consensus.map.thinned$KEEP[consensus.map.thinned$marker=="solcap_snp_sl_15058"] <- TRUE
 
@@ -645,5 +653,3 @@ write_csv(rarefaction_LD_data, "../../data/rarefaction_LD_data.csv")
 
 ```
 
-
-ONE LAST THING-- make SNP dataset for PC analysis; I'll do that tomorrow.
