@@ -1,6 +1,26 @@
 # BCB546X_MadMaize_final
+Dec. 3, 2018
+
 Final project for BCB546X, MadMaize project group: Laura Tibbs, Ben Cortes, Qi Mu, Jialu Wei, and Andy Herr
 
+This was based on the paper Blanca, José, et al. "Genomic variation in tomato, from wild ancestors to contemporary breeding accessions." BMC genomics 16.1 (2015): 257. This paper can be found at https://bmcgenomics.biomedcentral.com/articles/10.1186/s12864-015-1444-1 .
+
+## Overview of repository and project:
+
+### home directory:
+Contains files that give an overview of the project (markdown format), the "custom scripts" mentioned by Dr. Blanca in his paper and provided to us via email, and the final presentation. Also contains the following subdirectories:
+
+### code directory:
+Contains all code used in this project.
+
+#### Processing_Data directory: 
+Contains code used to pre-process data as described in the Methods of Blanca, et al. Also contains intermediate files from this process. The data produced by this code was stored in the `code` directory and used as input files for the other analyses in this project. Code written and annotated by Laura Tibbs and Ben Cortes.
+
+#### PCA directory: 
+Contains code used to process data for and run PCA analysis, then to make figures for this. Also contains intermediate files from this process. This analysis corresponds to Fig 1-2 in Blanca, et al. Code written by Laura Tibbs.
+
+### data directory: 
+Contains original data from the tables in Blanca, et al. (`12864_2015_1444_MOESM1_ESM.txt` and `Suppl_Table_2.csv`) as well as a paper it referenced (Sim, Sung-Chur, et al. "Development of a large SNP genotyping array and generation of high-density genetic maps in tomato." PloS one 7.7 (2012): e40563; found at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563) (these files are `S1_SNPs_Sim_etal.xlsx` and `S8_Map_Sim_etal.csv`. Also contains data processed using a script in the `code/Processing_Data` directory (`final_data.csv` and `rarefaction_LD_data.csv`).
 
 ## NOTES on required parts of the project/GitHub formatting (delete later):
 
