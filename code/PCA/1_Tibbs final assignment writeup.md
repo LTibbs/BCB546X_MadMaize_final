@@ -97,24 +97,18 @@ The graphs produced by Eigensoft's default plotting function(`ploteig`) were sim
 
 ## Step 5: Tidy files in repository:
 
-Move figures to a directory, Eigensoft input into the Eigensoft directory, any other intermediate files???
+Tidy up files in the GitHub repository. Move all files associated with Eigensoft into the `code/PCA/eigensoft/` directory.
 
-Thoughts--maybe I copy `example.perl`, edit it, and go from there?? Or is it easier just to rename all my files?? I don't see where to rename the example.pheno.
-
-###
-trying to plot: in EIGENSTRAT,
-
-	 perl ../bin/ploteig -i example.pca.evec -c 1:2 -p SLC:SLL:mixture:SP:SN:SG:SLL:conflicting -x -o Fig1_Eigensoft_plotting.xtxt
-
-But this causes--
-
-	SLC:SLL:mixture:SP:SN:SG:SLL:conflicting -x -o test_example.xtxt
-	## number of fields: 5
-	SLC:SLL:mixture:SP:SN:SG:SLL:conflicting
-	sh: gnuplot: command not found
-	Can't exec "fixgreen": No such file or directory at ../bin/ploteig line 118, <FF> line 1009.
-
-https://github.com/DReichLab/EIG/issues/13 said to comment out the fixgreen, which I did, but still had the gnuplot problem.
-
-Do: `module load gnuplot/5.2.0-py2-fnj3nkc`
+	# in the code/PCA directory, run:
+	mv full.eigensoft.indiv eigensoft/
+	mv full.eigensoft.geno eigensoft/
+	mv SP.geno eigensoft/
+	mv SP.indiv eigensoft/	
+	mv SLC.geno eigensoft/
+	mv SLC.indiv eigensoft/
+	mv SLL.geno eigensoft/
+	mv SLL.indiv eigensoft/
+	mv Fig2d.geno eigensoft/
+	mv Fig2d.indiv eigensoft/
+	mv eigensoft.snp eigensoft/
 
