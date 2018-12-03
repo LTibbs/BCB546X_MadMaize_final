@@ -93,7 +93,11 @@ ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, ne
   ylim(c(-0.10, 0.08)) +
   scale_shape_manual(values=c(16,16,16,17,15,4,18)) + # set shape to match Fig 1
   scale_color_manual(values=c("green", "gray", "black", "blue", "red", "gray", "gray")) + # set color to match
-  theme_classic() # remove background grid 
+  theme_classic() + # remove background grid
+  theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))
   # labs(caption="Replicated Fig 1 using 950 unique accessions & 2959 markers") +
   # theme(plot.caption=element_text(hjust=-.2)) + # add caption
 
@@ -108,7 +112,11 @@ ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, ne
   ylim(c(-0.10, 0.08)) +
   scale_shape_manual(values=c(16,16,16,17,15,4,18)) + # set shape to match Fig 1
   scale_color_manual(values=c("green", "gray", "black", "blue", "red", "gray", "gray")) + # set color to match
-  theme_classic() # remove background grid 
+  theme_classic() + # remove background grid
+  theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))
   # labs(caption="Replicated Fig 1 using 950 unique accessions & 2959 markers") +
   # theme(plot.caption=element_text(hjust=-.2)) + # add caption
 dev.off()
@@ -261,6 +269,10 @@ plot.SP <- ggplot(data=SP.fig2, mapping=aes(PC1, neg.PC2))+
                               "#ACFF73", "#ACDE8B", "#5AFF8B", "#C5DE83", "#4AC5BD",
                               "#52A452", "#08837B", "#206A4A", "#10AC10")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure) 
   theme(legend.position="bottom") +
+  theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))  +
   labs(tag="A") # add label for sub-figure
 
 # print plot
@@ -290,6 +302,10 @@ plot.SLC <- ggplot(data=SLC.fig2, mapping=aes(PC1, PC2))+
   ylab(paste("PC2 ", SLC.pct.var[2], "%", sep="")) +
   theme_classic() +
   theme(legend.position="bottom") +
+  theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))  +  
   labs(tag="B") # add label for sub-figure
 
 # print plot
@@ -318,6 +334,10 @@ plot.SLL <- ggplot(data=SLL.fig2, mapping=aes(neg.PC1, neg.PC2))+
                               "#EECD6A", "#BD39E6", "#F68B18", "#949494", "#FF4139",
                               "#F6CDA4", "#EE948B", "#FF41DE")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure)
   theme(legend.position="bottom") +
+    theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))  +
   labs(tag="C") # add label for sub-figure
 
 # print plot
@@ -350,6 +370,10 @@ plot.Fig2d <- ggplot(data=Fig2d.fig2, mapping=aes(neg.PC1, neg.PC2))+
                               "#4AA494", "#4AC5BD", "#94418B", "red", "#4A4A94", "#83FFE6",
                               "#B4E6E6", "#316A94")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure)
   theme(legend.position="bottom") +
+    theme(axis.title = element_text(size=18), # change font size
+        axis.text= element_text(size=14),
+        legend.text=element_text(size=17),
+        legend.title = element_text(size=18))  +
   labs(tag="D") # add label for sub-figure
 
 # print plot
@@ -359,7 +383,7 @@ print(plot.Fig2d)
 
 Now, I need to put the four parts of the figure together.
 
-```{r fig.width=8, fig.height=8}
+```{r fig.width=16, fig.height=12}
 # install library if necessary and load it
 # install.packages("gridExtra")
 library(gridExtra)
@@ -368,7 +392,7 @@ library(gridExtra)
 full.fig2 <- grid.arrange(plot.SP, plot.SLC, plot.SLL, plot.Fig2d)
 
 # save the plot as an image
-jpeg("figures/Fig2_R.jpg", width = 1000, height = 650)
+jpeg("figures/Fig2_R.jpg", width = 1500, height = 1050)
 grid.arrange(plot.SP, plot.SLC, plot.SLL, plot.Fig2d)
 dev.off()
 
