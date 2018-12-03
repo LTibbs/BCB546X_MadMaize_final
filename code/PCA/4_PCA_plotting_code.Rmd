@@ -1,0 +1,380 @@
+---
+title: "4_PCA_plotting_code"
+author: "Laura Tibbs"
+date: "November 29, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Goal:
+Plot PC output from Eigensoft to approximately reproduce Fig 1-2 from Blanca, et al. 2015.
+
+Set working directory to the location of this `.Rmd` file:
+```{r}
+# This needs to be changed to reflect the location of the GitHub repository and this code within it on any given computer that runs the code. 
+# In my case, this is:
+# setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/BCB546X_MadMaize_final/code/PCA")
+```
+
+Load library:
+```{r}
+library(tidyverse)
+```
+
+## Fig 1:
+Reproduce Fig 1: PCA using all uniquely named accessions.
+
+The Eigensoft package produced a plot (`Fig1_Eigensoft_ploteig.pdf`) that is very similar to Fig. 1 in the paper, but it differs in that the percentage of variability explained by each PC is shown in Fig 1 but not in the output from Eigensoft; also, it appears that Fig 1 has flipped the signs on PC1 and PC2 so that all values that were positive in my output are negative in their figure and vice versa. So, I will graph the data from Eigensoft using R to make these changes.
+
+Load data and tidy it:
+```{r}
+# read data
+fig1 <- as.tibble(read.table("eigensoft/full.eigensoft.pca.evec", comment.char="", row.names=NULL))
+
+# Currently, the eigenvalues are part of the column names; tidy the data to fix this:
+
+# extract the eigenvalues
+evals <- colnames(fig1)
+evals <- gsub("X", "", evals)
+evals <- evals[-c(1,2)]
+evals <- as.numeric(evals)
+
+# calculate percent of variance explained by each PC
+# For a given PC, this is 100 x the eigenvalue for that PC divided by the sum of all the eigenvalues found by the PCA
+pct.var <- 100*evals/sum(evals)
+stopifnot(near(sum(pct.var), 100)) # sanity check that percentages add to 100
+pct.var <- round(pct.var, digits = 2)
+
+# rename the columns
+PC.names <- character()
+for (i in 1:(ncol(fig1)-2)) {PC.names[i] <- paste("PC", i, sep="")}
+colnames(fig1) <- c("Sample", PC.names, "group")
+
+# edit group Schm:
+# when comparing to the paper, it looks like they called the group "Schm" "SC". Change that here.
+fig1$group <- gsub("Schm", "SC", fig1$group)
+
+```
+
+Now, plot this data. Try to more closely replicate the figure found in the paper by changing the axes titles to include the percent of variance explained by each PC on the graph.
+
+```{r}
+ggplot(data= fig1, mapping=aes(PC1, PC2, color=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep=""))
+
+
+```
+ 
+However, although the overall shape of the PC plot is similar, it appears that the version in the paper had the signs of both PC1 and PC2 flipped; that is, an accession that had positive PC values in both PC1 and PC2 in the Blanca et al. paper has negative values here, and vice versa. Because changing the sign of a PC does not affect the interpretation of the PCA, I will change the signs on my data in order to more closely replicate their figure.
+
+```{r}
+ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep=""))
+```
+
+ Now, make some cosmetic changes to more closely reproduce the figure's appearance: 
+ 
+```{r}
+# make group into factor to control order:
+fig1$group <- factor(fig1$group, levels= c("SP", "SC", "SG", "SLC", "SLL", "mixture", "SN"))
+
+ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group, shape=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep="")) +
+  xlim(c(-0.12,0.04)) + # change axis limits
+  ylim(c(-0.10, 0.08)) +
+  scale_shape_manual(values=c(16,16,16,17,15,4,18)) + # set shape to match Fig 1
+  scale_color_manual(values=c("green", "gray", "black", "blue", "red", "gray", "gray")) + # set color to match
+  theme_classic() # remove background grid 
+  # labs(caption="Replicated Fig 1 using 950 unique accessions & 2959 markers") +
+  # theme(plot.caption=element_text(hjust=-.2)) + # add caption
+
+
+# save figure:
+jpeg("figures/Fig1_R.jpg", width = 750, height = 554)
+ggplot(data= mutate(fig1, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group, shape=group)) + # color by group
+  geom_point() +
+  xlab(paste("PC1 ", pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", pct.var[2], "%", sep="")) +
+  xlim(c(-0.12,0.04)) + # change axis limits
+  ylim(c(-0.10, 0.08)) +
+  scale_shape_manual(values=c(16,16,16,17,15,4,18)) + # set shape to match Fig 1
+  scale_color_manual(values=c("green", "gray", "black", "blue", "red", "gray", "gray")) + # set color to match
+  theme_classic() # remove background grid 
+  # labs(caption="Replicated Fig 1 using 950 unique accessions & 2959 markers") +
+  # theme(plot.caption=element_text(hjust=-.2)) + # add caption
+dev.off()
+```
+ 
+  
+Of course, some cosmetic differences remain between these figures, including the location of the legend and the . However, some differences in content are also present. For example, the group "SN" is not in their figure. There was only one SN accession, so perhaps this was one of the accessions removed from their analysis, or perhaps it was a typo in the published table. In addition, there are differences in the PCA results themselves. In my analysis, PC1 accounted for 51.47% of the variation and PC2 for 16.79%, while their numbers were 34.5% and 5.6%, respectively. The overall shape of the PC graph, though similar, is not identical; for example, the total range of the PC2 values is larger in my data than in theirs. These discrepancies are probably due to differences in data processing; they used 952 accessions and 2313 markers, while our processed data included 950 accessions and 2959 markers despite our best efforts to replicate their processing methods.
+
+## Fig 2:
+Reproduce Fig 2: Principal Component Analysis for SP, SLC, SLL and SLL Mesoamerica and genetically close subgroups.
+
+The Eigensoft package produced a plots (`Fig2-...-ploteig.pdf`) that are reasonably similar to the four sub-figures within figure 2 in the paper, but these differ in the ways already mentioned above for Figure 1 (axis labels and signs flipped). Additionally, the figures in the paper contain circles around certain groups, which are not present in Eigensoft's output. So, I will graph the data from Eigensoft using R to replicate these changes.
+
+Load data and tidy it:
+```{r}
+# make list of sub-figure names to read in:
+fig2.names <- c("SP", "SLC", "SLL", "Fig2d")
+
+# create column name vector; assumes all figures' .evec files have same number of columns
+PC.names <- character()
+for (i in 1:(ncol(fig1)-2)) {PC.names[i] <- paste("PC", i, sep="")}
+new.names <- c("Sample", PC.names, "group")
+
+# read data and tidy, looping through all 4 datasets for this figure
+for (i in 1:length(fig2.names)){
+  # read data
+  # assign(paste(fig2.names[i],".fig2", sep=""), as.tibble(read.table(paste("eigensoft/", fig2.names[i], ".pca.evec", sep=""), comment.char="", row.names=NULL)))
+  temp.df <- as.tibble(read.table(paste("eigensoft/", fig2.names[i], ".pca.evec", sep=""), comment.char="", row.names=NULL))
+ 
+  # find eigenvalues
+  # temp.e <- colnames(get(paste(fig2.names[i],".fig2", sep="")))
+  temp.e <- colnames(temp.df)
+  temp.e <- gsub("X", "", temp.e)
+  temp.e <- temp.e[-c(1:2)]
+  temp.e <- as.numeric(temp.e)
+  assign(paste(fig2.names[i],".evals", sep=""), temp.e)
+  
+  # calculate percent of variance explained by each PC (see fig 1 comments for explanation)
+  temp.pct <- 100*temp.e/sum(temp.e)
+  stopifnot(near(sum(temp.pct),100)) # sanity check that percentages add to 100
+  temp.pct <- round(temp.pct, digits=2)
+  assign(paste(fig2.names[i], ".pct.var", sep=""), temp.pct)
+  
+  # rename columns
+  # colnames(get(paste(fig2.names[i],".fig2", sep=""))) <- new.names
+  colnames(temp.df) <- new.names
+  
+  # format group names to more closely match the paper
+  temp.df$group <- gsub("SLC-1", "SLC 1", temp.df$group)
+  temp.df$group <- gsub("SLC-SP-Peru", "SLC SP Peru", temp.df$group)
+  temp.df$group <- gsub("SLL-1", "SLL 1", temp.df$group)
+  temp.df$group <- gsub("SLC-", "", temp.df$group)
+  temp.df$group <- gsub("SLL-", "", temp.df$group)
+  temp.df$group <- gsub("SP-", "", temp.df$group)
+  temp.df$group <- gsub("-", " ", temp.df$group)
+  temp.df$group <- gsub("non Andean", "non-Andean", temp.df$group)
+
+  # save data
+  assign(paste(fig2.names[i],".fig2", sep=""), temp.df)
+  
+  rm(temp.df, temp.e, temp.pct) # clean workspace
+}
+
+```
+
+Now, make initial scatterplots for these four datasets:
+```{r}
+# Figure 2A, SP:
+ggplot(data=SP.fig2, mapping=aes(PC1, PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SP.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SP.pct.var[2], "%", sep=""))
+
+# Figure 2B, SLC:
+ggplot(data=SLC.fig2, mapping=aes(PC1, PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SLC.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLC.pct.var[2], "%", sep=""))
+
+# Fig 2C, SLL:
+ggplot(data=SLL.fig2, mapping=aes(PC1, PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SLL.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLL.pct.var[2], "%", sep=""))
+
+# Fig 2D:
+ggplot(data=Fig2d.fig2, mapping=aes(PC1, PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", Fig2d.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", Fig2d.pct.var[2], "%", sep=""))
+```
+
+As before, I need to flip the signs on PC1 and PC2 to better replicate these figures; however, it varies from figure to figure whether or not the signs need to be flipped or not, so I will do this manually below.
+
+```{r}
+# Figure 2A, SP:
+ggplot(data=mutate(SP.fig2, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(PC1, neg.PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SP.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SP.pct.var[2], "%", sep=""))
+
+# Figure 2B, SLC:
+ggplot(data=mutate(SLC.fig2, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(PC1, PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SLC.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLC.pct.var[2], "%", sep="")) 
+
+# Fig 2C, SLL:
+ggplot(data=mutate(SLL.fig2, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", SLL.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLL.pct.var[2], "%", sep=""))
+
+# Fig 2D:
+ggplot(data=mutate(Fig2d.fig2, neg.PC1=0-PC1, neg.PC2=0-PC2), mapping=aes(neg.PC1, neg.PC2, color=group))+
+  geom_point() +
+  xlab(paste("PC1 ", Fig2d.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", Fig2d.pct.var[2], "%", sep=""))
+```
+
+However, there is one exception to the rule that all the signs were flipped; for some reason, Fig 2B looks as though the signs were NOT flipped as they were for the other graphs to produce the figure. So, for Fig2B, keep the original signs from my eigensoft run.
+
+Now, I need to add circles to the figures to show the grouping of accessions to compare to that in the paper. From information at https://stackoverflow.com/questions/13577918/plotting-a-curve-around-a-set-of-points, I will use the library `ggalt` to accomplish this.
+
+```{r}
+# install library if needed, and load it:
+# install.packages("ggalt")
+library("ggalt")
+
+# Figure 2A, SP:
+# mutate the data to create needed columns; use Tables 2 and S1 to determine which subgroups fall within the larger group:
+SP.fig2 <- mutate(SP.fig2, 
+                  neg.PC1=0-PC1, neg.PC2=0-PC2,
+                  large.group=ifelse(group %in% c("Montane 1", "Montane 2"), "SP Montane", 
+                                     ifelse(group %in% c("Ecuador 1", "Ecuador 2", "Ecuador 3"), "SP Ecuador", 
+                                            ifelse(group %in% c("Peru 1", "Peru 2", "Peru 3", "Peru 4",
+                                                                "Peru 5", "Peru 6", "Peru 7", "Peru 8", "Peru 9"),
+                                                   "SP Peru", NA))))
+
+# make plot
+plot.SP <- ggplot(data=SP.fig2, mapping=aes(PC1, neg.PC2))+
+  geom_point(aes(color=group)) +
+  xlab(paste("PC1 ", SP.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SP.pct.var[2], "%", sep="")) +
+  geom_encircle(aes(color=large.group)) +
+  theme_classic() +
+  # scale_shape_manual(values=c(16,16,16,18,18,17,17,17,17,17,17,17,17,17,15,15,4))  + # set shape to match Fig in paper
+  scale_color_manual(values=c("#7B8B4A", "#4AC5BD", "#D5FF41", "#B4C5D5", "#ACDE8B", "#7BDE52",
+                              "#D5FF41", "#52A452", "#52D583", "#9CAC6A",
+                              "#ACFF73", "#ACDE8B", "#5AFF8B", "#C5DE83", "#4AC5BD",
+                              "#52A452", "#08837B", "#206A4A", "#10AC10")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure) 
+  theme(legend.position="bottom") +
+  labs(tag="A") # add label for sub-figure
+
+# print plot
+print(plot.SP)
+
+# Figure 2B, SLC: 
+# mutate the data to create needed columns; use Tables 2 and S1 to determine which subgroups fall within the larger group:
+SLC.fig2 <- mutate(SLC.fig2, 
+                  neg.PC1=0-PC1, neg.PC2=0-PC2,
+                  large.group=ifelse(group %in% c("Ecuador 1", "Ecuador 2", "Ecuador 3", "vintage"), "SLC Ecuador", 
+                              ifelse(group %in% c("Peru 1", "Peru 2", "Peru 3"), "SLC Peru",
+                              ifelse(group %in% c("SLC SP Peru"), "SLC-SP Peru",
+                              ifelse(group %in% c("Colombia", "Costa Rica", "Mesoamerica", "Asia", "other"), 
+                                     "SLC non-Andean", NA)))))
+
+# make plot
+plot.SLC <- ggplot(data=SLC.fig2, mapping=aes(PC1, PC2))+
+  geom_point(aes(color=group)) +
+  geom_encircle(aes(color=large.group)) +
+  # scale_shape_manual(values=c(16,16,16,18,18,17,17,17,17,17,17,17,17,17,15,15,4))  + # set shape to match Fig in paper
+  scale_color_manual(values=c("#E6A4F6", "#4AA494", "#4AC5BD", "#CDA4DE", "#5A8BB4", "#94418B", "#D5D5D5", 
+                              "#D5D5D5", "#AC83DE", "#D5D5D5", "#4A4A94", "#83FFE6", "#BDBDE6", "#94418B",
+                              "#527B8B", "#AC83DE", "#C5E6DE", 
+                              "#006A83", "#311852", "#EEC5EE", "#4AA494", "#D5D5D5" ,
+                              "#D5D5D5", "#D5D5D5")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure)
+  xlab(paste("PC1 ", SLC.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLC.pct.var[2], "%", sep="")) +
+  theme_classic() +
+  theme(legend.position="bottom") +
+  labs(tag="B") # add label for sub-figure
+
+# print plot
+print(plot.SLC)
+                                     
+# Figure 2C, SLL:
+# mutate the data to create needed columns; use Tables 2 and S1 to determine which subgroups fall within the larger group:
+SLL.fig2 <- mutate(SLL.fig2, 
+                  neg.PC1=0-PC1, neg.PC2=0-PC2,
+                  large.group=ifelse(group %in% c("Mesoamerica", "vintage 1", "early breed", "vintage 2"), "SLL vintage",
+                              ifelse(group %in% c("vintage fresh", "fresh 1", "fresh 2"), "SLL fresh",
+                              ifelse(group %in% c("processing 1 1", "processing 1 2", "processing 1 3"), 
+                                     "SLL processing 1",
+                              ifelse(group %in% c("processing 2"), "SLL processing 2",
+                              ifelse(group %in% c("SLL 1"), "SLL 1", NA)))))
+                  )
+# make plot
+plot.SLL <- ggplot(data=SLL.fig2, mapping=aes(neg.PC1, neg.PC2))+
+  geom_point(aes(color=group)) +
+  xlab(paste("PC1 ", SLL.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", SLL.pct.var[2], "%", sep="")) +
+  geom_encircle(aes(color=large.group)) +
+  theme_classic() +
+  # scale_shape_manual(values=c(16,16,16,18,18,17,17,17,17,17,17,17,17,17,15,15,4))  + # set shape to match Fig in paper
+  scale_color_manual(values=c("#C57B4A", "#C54AC5", "#FFBDB4", "#FF4A62", "#F6AC6A", "#FFB483", "#F6AC6A", "#A4837B",
+                              "#EECD6A", "#BD39E6", "#F68B18", "#949494", "#FF4139",
+                              "#F6CDA4", "#EE948B", "#FF41DE")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure)
+  theme(legend.position="bottom") +
+  labs(tag="C") # add label for sub-figure
+
+# print plot
+print(plot.SLL)
+
+# Figure 2d: SLL Mesoamerica and related group:
+# mutate the data to create needed columns:
+Fig2d.fig2 <- mutate(Fig2d.fig2,
+                     neg.PC1=0-PC1, neg.PC2=0-PC2,
+                     large.group=ifelse(group %in% c("Mesoamerica"), "SLL Mesoamerica",
+                                        ifelse(group %in% c("world"), "SLC World",
+                                        ifelse(group %in% c("Ecuador 3"), "SLC Ecuador 3",
+                                        ifelse(group %in% c("Peru 1"), "SLC Peru 1",
+                                        ifelse(group %in% c("Peru 2"), "SLC Peru 2",
+                                        ifelse(group %in% c("Costa Rica"), "SLC Costa Rica",
+                                        ifelse(group %in% c("Colombia"), "SLC Colombia",
+                                        ifelse(group %in% c("vintage"), "SLC vintage", NA))))))))
+)
+
+# make plot
+plot.Fig2d <- ggplot(data=Fig2d.fig2, mapping=aes(neg.PC1, neg.PC2))+
+  geom_point(aes(color=group)) +
+  xlab(paste("PC1 ", Fig2d.pct.var[1], "%", sep="")) + # set axes to show PC and percent of variance it explains
+  ylab(paste("PC2 ", Fig2d.pct.var[2], "%", sep="")) +
+  geom_encircle(aes(color=group)) +
+  theme_classic() +
+  # scale_shape_manual(values=c(16,16,16,18,18,17,17,17,17,17,17,17,17,17,15,15,4))  + # set shape to match Fig in paper
+  scale_color_manual(values=c("#4AA494", "#4AC5BD", "#94418B", "red", "#4A4A94", "#83FFE6",
+                              "#B4E6E6", "#316A94",
+                              "#4AA494", "#4AC5BD", "#94418B", "red", "#4A4A94", "#83FFE6",
+                              "#B4E6E6", "#316A94")) + # set colors to match (used "Instant Color Picker" app to extract original colors from original figure)
+  theme(legend.position="bottom") +
+  labs(tag="D") # add label for sub-figure
+
+# print plot
+print(plot.Fig2d)
+
+```
+
+Now, I need to put the four parts of the figure together.
+
+```{r fig.width=8, fig.height=8}
+# install library if necessary and load it
+# install.packages("gridExtra")
+library(gridExtra)
+
+# arrange the plots together
+full.fig2 <- grid.arrange(plot.SP, plot.SLC, plot.SLL, plot.Fig2d)
+
+# save the plot as an image
+jpeg("figures/Fig2_R.jpg", width = 1000, height = 650)
+grid.arrange(plot.SP, plot.SLC, plot.SLL, plot.Fig2d)
+dev.off()
+
+```
+
+
+This figure is largely similar to that in the paper. Overall, most groups were in similar locations on these PCA graphs compared to those in the paper. There are some cosmetic differences; for example, after I added   `geom_encircle` I could no longer edit the shapes of the points nor the order of the group labels. The circles provided by `geom_encricle` were also considerably more jagged than those in the paper, and the legends in my figure are grouped under each sub-figure rather than all at the bottom.
+
+There were also some content differences. For example, the "world" group is in my Fig2b but not in theirs, and similarly the "non-Andean" group is in my Fig2a but not in theirs. The percent variation due to each PC also varies from that found in the paper. The locations of each group on the PCA plots, though similar, are not identical. However, in order to get this to be the case, I needed to switch the signs on the PC axes in most of the figures. These discrepancies are probably due to the differences in data processing, as noted above in discussing Figure 1.

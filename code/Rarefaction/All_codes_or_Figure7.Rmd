@@ -1,0 +1,256 @@
+---
+title: "Figure7"
+author: "Jialu Wei"
+date: "December 2, 2018"
+output: html_document
+---
+---
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(gridExtra)
+library(grid)
+```
+
+# Data inspection
+## Two SNP dataset will be used in the following analysis
+```{r}
+geno_full_ori <- read.csv("final_data.csv") #3341 SNPs included after filtering
+geno_ld_ori <- read.csv("rarefaction_LD_data.csv") # 6471 SNPs included without filtering by position 
+unique(geno_full_ori$solcap_snp_sl_100003)
+unique(geno_ld_ori$solcap_snp_sl_100003)
+```
+
+# Re-coding
+## Software `adze` will be used for rarefaction calculation. Data need to be recoded for specific format (same as used in `STRUCTURE`)
+### For small SNP dataset with 3341 SNPs
+#### Na:-9
+#### AA-11 TT-22 CC-33 GG-44 
+```{r}
+geno_full_ori[]=lapply(geno_full_ori,as.character)
+geno_full_ori[is.na(geno_full_ori)] <- -9 # missing data coded as `-9`
+geno_full_copy1 <- geno_full_ori
+geno_full_copy1 <- geno_full_ori %>% #coded based on the first allele
+  replace(geno_full_copy1 == "AA",1) %>%
+  replace(geno_full_copy1 == "AG",1) %>%
+  replace(geno_full_copy1 == "AT",1) %>%
+  replace(geno_full_copy1 == "AC",1) %>% 
+  replace(geno_full_copy1 == "TT",2) %>%
+  replace(geno_full_copy1 == "TA",2) %>%
+  replace(geno_full_copy1 == "TC",2) %>%
+  replace(geno_full_copy1 == "TG",2) %>%
+  replace(geno_full_copy1 == "CC",3) %>%
+  replace(geno_full_copy1 == "CA",3) %>%
+  replace(geno_full_copy1 == "CT",3) %>%
+  replace(geno_full_copy1 == "CG",3) %>%
+  replace(geno_full_copy1 == "GG",4) %>%
+  replace(geno_full_copy1 == "GA",4) %>%
+  replace(geno_full_copy1 == "GT",4) %>%
+  replace(geno_full_copy1 == "GC",4) 
+unique(geno_full_copy1$solcap_snp_sl_100003)
+
+geno_full_copy2 <- geno_full_ori 
+geno_full_copy2 <- geno_full_ori  %>% #coded based on the second allele
+  replace(geno_full_copy2 == "NA",-9) %>%
+  replace(geno_full_copy2 == "AA",1) %>%
+  replace(geno_full_copy2 == "AG",4) %>%
+  replace(geno_full_copy2 == "AT",2) %>%
+  replace(geno_full_copy2 == "AC",3) %>%
+  replace(geno_full_copy2 == "TT",2) %>%
+  replace(geno_full_copy2 == "TA",1) %>%
+  replace(geno_full_copy2 == "TC",3) %>%
+  replace(geno_full_copy2 == "TG",4) %>%
+  replace(geno_full_copy2 == "CC",3) %>%
+  replace(geno_full_copy2 == "CA",1) %>%
+  replace(geno_full_copy2 == "CT",2) %>%
+  replace(geno_full_copy2 == "CG",4) %>%
+  replace(geno_full_copy2 == "GG",4) %>%
+  replace(geno_full_copy2 == "GA",1) %>%
+  replace(geno_full_copy2 == "GT",2) %>%
+  replace(geno_full_copy2 == "GC",3) 
+ unique(geno_full_copy2$solcap_snp_sl_100003)
+ 
+formatted_geno_full <- rbind(geno_full_copy1,geno_full_copy2) %>% arrange(Sample) #combinded codes for both alleles
+write.table(formatted_geno_full,"formatted_geno_full.txt") # This file will be used for 
+
+```
+
+### For large SNP dataset with 6471 SNPs
+```{r}
+geno_ld_ori[]=lapply(geno_ld_ori,as.character)
+geno_ld_ori[is.na(geno_ld_ori)] <- -9
+geno_ld_copy1 <- geno_ld_ori
+geno_ld_copy1 <- geno_ld_ori %>%
+  replace(geno_ld_copy1 == "AA",1) %>%
+  replace(geno_ld_copy1 == "AG",1) %>%
+  replace(geno_ld_copy1 == "AT",1) %>%
+  replace(geno_ld_copy1 == "AC",1) %>%
+  replace(geno_ld_copy1 == "TT",2) %>%
+  replace(geno_ld_copy1 == "TA",2) %>%
+  replace(geno_ld_copy1 == "TC",2) %>%
+  replace(geno_ld_copy1 == "TG",2) %>%
+  replace(geno_ld_copy1 == "CC",3) %>%
+  replace(geno_ld_copy1 == "CA",3) %>%
+  replace(geno_ld_copy1 == "CT",3) %>%
+  replace(geno_ld_copy1 == "CG",3) %>%
+  replace(geno_ld_copy1 == "GG",4) %>%
+  replace(geno_ld_copy1 == "GA",4) %>%
+  replace(geno_ld_copy1 == "GT",4) %>%
+  replace(geno_ld_copy1 == "GC",4) 
+unique(geno_ld_copy1$solcap_snp_sl_100003)
+
+geno_ld_copy2 <- geno_ld_ori 
+geno_ld_copy2 <- geno_ld_ori  %>%
+  replace(geno_ld_copy2 == "NA",-9) %>%
+  replace(geno_ld_copy2 == "AA",1) %>%
+  replace(geno_ld_copy2 == "AG",4) %>%
+  replace(geno_ld_copy2 == "AT",2) %>%
+  replace(geno_ld_copy2 == "AC",3) %>%
+  replace(geno_ld_copy2 == "TT",2) %>%
+  replace(geno_ld_copy2 == "TA",1) %>%
+  replace(geno_ld_copy2 == "TC",3) %>%
+  replace(geno_ld_copy2 == "TG",4) %>%
+  replace(geno_ld_copy2 == "CC",3) %>%
+  replace(geno_ld_copy2 == "CA",1) %>%
+  replace(geno_ld_copy2 == "CT",2) %>%
+  replace(geno_ld_copy2 == "CG",4) %>%
+  replace(geno_ld_copy2 == "GG",4) %>%
+  replace(geno_ld_copy2 == "GA",1) %>%
+  replace(geno_ld_copy2 == "GT",2) %>%
+  replace(geno_ld_copy2 == "GC",3) 
+ unique(geno_ld_copy2$solcap_snp_sl_100003)
+ 
+formatted_geno_ld <- rbind(geno_ld_copy1,geno_ld_copy2) %>% arrange(Sample)
+write.table(formatted_geno_ld,"formatted_geno_ld.txt")
+
+```
+
+# Grouping
+## Group samples based on their genetic group information. 
+## Six subgroups are to be analyzed here, and we manually labelled them based on their passport information.
+```{r}
+passport <- read.csv("./12864_2015_1444_MOESM1_ESM.csv")
+match_infor <- select(passport,`Sample`,`group1`)
+unique(match_infor$group1)
+
+SP <- c("SP_Ecuador","SP_mixture","SP_Montane","SP_Peru")
+SLC_Andean <- c("SLC_Peru","SLC_Ecuador","SLC_SP_Peru")
+SLC_nonAndean <- c("SLC_non_Andean","SLC_mixture","SLC_Wva106","SLC_LA2135","SLC_LA2792")
+SLL_vintage <- c("SLL_vintage")
+SLL_fresh <- c("SLL_fresh","SLL_1")
+SLL_processing <- c("SLL_processing_1","SLL_processing_2")
+others <- c("mixture","conflicting classification","SN","Schm","","SLC_1","SG")
+
+SP_sample <- subset(match_infor,group1 %in% SP) 
+SLC_Andean_sample <- subset(match_infor,group1 %in% SLC_Andean)
+SLC_nonAndean_sample <- subset(match_infor,group1 %in% SLC_nonAndean)
+SLL_vintage_sample <- subset(match_infor,group1 %in% SLL_vintage)
+SLL_fresh_sample <- subset(match_infor,group1 %in% SLL_fresh)
+SLL_processing_sample <- subset(match_infor,group1 %in% SLL_processing)
+others_sample <- subset(match_infor,group1 %in% others)
+
+```
+
+# Labelling samples with group together with genotype information
+## For small SNP dataset with 3341 SNPs
+### Label with By subgroup
+```{r}
+SP_geno_full <- subset(formatted_geno_full, Sample %in% SP_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SP")
+SLC_Andean_geno_full <- subset(formatted_geno_full, Sample %in% SLC_Andean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_Andean")
+SLC_non_Andean_geno_full <- subset(formatted_geno_full, Sample %in% SLC_nonAndean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_non_Andean")
+SLL_vintage_geno_full <- subset(formatted_geno_full, Sample %in% SLL_vintage_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_vintage")
+SLL_fresh_geno_full <- subset(formatted_geno_full, Sample %in% SLL_fresh_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_fresh")
+SLL_processing_geno_full <- subset(formatted_geno_full, Sample %in% SLL_processing_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_processing")
+#others_geno_full <- subset(formatted_geno_full, Sample %in% others_sample$Sample) %>% arrange(Sample) %>% mutate(group = "others")
+```
+
+### combine six subgroups together
+```{r}
+geno_plus_group_full <- rbind(SP_geno_full,SLC_Andean_geno_full) %>% rbind(SLC_non_Andean_geno_full) %>% rbind(SLL_vintage_geno_full) %>% rbind(SLL_fresh_geno_full) %>% rbind(SLL_processing_geno_full) 
+adze_full <- geno_plus_group_full[,c(1,3343,2:3342)] 
+head(adze_full,20)
+
+write.table(adze_full,"adze_full.txt")
+write.csv(adze_full,"adze_full.csv")
+```
+
+## For large SNP dataset with 6471 SNPs
+```{r}
+SP_geno_ld <- subset(formatted_geno_ld, Sample %in% SP_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SP")
+SLC_Andean_geno_ld <- subset(formatted_geno_ld, Sample %in% SLC_Andean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_Andean")
+SLC_non_Andean_geno_ld <- subset(formatted_geno_ld, Sample %in% SLC_nonAndean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_non_Andean")
+SLL_vintage_geno_ld <- subset(formatted_geno_ld, Sample %in% SLL_vintage_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_vintage")
+SLL_fresh_geno_ld <- subset(formatted_geno_ld, Sample %in% SLL_fresh_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_fresh")
+SLL_processing_geno_ld <- subset(formatted_geno_ld, Sample %in% SLL_processing_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLL_processing")
+#others_geno_ld <- subset(formatted_geno_ld, Sample %in% others_sample$Sample) %>% arrange(Sample) %>% mutate(group = "others")
+```
+
+### combine six subgroups together
+```{r}
+geno_plus_group_ld <- rbind(SP_geno_ld,SLC_Andean_geno_ld) %>% rbind(SLC_non_Andean_geno_ld) %>% rbind(SLL_vintage_geno_ld) %>% rbind(SLL_fresh_geno_ld) %>% rbind(SLL_processing_geno_ld)
+adze_ld <- geno_plus_group_ld[,c(1,6473,2:6472)] 
+head(adze_ld,20)
+write.table(adze_ld,"adze_ld.txt")
+write.csv(adze_ld,"adze_ld.csv")
+```
+
+#With the output files from above, we got rarefaction analysis result from `adze` software. Next, we load these output file again in R and visualize them with ggplot
+```{r}
+full_result_r_ori <- read.table("./adze_r.txt")
+full_result_p_ori <- read.table("./adze_p.txt")
+filtered_result_r_ori <- read.table("./adze_filtered_r.txt")
+filtered_result_p_ori <- read.table("./adze_filtered_p.txt")
+
+full_result_r <- select(full_result_r_ori,c(1,2,4)) # column 1 - group name ; column 2- number of individual ;column 4 - statitics from adze
+full_result_p <- select(full_result_p_ori,c(1,2,4)) 
+colnames(full_result_r) <- c("Group","num_indv","num_allele_per_loci")
+colnames(full_result_p) <- c("Group","num_indv","f_per_allele")
+filtered_result_r <- select(filtered_result_r_ori,c(1,2,4)) 
+filtered_result_p <- select(filtered_result_p_ori,c(1,2,4)) 
+colnames(filtered_result_r) <- c("Group","num_indv","num_allele_per_loci")
+colnames(filtered_result_p) <- c("Group","num_indv","f_per_allele")
+
+full_result_r[,2] <- full_result_r[,2]/2 #each individual has two lines in data
+full_result_p[,2] <- full_result_p[,2]/2
+filtered_result_r <- filter(filtered_result_r,`Group`!="others")
+filtered_result_p <- filter(filtered_result_p,`Group`!="others")
+filtered_result_r[,2] <- filtered_result_r[,2]/2
+filtered_result_p[,2] <- filtered_result_p[,2]/2
+
+
+head(full_result_r)
+head(full_result_p)
+
+```
+
+#Visualization
+
+```{r}
+A <- ggplot(data = filtered_result_r) + 
+  geom_line(aes(x = num_indv, y =num_allele_per_loci,group = Group,color = Group),size = 2.5) + theme(panel.background = element_rect(fill = NA),panel.border = element_rect(fill = NA),legend.position = c(0.85,0.3)) + xlab("number of individuals") + ylab("number of alleles per loci") 
+
+B <- ggplot(data = full_result_r) + 
+  geom_line(aes(x = num_indv, y =num_allele_per_loci,group = Group,color = Group),size = 2.5) + theme(panel.background = element_rect(fill = NA),panel.border = element_rect(fill = NA),legend.position = 'none') + xlab("number of individuals") + ylab("number of alleles per loci") 
+C <- ggplot(data = filtered_result_p) + 
+  geom_line(aes(x = num_indv, y = f_per_allele,group = Group,color = Group),size = 2.5) + theme(panel.background = element_rect(fill = NA),panel.border = element_rect(fill = NA),legend.position = 'none') + xlab("number of individuals") + ylab("freq. of private alleles") 
+D <- ggplot(data = full_result_p) + 
+  geom_line(aes(x = num_indv, y = f_per_allele,group = Group,color = Group),size = 2.5) + theme(panel.background = element_rect(fill = NA),panel.border = element_rect(fill = NA),legend.position = 'none') + xlab("number of individuals") + ylab("freq. of private alleles") 
+
+
+
+print(A)
+print(B)
+print(C)
+print(D)
+
+```
+
+#Save Image
+```{r}
+pdf("Figure7.pdf",width = 1000,height = 1000)
+grid.arrange(A,B,C,D,nrow = 2, ncol = 2)
+dev.off(dev.next())
+```
+
+
+

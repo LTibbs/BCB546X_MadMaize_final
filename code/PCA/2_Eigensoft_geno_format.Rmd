@@ -12,9 +12,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Goal: 
 Edit genotype data to match that required for Eigensoft 3.0.
 
-Set working directory CHANGE ME:
+Set working directory to the location of this `.Rmd` file:
 ```{r}
-setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/BCB546X_MadMaize_final/code/PCA")
+# This needs to be changed to reflect the location of the GitHub repository and this code within it on any given computer that runs the code. 
+# In my case, this is:
+# setwd("C:/Users/ltibbs/Box Sync/ISU/2018 fall/BCB 546X Computational Skills for Bio Data/BCB546X_MadMaize_final/code/PCA")
 ```
 
 Load libraries:
@@ -25,7 +27,7 @@ library(readxl)
 
 Import original genotype data from paper:
 ```{r}
-full.geno <- read_csv("../../data/Suppl_Table_2.csv")
+full.geno <- read_csv("../../data/final_data.csv")
 ``` 
 
 ## Prepare data for Fig. 1: PCA on all accessions
@@ -38,15 +40,16 @@ According to the README on Eigensoft GitHub, this format is:
   1 means one copy of reference allele.
   2 means two copies of reference allele.
   9 means missing data."
-
+  
 Inspect the data to see current format:
+
 ```{r}
 head(full.geno)
 ```
 
-Currently, each individual is in its own row, with its genotype at each of the SNPs recorded in the columns of that row as a pair of letters (e.g., "GG").
+Currently, each individual sample is in its own row, with its genotype at each of the SNPs recorded in the columns of that row as a pair of letters (e.g., "GG").
 
-First, then, the tibble needs to be transposed so that each row contains one SNP rather than one individual.
+First, then, the tibble needs to be transposed so that each row contains one SNP rather than one sample.
 ```{r}
 tr.geno <- as_tibble(cbind(SNPs=colnames(full.geno), t(full.geno))) # transpose full.geno and cbind the SNP names to it
 colnames(tr.geno) <- tr.geno[1,] # add the column names since they were moved to row 1 by t()
@@ -100,7 +103,7 @@ Now, combine the split tibbles from the list and output genotype file for Eigens
 ```{r}
 eigensoft.geno <- do.call("rbind", split.num.geno) %>% # combine tibbles in list
   ungroup() %>%
-  select(-ref.allele, -X1) # remove unneeded columns
+  select(-ref.allele, -Sample) # remove unneeded columns
 
 # save the full dataset in eigensoft format
 full.eigensoft.geno <- unite(eigensoft.geno, united, sep="", remove=T) # collapse all SNPs into one line
@@ -126,7 +129,7 @@ full.indiv <- read_tsv("../../data/12864_2015_1444_MOESM1_ESM.txt") # this file 
 head(full.indiv)
 ```
 
-Construct a file with the accession or line name (the column names of `eigensoft.geno`) in the first column, and U for unknown gender in the second column. Building this from the `eigensoft.geno` file ensures that these files are in the same order:
+Construct a file with the sample name (the column names of `eigensoft.geno`) in the first column, and U for unknown gender in the second column. Building this from the `eigensoft.geno` file ensures that these files are in the same order:
 ```{r}
 pre.indiv <- tibble(line=colnames(eigensoft.geno), gender=c(rep("U", length(colnames(eigensoft.geno)))))
 ```
@@ -136,7 +139,9 @@ In Figure 1 of Blanca et al., the accessions are identified as one of SP, SC, SG
 indiv.join <- left_join(pre.indiv, full.indiv, by=c("line"="Sample")) # join by sample ID
 plyr::count(is.na(indiv.join$species)) # but not everything joined; why?
 
-# After manual inspection, some of the problems seem to be: 
+# 58 of the individual samples from full.indiv are NOT expected to join with our current dataset because they were removed as duplicates in data processing (see script in `code/Processing_Data`). This accounts for the 1008 samples in full.indiv vs 950 in pre.indiv (1008-950=58)
+
+# After manual inspection, some of the other problems seem to be: 
 # different cases (upper vs lower; lowercase in pre.indiv),
 # periods vs commas (periods in pre.indiv), 
 # and spaces vs underscores (underscores in pre.indiv)
@@ -170,9 +175,8 @@ full.eigensoft.indiv <- indiv.join %>%
 write_tsv(full.eigensoft.indiv, "full.eigensoft.indiv", col_names = F)
 ```
 
-
-#####DELETE ME####
-For practice, make a fake SNP file and see if I can run eigensoft or not
+### Make snp file formatted for Eigensoft
+According to the README on Eigensoft GitHub, this format is:
 "The snp file contains 1 line per SNP.  There are 6 columns (last 2 optional):
   1st column is SNP name
   2nd column is chromosome.  X chromosome is encoded as 23.
@@ -182,11 +186,65 @@ For practice, make a fake SNP file and see if I can run eigensoft or not
   4th column is physical position (in bases)
   Optional 5th and 6th columns are reference and variant alleles.
     For monomorphic SNPs, the variant allele can be encoded as X (unknown)."
-```{r}
-practice.snp <- tibble(num.geno$X1, c(rep("1", length(num.geno$X1))), c(rep(0.0, length(num.geno$X1))), c(1:length(num.geno$X1)))
 
-write_tsv(practice.snp, "practice.snp", col_names = F)
+Construct a file with the SNP name (the first columns of the tibbles in the list `split.num.geno`) in the first column and the second column (which will be moved to the third) all set to 0.0 because this column is optional. Building this from the `split.num.geno` list ensures that all files are in the same order.
+
+```{r}
+# Get SNP names
+snp.names <- do.call("rbind", split.num.geno) %>% # combine tibbles in list
+  ungroup() %>%
+  select(SNP=Sample) # extract SNP names only, and rename
+
+# add a column of zeroes:
+pre.snp <- snp.names %>%
+  mutate(cM=0.0)
 ```
+
+Now, add chromosome and physical position for SNPs. According to the Blanca et al. paper, the maps from Sim et al. 2012 (https://doi.org/10.1371/journal.pone.0040563) were used. The physical positions and chromosome assignment of each SNP is found in the first supplemental table from that paper, which we have downloaded and placed in the `data` folder as `S1_SNPs_Sim_etal.xlsx`. Use this file to find the positions of SNPs in our dataset.
+
+```{r}
+# read in map file and tidy:
+sim.snps <- read_xlsx("../../data/S1_SNPs_Sim_etal.xlsx")
+# based on manual inspection of original file, column names have been moved to the first row. Fix this.
+colnames(sim.snps) <- sim.snps[1,]
+sim.snps <- sim.snps[-1,]
+# select and rename needed columns
+sim.snps <- sim.snps %>%
+  select(SNP=`SNP Name`, Alt.SNP=`SolCAP SNP ID`, chr=Chromosome1, pos=`SNP Position (Mbp)1`)
+
+# join with our snp file--looks like the Alt.SNP column is the one we need
+full.snp <- left_join(pre.snp, sim.snps, by=c("SNP"="Alt.SNP"))
+stopifnot(sum(is.na(full.snp$chr))==0) # check that it fully joined
+
+# inspect and tidy the joined file:
+plyr::count(full.snp$chr)
+# there are SNPs with unknown chromosomes and positions; to format for Eigensoft, set all these chromosomes to 0
+full.snp$pos[full.snp$chr=="Unknown"] <- 0 # if chr is unknown, set pos = 0
+full.snp$chr[full.snp$chr=="Unknown"] <- 0 # if chr is unknown, set chr = 0 
+# make columns numeric:
+full.snp$chr <- as.numeric(full.snp$chr) 
+full.snp$pos <- as.numeric(full.snp$pos) 
+# keep only needed columns
+full.snp <- select(full.snp, SNP, chr, cM, pos)
+
+# sanity check: all cells have data?
+stopifnot(sum(is.na(full.snp))==0)
+
+```
+
+Finally, format and output the data for Eigensoft. The file must have the columns in order as SNP name, chromosome, map position in Morgans, and physical position in bases. However, the physical position read in from the Sims et al. paper was in Mbp, not in bases. Therefore, I need to convert this column. One Mbp (mega base pair) is equal to 1,000,000 base pairs. I will also need to remove the column headers and save as a tab-delimited `.snp` file.
+
+```{r}
+# format data
+full.snp <- full.snp %>%
+  mutate(pos.bases=1000000*pos) %>% # convert position to bases
+  select(SNP, chr, cM, pos.bases) # select needed columns
+
+# write file for Eigensoft
+write_tsv(full.snp, "eigensoft.snp", col_names = F)
+
+```
+
 
 ## Prepare data for Fig. 2: PCA on SP, SLC, SLL, and SLL Mesoamerica + SLC subgroups
 
@@ -201,18 +259,22 @@ So, I need to extract the individuals used to make each part of Figure 2 from th
 SP.indiv <- indiv.join %>% 
   filter(species=="SP") %>% # filter SP lines
   select(line, gender, group2) # keep group2 to use to color the points in the figure later
+SP.indiv$group2 <- gsub("_", "-",  SP.indiv$group2) # edit group names to change special character
 write_tsv(SP.indiv, "SP.indiv", col_names=FALSE) # write file
 
 # Fig 2b: SLC
 SLC.indiv <- indiv.join %>% 
   filter(species=="SLC") %>% # filter SLC lines
   select(line, gender, group2) # keep group2 for later
+SLC.indiv$group2 <- gsub("_", "-",  SLC.indiv$group2) # edit group names to change special character
 write_tsv(SLC.indiv, "SLC.indiv", col_names=FALSE) # write file
 
 # Fig 2c: SLL
 SLL.indiv <- indiv.join %>% 
   filter(species=="SLL") %>% # filter SLL lines
   select(line, gender, group2) # keep group2 for later
+SLL.indiv$group2 <- gsub("SLL_vintage/fresh", "SLL-vintage-fresh", SLL.indiv$group2) # edit group name to remove special character
+SLL.indiv$group2 <- gsub("_", "-",  SLL.indiv$group2) # edit group names to change special character
 write_tsv(SLL.indiv, "SLL.indiv", col_names=FALSE) # write file
 
 # Fig 2d: SLL Mesoamerica and SLC groups
@@ -220,6 +282,7 @@ Fig2d.indiv <- indiv.join %>%
   filter(group2 %in% c("SLC_Ecuador_3", "SLC_vintage", "SLC_Colombia", "SLC_Costa_Rica", 
                        "SLC_Mesoamerica", "SLL_Mesoamerica", "SLC_world", "SLC_Peru_1", "SLC_Peru_2")) %>% # filter lines
   select(line, gender, group2) # keep group2 for later
+Fig2d.indiv$group2 <- gsub("_", "-",  Fig2d.indiv$group2) # edit group names to change special character
 write_tsv(Fig2d.indiv, "Fig2d.indiv", col_names=FALSE) # write file
 
 ```
@@ -255,4 +318,8 @@ Fig2d.geno <- eigensoft.geno %>%
   unite(united, sep="", remove=T) # collapse all sNPs into one line
 write_tsv(Fig2d.geno, "Fig2d.geno", col_names=F) # output file
 ```
+
+### SNP files:
+
+The same SNP file will be used for all Eigensoft runs, because all groups use the same SNPs. Therefore, there is no need to make separate files for each part of Figure 2.
 

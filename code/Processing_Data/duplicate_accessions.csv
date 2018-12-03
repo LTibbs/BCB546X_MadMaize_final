@@ -1,0 +1,105 @@
+Sample,Accession,Original Bank,Genotyping Institution,species,group1,group2,Passport Species,Passport Classification,Country,Geographic_Region,Latitude,Longitude,lc,fw22,fw32,fw113,fas,ovate,sun,sun_dup
+cc7,LA0147,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_Mesoamerica,Honduras,Mesoamerica,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR129,LA0147,TGRC,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_Mesoamerica,Honduras,Mesoamerica,"14,078972",-87198858,NA,NA,NA,NA,NA,NA,NA,NA
+CR163,LA0400,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,"-5,260833",-79964167,A,A,A,NA,A,A,NA,NA
+LA0400,LA0400,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,"-5,26083",-7996417,NA,NA,NA,NA,NA,NA,NA,NA
+CR250,LA1221,TGRC,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,NA,NA,NA,NA,A,B,A,NA,A,A,NA,NA
+VFNT_Cherry,LA1221,TGRC,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR057,LA1269,TGRC,INRA,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,"-11,475",-77108333,A,A,A,NA,A,NA,NA,NA
+LA1269,LA1269,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP_Peru_C5,Peru,Peru_C5,"-11,475",-7710833,NA,NA,NA,NA,NA,NA,NA,NA
+LA1301,LA1301,TGRC,OSU,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,"-13,733333",-75916667,NA,NA,NA,NA,NA,NA,NA,NA
+LA1301_inra,LA1301,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,"-13,73333",-7591667,NA,NA,NA,NA,NA,NA,NA,NA
+CR111,LA1312,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,"-12,616667",-7378333,B,NA,A,NA,A,A,NA,NA
+LA1312,LA1312,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,"-13,6",-723166666667,NA,B,NA,A,A,NA,A,A
+CR112,LA1314,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,"-12,56",-7382,B,B,NA,A/B,A,A,NA,A
+PI_379003,LA1314,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,"-12,56",-7382,NA,NA,NA,NA,NA,NA,NA,NA
+CR115,LA1338,TGRC,INRA,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC,Ecuador,Ecuador_I1,"-1,466667",-77983333,A,B,A,A,A,A,NA,A
+PI_379051,LA1338,TGRC,OSU,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Ecuador,Ecuador,Ecuador,"-1,483333",-78,NA,NA,NA,NA,NA,NA,NA,NA
+CR169,LA1371,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,"-11,88944",-76653889,NA,NA,NA,NA,NA,NA,NA,NA
+LA1371,LA1371,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,"-11,90083",-7666333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1388,LA1388,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,"-11,1333333333",-753333333333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1388_inra,LA1388,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLL,SLL,Peru,Peru_I2,"-11,116667",-7535,B,A,A,A,A,A,A,A
+CR119,LA1425,TGRC,INRA,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,"6,249179",-7555376,NA,NA,NA,NA,NA,NA,NA,NA
+L00167,LA1425,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,"2,545",-769597222222,A,A,A,A,A,A,A,A
+CR120,LA1429,TGRC,INRA,SP,SP_Ecuador,SP_Ecuador_2,SLC,SLC,Ecuador,Ecuador_C2,"-0,81667",-802333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1429,LA1429,TGRC,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP,Ecuador,Ecuador_C2,"-0,8083333333",-802416666667,A,NA,NA,NA,A,A,B,A
+CR062,LA1478,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,"-5,216667",-8008333,A,A,A,NA,A,A,NA,NA
+LA1478,LA1478,TGRC,OSU,conflicting classification,conflicting classification,conflicting classification,SP,SP_Peru,Peru,Peru,"-5,216667",-80083333,NA,NA,NA,NA,NA,NA,NA,NA
+CR144,LA1542,TGRC,INRA,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,"9,907557",-83681502,NA,NA,NA,NA,NA,NA,NA,NA
+LA1542,LA1542,TGRC,OSU,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,"9,906578",-83681264,A,A,A,A,A,A,NA,A
+CR173,LA1547,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador,Ecuador_M1,"0,58333",-7793333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1547,LA1547,TGRC,OSU,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador,Ecuador_M1,"0,583333",-7793333,A,A,A,B,A,A,A,A
+LA1547_comav,LA1547,TGRC,COMAV,conflicting classification,conflicting classification,conflicting classification,SP,SP_Ecuador,Ecuador,Ecuador,"0,583333",-77933333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1547_inra,LA1547,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador,Ecuador_M1,"0,58333",-7793333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1549,LA1549,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,"-10,583333",-75483333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1549_comav,LA1549,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,"-10,575",-754916666667,B,B,A,A,A,A,A,A
+LA1582,LA1582,TGRC,OSU,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,"-6,15",-79733333,NA,NA,NA,NA,NA,NA,NA,NA
+LA1582_inra,LA1582,TGRC,INRA,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,"-6,15",-7973333,NA,NA,NA,NA,NA,NA,NA,NA
+CR203,LA1589,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SP,SLC_Peru,Peru,Peru,"-8,39",-7874,NA,NA,NA,NA,NA,NA,NA,NA
+LA1589,LA1589,TGRC,OSU,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,"-8,39",-7874,A,A,A,A,A,A,NA,A
+LA1589_koenig,LA1589,TGRC,Koenig et al.,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,"-8,39",-7874,NA,NA,NA,NA,NA,NA,NA,NA
+CR146,LA1620,TGRC,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_South America,Brazil,South America,"-12,75",-394333,B,B,B,A,A,A,NA,A
+LA1620,LA1620,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_South America,Brazil,South America,"-12,75",-39433333,NA,NA,NA,NA,NA,NA,NA,NA
+CR147,LA1622,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Zambia,Africa,"-15,406024",28302727,NA,NA,NA,NA,NA,NA,NA,NA
+LA1622,LA1622,TGRC,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Zambia,Africa,"-15,4083333333",28275,A,B,B,A,A,A,A,A
+CR186,LA1689,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,"-5,176389",-806175,NA,NA,NA,NA,NA,NA,NA,NA
+LA1689,LA1689,TGRC,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,"-5,3683333333",-810472222222,A,NA,NA,A,A,A,B,A
+LA1933,LA1933,TGRC,COMAV,conflicting classification,conflicting classification,conflicting classification,SP,SP_Peru,Peru,Peru,"-15,456389",-74445833,NA,NA,NA,NA,NA,NA,NA,NA
+LA1933_inra,LA1933,TGRC,INRA,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,"-15,45639",-7444583,NA,A,B,NA,A,A,NA,NA
+CR148,LA2078,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Brazil,South America,"-31,114092",-50908127,B,B,NA,A,A,A,NA,A
+LA2078,LA2078,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Brazil,South America,"-31,1047222222",-509169444444,NA,NA,NA,NA,NA,NA,NA,NA
+CR150,LA2131,TGRC,INRA,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,"-3,45444",-78555278,B,B,A,NA,A,A,NA,A
+LA2131,LA2131,TGRC,OSU,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,"-3,454444",-78555278,NA,NA,NA,NA,NA,NA,NA,NA
+CR151,LA2137,TGRC,INRA,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,"-2,6666",-782,A,A,A,A,A,A,NA,A
+LA2137,LA2137,TGRC,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,"-2,66667",-782,NA,NA,NA,NA,NA,NA,NA,NA
+LA2181,LA2181,TGRC,OSU,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,"-5,775833",-78783056,NA,NA,NA,NA,NA,NA,NA,NA
+LA2181_inra,LA2181,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,"-5,77583",-7878306,NA,NA,NA,NA,NA,NA,NA,NA
+CR153,LA2308,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,"-6,733333",-7633333,NA,NA,NA,NA,NA,NA,NA,NA
+LA2308,LA2308,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,"-6,733333",-7633333,B,B,A,A,A,A,NA,A
+LA2312,LA2312,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,"-5,908333",-77788333,B,B,A,A,A,A,A,A
+LA2312_comav,LA2312,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,"-5,9083333333",-777916666667,NA,NA,NA,NA,NA,NA,NA,NA
+CR154,LA2392,TGRC,INRA,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Indonesia,Asia,"-6,287999",106874084,A/B,B,A,A,A,A,A,A
+LA2392,LA2392,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Indonesia,Asia,"-6,175",106825,NA,NA,NA,NA,NA,NA,NA,NA
+LA2533,LA2533,TGRC,INRA,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,"-11,3",-7736,NA,NA,NA,NA,NA,NA,NA,NA
+LA2533_A,LA2533,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,"-11,3",-7736,NA,NA,NA,NA,NA,NA,NA,NA
+LA2533_Pool,LA2533,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,"-11,3",-7736,NA,NA,NA,NA,NA,NA,NA,NA
+CR157,LA2670,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Peru,Peru,Peru,"-14,1",-69025,NA,NA,NA,NA,NA,NA,NA,NA
+LA2670,LA2670,TGRC,COMAV,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Peru_I3,Peru,Peru_I3,"-14,1083333333",-69025,A,A,A,A,A,A,A,A
+CR158,LA2675,TGRC,INRA,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,"-13,636944",-70460556,NA,NA,NA,NA,NA,NA,NA,NA
+LA2675,LA2675,TGRC,OSU,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,"-13,636944",-70400556,A,A,A,A,A,A,A,A
+LA2675_comav,LA2675,TGRC,COMAV,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,"-13,6083333333",-704583333333,NA,NA,NA,NA,NA,NA,NA,NA
+cc4,LA2706,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Money_0,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+money_1,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+money_2,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+money_3,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Moneymaker,LA2706,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR161,LA2709,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC,India,India,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LA2709,LA2709,TGRC,COMAV,mixture,mixture,mixture,SLC,SLC_Asia,India,Asia,"12,825",773916666667,A,A,A,B,A,A,B,A
+Ailsa_Craig,LA2838A,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,United Kingdom,Europe,NA,NA,A,B,B,B,A,A,NA,A
+CR055,LA2838A,TGRC,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+LA2843_r1,LA2843,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,"-6,0583333333",-76975,A/B,B,B,A/B,A,A,A,A
+LA2843_r2,LA2843,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,"-6,0583333333",-76975,NA,NA,NA,NA,NA,NA,NA,NA
+CR021,LA3343,TGRC,INRA,SLL,SLL_1,SLL_1,SLL,SLL,NA,NA,NA,NA,A,B,B,NA,A,NA,NA,NA
+RioGrande,LA3343,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL,USA,North America,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+RioGrande_david,LA3343,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL_vintage,USA,North America,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+M82,LA3475,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,NA,NA,A,B,B,B,A,A,NA,A
+SLL_koenig,LA3475,TGRC,Koenig et al.,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR317,LA4345,TGRC,INRA,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Heinz_1706,LA4345,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,NA,NA,A,B,B,B,A,B,NA,A
+LA483,LA483,TGRC,COMAV,mixture,mixture,mixture,SG,SG_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),"-21,0513888889",-915494444444,NA,NA,NA,NA,NA,NA,NA,NA
+LA483_1,LA483,TGRC,COMAV,mixture,mixture,mixture,SG,SG_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),"-21,0513888889",-915494444444,NA,NA,NA,NA,NA,NA,NA,NA
+CR257,NC2C,INRA,INRA,mixture,mixture,mixture,SLL,SLL,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+NC2C,NC2C,NCSU,OSU,mixture,mixture,mixture,SLL,SLL,USA,North America,NA,NA,NA,A,B,A,A,A,NA,A
+CR030,Severianin,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_early_breed,NA,NA,NA,NA,B,B,B,B,A,A,NA,A
+Severianin,Severianin,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,USA,North America,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+cc9,VIR1011,VIR,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Guatemala,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR094,VIR1011,VIR,INRA,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Guatemala,Mesoamerica,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+cc39-2,VIR347,VIR,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC_vintage,Mexico,Mesoamerica,NA,NA,A,B,A,A,A,A,NA,A
+CR097,VIR347,VIR,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Mesoamerica,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+cc37-2,VIR933,VIR,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_vintage,Uzbekistan,Asia,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+CR079,VIR933,VIR,INRA,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC,Uzbekistan,Asia,NA,NA,B,B,B,NA,A,A,NA,NA
+CR244,Yellow Pear,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yellow_Pear,Yellow Pear,OSU,OSU,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,NA,NA,NA,NA,A,B,A,A,A,B,NA,A
+Yellow_Stuffer,Yellow_Stuffer,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+Yellow_Stuffer_david,Yellow_Stuffer,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,NA,NA,NA,NA,B,B,B,B,A,A,NA,A
