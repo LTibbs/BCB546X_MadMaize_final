@@ -184,7 +184,7 @@ sw_plot <- function(plot_data) {
 }
 
 # use grid arrange to combine the 6 graphs into one figure with two rows
-fin_plot = grid.arrange(sw_plot(lc), sw_plot(fw22), sw_plot(fw32), sw_plot(fas), sw_plot(ovate), sw_plot(sun), nrow = 2)
+figure8 = grid.arrange(sw_plot(lc), sw_plot(fw22), sw_plot(fw32), sw_plot(fas), sw_plot(ovate), sw_plot(sun), nrow = 2)
 
 ```
 
