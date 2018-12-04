@@ -123,12 +123,12 @@ dev.off()
 ```
  
   
-Of course, some cosmetic differences remain between these figures, including the location of the legend and the . However, some differences in content are also present. For example, the group "SN" is not in their figure. There was only one SN accession, so perhaps this was one of the accessions removed from their analysis, or perhaps it was a typo in the published table. In addition, there are differences in the PCA results themselves. In my analysis, PC1 accounted for 51.47% of the variation and PC2 for 16.79%, while their numbers were 34.5% and 5.6%, respectively. The overall shape of the PC graph, though similar, is not identical; for example, the total range of the PC2 values is larger in my data than in theirs. These discrepancies are probably due to differences in data processing; they used 952 accessions and 2313 markers, while our processed data included 950 accessions and 2959 markers despite our best efforts to replicate their processing methods.
+Of course, some cosmetic differences remain between these figures, including the location of the legend. However, some differences in content are also present. For example, the group "SN" is not in their figure. There was only one SN accession, so perhaps this was one of the accessions removed from their analysis, or perhaps it was a typo in the published table. In addition, there are differences in the PCA results themselves. In my analysis, PC1 accounted for 51.47% of the variation and PC2 for 16.79%, while their numbers were 34.5% and 5.6%, respectively. The overall shape of the PC graph, though similar, is not identical; for example, the total range of the PC2 values is larger in my data than in theirs. These discrepancies are probably due to differences in data processing; they used 952 accessions and 2313 markers, while our processed data included 950 accessions and 2959 markers despite our best efforts to replicate their processing methods.
 
 ## Fig 2:
 Reproduce Fig 2: Principal Component Analysis for SP, SLC, SLL and SLL Mesoamerica and genetically close subgroups.
 
-The Eigensoft package produced a plots (`Fig2-...-ploteig.pdf`) that are reasonably similar to the four sub-figures within figure 2 in the paper, but these differ in the ways already mentioned above for Figure 1 (axis labels and signs flipped). Additionally, the figures in the paper contain circles around certain groups, which are not present in Eigensoft's output. So, I will graph the data from Eigensoft using R to replicate these changes.
+The Eigensoft package produced plots (`Fig2-...-ploteig.pdf`) that are reasonably similar to the four sub-figures within figure 2 in the paper, but these differ in the ways already mentioned above for Figure 1 (axis labels and signs flipped). Additionally, the figures in the paper contain circles around certain groups, which are not present in Eigensoft's output. So, I will graph the data from Eigensoft using R to replicate these changes.
 
 Load data and tidy it:
 ```{r}
@@ -241,7 +241,7 @@ However, there is one exception to the rule that all the signs were flipped; for
 
 Now, I need to add circles to the figures to show the grouping of accessions to compare to that in the paper. From information at https://stackoverflow.com/questions/13577918/plotting-a-curve-around-a-set-of-points, I will use the library `ggalt` to accomplish this.
 
-```{r}
+```{r fig.width=11}
 # install library if needed, and load it:
 # install.packages("ggalt")
 library("ggalt")
