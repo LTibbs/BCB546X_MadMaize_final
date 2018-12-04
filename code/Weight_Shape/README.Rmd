@@ -1,0 +1,190 @@
+---
+title: "README"
+author: "Ben Cortes"
+date: "November 30, 2018"
+output: html_document
+---
+
+```{r}
+
+library(tidyverse)
+
+```
+
+Table 8 shows gene frequencies for the weight and shape phenotypes across the genetic groups. The number of accessions falling into these group categories is shown in Table 2. However, the authors don't state the sorting/filtering workflow used to generate Table 2 from the raw data. First, import data, then split data into three tibbles based on species classification, each one containing all the rows that bear either SP, SLC, or SLL.
+
+```{r}
+
+weight_shape <- as.tibble(read_tsv("../../data/12864_2015_1444_MOESM1_ESM.txt"))
+
+sp_tib <- filter(weight_shape, grepl('SP', species)) %>%
+  filter(!grepl('xSP', `Passport Classification`)) %>%
+  arrange(`Passport Classification`)
+
+slc_tib <- filter(weight_shape, grepl('SLC', species)) %>%
+  arrange(`Passport Classification`)
+
+sll_tib <- filter(weight_shape, grepl('SLL', species)) %>%
+  arrange(`Passport Classification`)
+
+```
+
+Create a new tibble for each subgroup, further filtering rows by group1 (and if necessary by group2) in order to match as closely as possible the numbers of accessions shown in Table 2. Again, the authors don't state their workflow. Finally, mutate and add a column that is filled with the group name given by the authors.
+
+```{r}
+
+sp_peru <- filter(sp_tib, grepl('Peru', group1)) %>%
+  filter(grepl('Peru', group2)) %>%
+  mutate(grpname = "SP Peru")
+sp_mont <- filter(sp_tib, grepl('Montane', group1)) %>%
+  mutate(grpname = "SP Montane")
+sp_ecua <- filter(sp_tib, grepl('Ecuador', group1)) %>%
+  mutate(grpname = "SP Ecuador")
+
+slc_sp_peru <- filter(slc_tib, grepl('SLC_SP', group2)) %>%
+  filter(!grepl('SLL', `Passport Species`)) %>%
+  mutate(grpname = "SLC-SP Peru")
+slc_ecua <- filter(slc_tib, grepl('Ecuador', group1)) %>%
+  mutate(grpname = "SLC Ecuador")
+slc_peru <- filter(slc_tib, grepl('Peru', group1)) %>%
+  filter(grepl('Peru', Country)) %>%
+  mutate(grpname = "SLC Peru")
+slc_cost <- filter(slc_tib, grepl('non_Andean', group1)) %>%
+  filter(grepl('Costa', group2)) %>%
+  mutate(grpname = "SLC Costa Rica")
+slc_meso <- filter(slc_tib, grepl('non_Andean', group1)) %>%
+  filter(grepl('Mesoamerica', group2)) %>%
+  mutate(grpname = "SLC Mesoamerica")
+slc_asia <- filter(slc_tib, grepl('non_Andean', group1)) %>%
+  filter(grepl('Asia', group2)) %>%
+  mutate(grpname = "SLC Mesoamerica")
+slc_other <- filter(slc_tib, grepl('non_Andean', group1)) %>%
+  filter(!grepl('Colombia', group2)) %>%
+  filter(!grepl('Costa', group2)) %>%
+  filter(!grepl('Mesoamerica', group2)) %>%
+  filter(!grepl('Asia', group2)) %>%
+  mutate(grpname = "SLC Other")
+
+sll_meso <- filter(sll_tib, grepl('vintage', group1)) %>%
+  filter(grepl('Mesoamerica', group2)) %>%
+  mutate(grpname = "SLL Mesoamerica")
+sll_vint1 <- filter(sll_tib, grepl('vintage', group1)) %>%
+  filter(grepl('vintage_1', group2)) %>%
+  mutate(grpname = "SLL vintage 1")
+sll_early <- filter(sll_tib, grepl('vintage', group1)) %>%
+  filter(grepl('early', group2)) %>%
+  mutate(grpname = "SLL early breed")
+sll_fresh <- filter(sll_tib, grepl('fresh', group1)) %>%
+  mutate(grpname = "SLL fresh")
+sll_proc1 <- filter(sll_tib, grepl('processing_1', group1)) %>%
+  mutate(grpname = "SLL processing 1")
+sll_proc2 <- filter(sll_tib, grepl('processing_2', group1)) %>%
+  mutate(grpname = "SLL processing 2")
+
+# SLL 1 is not listed in Table 2, so there is no number of accessions to try to match
+sll_1 <- filter(sll_tib, grepl('SLL_1', group1)) %>%
+  mutate(grpname = "SLL 1")
+
+```
+
+Merge the individual group tibbles into one, final, sorted tibble using ribind. Take only the fruit weight and shape loci data columns, as well as the group name column. Turn the group name column into a factor.
+
+```{r}
+
+final_weight_shape <- rbind(sp_peru[,c(14:16, 18:20, 22)], sp_mont[,c(14:16, 18:20, 22)], sp_ecua[,c(14:16, 18:20, 22)], slc_sp_peru[,c(14:16, 18:20, 22)], slc_ecua[,c(14:16, 18:20, 22)], slc_peru[,c(14:16, 18:20, 22)], slc_cost[,c(14:16, 18:20, 22)], slc_meso[,c(14:16, 18:20, 22)], slc_asia[,c(14:16, 18:20, 22)], slc_other[,c(14:16, 18:20, 22)], sll_meso[,c(14:16, 18:20, 22)], sll_vint1[,c(14:16, 18:20, 22)], sll_early[,c(14:16, 18:20, 22)], sll_fresh[,c(14:16, 18:20, 22)], sll_proc1[,c(14:16, 18:20, 22)], sll_proc2[,c(14:16, 18:20, 22)], sll_1[,c(14:16, 18:20, 22)])
+
+final_weight_shape$grpname <- factor(final_weight_shape$grpname, levels = c("SP Ecuador", "SP Montane", "SP Peru", "SLC-SP Peru", "SLC Ecuador", "SLC Peru", "SLC Costa Rica", "SLC Mesoamerica", "SLC Asia", "SLC Other", "SLL Mesoamerica", "SLL vintage 1", "SLL early breed", "SLL fresh", "SLL processing 1", "SLL Processing 2", "SLL 1"))
+
+```
+
+For each locus, first create a tibble containing two columns, the locus data and the group name data, removing any accessions where the allele was "A/B" (and where it was "C" in the case of the sun locus). Next, remove any accessions with missing data. Then, create a bar plot using the locus tibble as data where the group names are on the X axis and the locus data is filled into the bars. Standardize the data out of 100% (set bars to same height) and rotate the x axis labels.
+
+```{r}
+
+lc <- filter(final_weight_shape[,c(1,7)], !grepl('A/B', lc))
+lc <- lc[complete.cases(lc),]
+
+fw22 <- filter(final_weight_shape[,c(2,7)], !grepl('A/B', fw22))
+fw22 <- fw22[complete.cases(fw22),]
+
+fw32 <- filter(final_weight_shape[,c(3,7)], !grepl('A/B', fw32))
+fw32 <- fw32[complete.cases(fw32),]
+
+fas <- filter(final_weight_shape[,c(4,7)], !grepl('A/B', fas))
+fas <- fas[complete.cases(fas),]
+
+ovate <- filter(final_weight_shape[,c(5,7)], !grepl('A/B', ovate))
+ovate <- ovate[complete.cases(ovate),]
+
+sun <- filter(final_weight_shape[,c(6,7)], !grepl('A/B', sun)) %>%
+  filter(!grepl('C', sun))
+sun <- sun[complete.cases(sun),]
+
+```
+
+Figure 8 is a stacked barplot with the ancestral allele in blue (on the bottom) and the derived allele in red (stacked on top) for each group. However, in the raw data, the alleles are merely listed as "A" or "B" with no information as to which allele is derived and which is ancestral. After plotting the data, the graphs looked most similar to Figure 8 when "A" was assumed to be the ancestral allele. Figure 8 also has binomial confidence intervals shown as black lines. Seeing as these lines are centered around the ancestral allele, I assumed that the binomial confidence interval was calculated based on thenumber of "A" alleles. 
+
+```{r}
+
+# gridExtra contains grid.arrange, which is used later to combine the 6 graphs into one figure
+require(gridExtra)
+
+# function to create a graph for each shape/weight locus. Accepts one of the tibbles from the previous chunk as an argument. 
+sw_plot <- function(plot_data) {
+  
+  # Hmisc contains binconf which calculates binomial confidence intervals
+  require(Hmisc)
+  
+  # create a character vector from the unique values in the group name column in the argument data (had to turn into a vector to deal with some issues that seem to arise from the fact that grpname is a factor)
+  group_list <- as.vector(unique(plot_data[['grpname']]))
+
+  # create a tibble with each unique value in grp name (the 15 group names) and add four rows: one for the number of "A"s per group for the given locus, one for the total accessions in the group, and one for the lower and upper confidence intervals
+  ci_table <- as.tibble(group_list) %>% 
+    mutate(acount = "", tcount = "", ci_lower = "", ci_upper = "")
+  
+  # iterate through the list of group names. Sum the number of accessions in the argument data that belong to the ith group (the grpname and group_list[i] are equal). This makes it count the total number of accessions in each group. Add that value to the table
+  for (i in 1:n_distinct(group_list)) {
+    ci_table[i,3] <- sum(plot_data['grpname'] == group_list[i])
+  }
+  
+  # iterate through the list of group names. Sum the number of accessions that have "A" as the allele and that belong to the ith group (the grpname and group_list[i] are equal). This makes it count the number of "A" alleles in each group. Add that value to the table
+  for (i in 1:n_distinct(group_list)) {
+    ci_table[i,2] <- sum(plot_data[,1] == "A" & plot_data[,2] == group_list[i]) 
+  }
+  
+  # iterate through each row of the ci_table. binconf accepts x (the number of occurences of a binomial trait) and n (the total number of occurences). It then, unless otherwise told, assumes a 95% confidence interval and prints the pointEst and lower and upper confidence intervals. Send the A count for each group and the total count of each group as x and n respectively, coercing them to teh numeric type. Send the second output (lower ci) and third output (upper ci) to the table.
+  for (i in 1:nrow(ci_table)) {
+    ci_table[i,4] <- binconf(as.numeric(ci_table[i,2]), as.numeric(ci_table[i,3]))[2]
+    ci_table[i,5] <- binconf(as.numeric(ci_table[i,2]), as.numeric(ci_table[i,3]))[3]
+  }
+  
+# make graph for the argument data (title, colnames, ggplot, etc. are assumed to be self-explanatory)
+  title <- colnames(plot_data)[1]
+  
+  # rename the locus column so it's consistent for the function to use
+  colnames(plot_data)[1] <- "gene"
+  ggplot(data = plot_data) + 
+    
+    # make bar plot with groups as x axis and the gene, invert position so that allele "A" is on the bottom
+    geom_bar(mapping = aes(x = grpname, fill = gene), position = position_fill(reverse = TRUE)) +
+    
+    # set colors, set x axis tick text size and position, remove legend, give a title and center it, remove x and y axis labels, set the y axis scale
+    scale_fill_manual(values=c("royalblue3", "firebrick2")) +
+    theme(axis.text.x = element_text(angle = 90, size = 5, hjust = 1, vjust = 0.3)) +
+    theme(legend.position = "none") +
+    ggtitle(title) +
+    theme(plot.title = element_text(hjust = 0.5)) +
+    xlab(NULL) +
+    ylab(NULL) +
+    scale_y_continuous(breaks = seq(0, 1, 0.2)) +
+    
+    # set confidence interval bars based on the ci_table. Set the values (group names) as the x axis. Set ymin and ymax as the lower and upper confidence intervals, respectively (have to coerce into a numeric vector, can't get it to work otherwise)
+    geom_linerange(mapping = aes(x = value, ymin = as.vector(as.numeric(ci_table[['ci_lower']])), ymax = as.vector(as.numeric(ci_table[['ci_upper']]))), data = ci_table)
+    
+}
+
+# use grid arrange to combine the 6 graphs into one figure with two rows
+figure8 = grid.arrange(sw_plot(lc), sw_plot(fw22), sw_plot(fw32), sw_plot(fas), sw_plot(ovate), sw_plot(sun), nrow = 2)
+
+```
+
