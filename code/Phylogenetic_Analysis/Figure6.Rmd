@@ -9,22 +9,22 @@ output: html_document
 ```{r}
 library(ggplot2)
 library(ape)
-library(tidyverse)
+library(dplyr)
 library(seqinr)
+library(tidyr)
 ```
 # Selected samples for Figure6
 ```{r}
-geno_final_ori <- read.csv("./final_data.csv") %>% arrange(Sample)
-full <- read.csv("result.csv")
-passport <- read.csv("./12864_2015_1444_MOESM1_ESM.csv")
+geno_final_ori <- read.csv("../../data/final_data.csv") %>% arrange(Sample)
+passport <- read.csv("../../data/12864_2015_1444_MOESM1_ESM.csv")
 samples <- c("BGV007859","LA1291","LA2254","BGV006931","BGV006753","BGV007208","BGV007208","BGV007155","BGV007137","BGV009320","LA2181_inra","BGV006639","PI_128216","LA2725","LA2974","LA1322","LA1330","GLP44") #manually input sample_id
 snp <- colnames(geno_final_ori)
-geno_selected <- subset(full,Sample %in% samples) #from full dataset, select samples with SNPs
+geno_selected <- subset(geno_final_ori,Sample %in% samples) #from full dataset, select samples with SNPs
 geno_selected[] <- lapply(geno_selected, as.character)
-recode <- geno_selected[,2:3343]  
+recode <- geno_selected[,2:2960]  
 ```
  
-#Recode SNPs to fasta.format
+# Recode SNPs to fasta.format
 ```{r}
 code <- recode
 code <- recode %>%
@@ -44,16 +44,14 @@ code <- recode %>%
   replace(recode == "GA","R") %>%
   replace(recode == "GT","K") 
 code[is.na(code)] <- "?" 
-code
-
-unite_code <- unite(code, string,2:3342,sep = "") 
+unite_code <- unite(code, string,2:2959,sep = "") 
 names <- code[,1]
 final <- as.data.frame(t(code))
-sequences <- final[2:3342,] %>% as.list.data.frame()
+sequences <- final[2:2959,] %>% as.list.data.frame()
 write.fasta(sequences = sequences,names = names, file.out = "figure6_samples.fasta")
 ```
 
-#Install package `ggtree` for tree plotting
+# Install package `ggtree` for tree plotting
 ```{r}
 source("http://bioconductor.org/biocLite.R")
 biocLite()
