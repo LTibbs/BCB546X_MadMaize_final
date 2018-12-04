@@ -1,0 +1,133 @@
+---
+title: "Figure5"
+author: "Qi Mu"
+date: "December 3, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown file for reproducing analysis of Figure 5 from Blanca et al. 2015 BMC Genomics paper - neighbor net analysis.
+
+```{r load libraries}
+library("tidyverse")
+library("adegenet")
+library("hierfstat")
+library("phangorn")
+```
+
+# Read the data
+```{r read data}
+Geno <- read_csv("../../data/final_data.csv")
+#Geno
+dim(Geno) # 950 individuals
+
+info <- read_csv("../../data/Suppl_Table_1.csv")
+#info
+dim(info) # 1008 individuals
+```
+
+# Process and format the data. 
+Combine the group information with SNP data, and filtering out any groups with less 5 individuals.
+```{r join info$group2 with Geno, filtering NA and indivudals<6/group}
+# subsetting sampleID and group2 information into group
+group <- select(info, Sample, group2)
+#group
+
+# join the Geno with group
+Geno_group <- inner_join(group, Geno, by = "Sample")
+Geno_group # after joining there will be 907 individuals left. Total 2961 columns (2959 SNPs)
+
+# summarize data so I know how many individuals each group has
+Geno_group_counts <- Geno_group %>%
+  group_by (group2) %>%
+  summarise (sample_counts = n()) %>%
+  arrange (sample_counts)
+
+head(Geno_group_counts, n=20L)
+
+# filtering groups so only groups with more than 5 individuals are left, removing "mixture" as well 
+Geno_group_counts_filtered <- filter(Geno_group_counts, sample_counts >=5, 
+                                     group2 != "mixture", group2 != "SP_mixture", group2 != "SLC_mixture")
+Geno_group_counts_filtered # After filtering there are 36 groups left
+sum(Geno_group_counts_filtered$sample_counts) # After filtering there are 760 individuals left
+
+# filter the Geno_group data to match up with the groups left in Geno_group_counts_filtered
+Geno_group_filtered <- Geno_group %>%
+  inner_join(Geno_group_counts_filtered, by = "group2" ) %>%
+  select(- sample_counts) # sample_counts column has to be removed after joining.
+
+Geno_group_filtered # after joining and removing, there are 760 rows (individuals). Total 2959 columns.
+```
+
+# Convert to `genind` and `hierfstat` objects
+To work with the data, we need to convert the dataset to a “genind” object. To achieve this, we create a matrix with only genotypes, and keep only a subset of the first 11 SNP loci (to make calculations faster). The result can then be converted to a “genind” object (for package adegent). The “genind” object can then easily be converted into a “hierfstat” (package hierfstat) object.
+`genind` is used to store individual genotypes,`hierfstat` is used to estimate hierarchical F-statistics for any number of hierarchical levels using the method described in Yang, R.C. (1998) Estimating hierarchical F-statistics. Evolution 52(4):950-956. It also contains functions allowing to test the significance of population differentiation.
+```{r convert data}
+Geno_set <- Geno_group_filtered [, -c(1,2)] # Remove the first two colums and leave only SNP data
+#Geno_set
+ 
+ind = Geno_group_filtered$Sample # labels of the individuals
+population = Geno_group_filtered$group2 # labels of the populations
+Geno_set1 <- df2genind(Geno_set, ploidy = 2, ind.names = ind, pop = population, sep="") # Dataframe to genind object
+Geno_set1 # combined sample ID, pop, and SNP data
+
+#nAll(Geno_set1) # Number of alleles per locus, commented because result is large.
+
+Geno_set2 <- genind2hierfstat(Geno_set1) # Create hierfstat object: Pop and SNP info, no sample ID.
+dim(Geno_set2)
+#Geno_set2_tb <- as.tibble(Geno_set2) # for easy viewing the dataset
+#Geno_set2_tb
+```
+
+# Genetic diversity (observed and expected heterozygosity)
+`summary` information related to compute genetic diversity. This chunck is for myself's understanding, not the data shown in the paper.
+```{r Geno_set1 with adegenet library functions}
+div <- summary(Geno_set1)
+#div # results are too large to show
+names(div)
+
+# If we want to visualize the heterozygosity between expected and observed.
+plot(div$Hobs, xlab="Loci number", ylab="Observed Heterozygosity", 
+     main="Observed heterozygosity per locus")
+
+plot(div$Hobs,div$Hexp, xlab="Hobs", ylab="Hexp", 
+     main="Expected heterozygosity as a function of observed heterozygosity per locus")
+
+bartlett.test(list(div$Hexp, div$Hobs)) # a test : H0: Hexp = Hobs
+```
+We observed that heterozygosity varies among loci. We observed there is significant differences between expected and observed heterozygosity. The observed heterozygosity is significantly lower than the expected, meaning different groups are quite homogenous among themselves.
+
+# Observed and expected heterozygosity: Fst based on locus
+These statistics come from the package hierfstat. All the parameters are caclulated based on a single SNP site across groups `perloc` and `overall` SNP sites. This chunck is also for myself's understanding, not the data shown in the paper.
+```{r}
+stats <- basic.stats(Geno_set1) # Dest per locus is also included in the output
+stats$overall # only checking the overall stats, as the per locus result is too large
+
+#wc(Geno_set1) # Weir and Cockerham's estimate for Fst and Fis. No need to use this method
+```
+
+# Pairwise Fst: produce pairwise Fst matrix 
+`genet.dist` estimates one of several genetic distances among all pairs of populations, including Fst. The method of calculation is determined by the argument `method`. Estimate pairwise FSTs according to Nei, M. (1987) Molecular Evolutionary Genetics. Columbia University Press. **This calculation will take ~35mins to run.**
+```{r pairwise Fst matrix}
+FstMatrix <- genet.dist(Geno_set1, method = "Nei87")
+```
+
+# Generate nexus file for constructing neighbor-net
+The output file will be used in SplitsTree4 (v 4.14.6) to generate the figure. 
+```{r use phangorn package to convert to nexus file format}
+write.nexus.dist(FstMatrix, file = "Figure5/FstMatrix.nxs")
+```
+
+# Contruct an unrooted Neighbor-Net (D. Bryant and Moulton 2004) using `phangorn` package in R
+We can still generate the figure by R, but it is not nicely looking. Instead, I used the SplitsTree4 method suggested by the paper to generate the final figure using the nexus file generated above.
+```{r phangorn}
+nnet <- neighborNet(FstMatrix)
+nnet_plot <- plot(nnet, "2D")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
