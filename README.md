@@ -22,8 +22,14 @@ Contains code used to process data for and run PCA analysis, then to make figure
 #### Neighbor_Network directory: 
 Contains code (R markdown file) used to process data for and run Neighbor network analysis. The output files and intermediate files can be found in the sub-directory `Figure5_Output`. Explicit annotations can be found inside the R markdown code file. The R code was used to generate the stats for neighbor network, and the actual figure was produced by interface software SplitsTree4 (v 4.14.6) as indicated by the paper. A similar figure can be generated in R, however, without proper available package, the quality was low so I did not include it in results. This analysis corresponds to Fig 5 (A and B) in Blanca, et al. Code written and annotated by Qi Mu.
 
+#### Phylogenetic_Analysis directory: 
+Contains code used to process data for phylogenetic analysis, then to make figures for this. The output figures can be found in the subdirectory `figures`. Software TASSEL was used for clustering with Neighbor Joining method instead of Beast as they did; input and output files of it can be found in `TASSEL`. This analysis corresponds to Fig 6 in Blanca, et al. Code written by Jialu Wei.
+
+#### Rarefaction_Analysis directory: 
+Contains code used to process data for rarefaction analysis, then to make figures for this. The output figures can be found in the subdirectory `figures`. ADZE1.0 software was used for analysis as indicated by the paper; input and output files of it can be found in `ADZE`. This analysis corresponds to Fig 7 in Blanca, et al. Code written by Jialu Wei.
+
 ### Data directory: 
-Contains original data from the tables in Blanca, et al. (`12864_2015_1444_MOESM1_ESM.txt` / `Suppl_Table_1.csv` and `Suppl_Table_2.csv`) as well as a paper it referenced (Sim, Sung-Chur, et al. "Development of a large SNP genotyping array and generation of high-density genetic maps in tomato." PloS one 7.7 (2012): e40563; found at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563) (these files are `S1_SNPs_Sim_etal.xlsx` and `S8_Map_Sim_etal.csv`. Also contains data processed using a script in the `code/Processing_Data` directory (`final_data.csv` and `rarefaction_LD_data.csv`).
+Contains original data from the tables in Blanca, et al. (`12864_2015_1444_MOESM1_ESM.txt` /`12864_2015_1444_MOESM1_ESM.csv`/ `Suppl_Table_1.csv` and `Suppl_Table_2.csv`) as well as a paper it referenced (Sim, Sung-Chur, et al. "Development of a large SNP genotyping array and generation of high-density genetic maps in tomato." PloS one 7.7 (2012): e40563; found at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563) (these files are `S1_SNPs_Sim_etal.xlsx` and `S8_Map_Sim_etal.csv`. Also contains data processed using a script in the `code/Processing_Data` directory (`final_data.csv` and `rarefaction_LD_data.csv`).
 
 ## NOTES on required parts of the project/GitHub formatting (delete later):
 
@@ -51,3 +57,4 @@ presentation should include:
 4. Presentation of results including comparison to results from the published paper.
 
 # DUE DATE: Wednesday, Dec. 5 -- even if we don't present until Dec 7! 
+
