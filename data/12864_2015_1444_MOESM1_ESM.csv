@@ -1,0 +1,1009 @@
+Sample,Accession,Original Bank,Genotyping Institution,species,group1,group2,Passport Species,Passport Classification,Country,Geographic_Region,Latitude,Longitude,lc,fw22,fw32,fw113,fas,ovate,sun,sun_dup
+8697,8697,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,,,,,,,,,,,,
+8698,8698,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8699,8699,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8700,8700,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,,,,,,,,,,,,
+8701,8701,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,,,,,,,,,,,,
+8805,8805,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8806,8806,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8810,8810,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8813,8813,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8815,8815,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8821,8821,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8822,8822,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8825,8825,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8827,8827,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8829,8829,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8832,8832,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8838,8838,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8843,8843,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8846,8846,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8850,8850,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8851,8851,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+8853,8853,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing,,,,,,,,,,,,
+071733-1,071733-1,Cornell,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,A,B,B,B,B,A,,A
+071820-2,071820-2,Cornell,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,A,B,B,B,,,,A
+091004-15,091004-15,Cornell,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+091109-3,091109-3,Cornell,OSU,SLL,SLL_fresh,SLL_fresh_2,SLL,SLL_fresh_NY,USA,NY,,,A,B,B,B,,A,,A
+091119-2,091119-2,Cornell,OSU,SLL,SLL_fresh,SLL_fresh_2,SLL,SLL_fresh_NY,USA,NY,,,B,B,,B,,A,,A
+091120-2,091120-2,Cornell,OSU,SLL,SLL_fresh,SLL_fresh_2,SLL,SLL_fresh_NY,USA,NY,,,B,B,B,B,A,A,,A
+091120-7,091120-7,Cornell,OSU,SLL,SLL_fresh,SLL_fresh_2,SLL,SLL_fresh_NY,USA,NY,,,B,B,B,B,B,,,A
+091135-1,091135-1,Cornell,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+091144-1,091144-1,Cornell,OSU,SLL,SLL_fresh,SLL_fresh_2,SLL,SLL_fresh_NY,USA,NY,,,B,B,B,B,B,A,,A
+091153-1,091153-1,Cornell,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,A,B,B,B,,A,,
+091166-3,091166-3,Cornell,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,A,B,B,B,,,,
+1091-Chonto_21,PI 505317,USDA,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Colombia,Colombia,3,,,,,,,,,
+2K10-6626,2K10-6626,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_vintage,,,,,,,,,,,,
+2K1-1439,2K1-1439,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+2K1-2019,2K1-2019,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+2K1-2029,2K1-2029,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+2K1-2054,2K1-2054,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+2K8-7663,2K8-7663,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_vintage,,,,,,,,,,,,
+88003-62,88003-62,Cornell,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,USA,North America,,,A,B,B,B,A,A,,
+88003-81,88003-81,Cornell,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,USA,North America,,,A,B,B,B,B,,,
+A-1770,PI 452026,USDA,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+A-1771,PI 452027,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+Abel,PI 121662,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Canada,North America,51,,,,,,,,,
+Ailsa_Craig,LA2838A,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,United Kingdom,Europe,,,A,B,B,B,A,A,,A
+Aker's_West_Virginia,Aker's West Virginia,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,,,,,B,B,B,B,B,A,,A
+Amish_Paste,Amish Paste,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,,A,,B
+Anastasia_F1,Anastasia F1,Commercial,COMAV,SLL,SLL_1,SLL_1,SLL,SLL_hybrid,,,,,,,,,,,,
+ANL38_1,BGV00937,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+ARG77,BGV015094,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Algeria,Africa,31,,,,,,,,,
+Beauty,Beauty,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,A,A,,A
+BGV000250,BGV000250,COMAV,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Africa,Angola,Africa,-14,,,,,,,,,
+BGV000931,BGV000931,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+BGV000932,BGV000932,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+BGV000933,BGV000933,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+BGV000938,BGV000938,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+BGV000943,BGV000943,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Spain,Europe,36,,,,,,,,,
+BGV003032,BGV003032,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,28,,,,,,,,,
+BGV003034,BGV003034,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Spain,Europe,28,,,,,,,,,
+BGV003036,BGV003036,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Spain,Europe,28,,,,,,,,,
+BGV003040,BGV003040,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Spain,Europe,28,,,,,,,,,
+BGV003048,BGV003048,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,28,,,,,,,,,
+BGV003058,BGV003058,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,27,,,,,,,,,
+BGV003075,BGV003075,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,28,,,,,,,,,
+BGV003109,BGV003109,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,28,,,,,,,,,
+BGV003115,BGV003115,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,28,,,,,,,,,
+BGV003120,BGV003120,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,28,,,,,,,,,
+BGV003125,BGV003125,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,28,,,,,,,,,
+BGV003139,BGV003139,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,28,,,,,,,,,
+BGV003887,BGV003887,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,,,,,,,,
+BGV004573,BGV004573,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Cuba,Mesoamerica,23,,,,,,,,,
+BGV004575,BGV004575,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004577,BGV004577,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004580,BGV004580,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004582,BGV004582,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004583,BGV004583,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004588,BGV004588,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Guatemala,Mesoamerica,14,,,,,,,,,
+BGV004628,BGV004628,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV004652,BGV004652,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV004656,BGV004656,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV004664,BGV004664,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV004667,BGV004667,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV004672,BGV004672,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,41,,,,,,,,,
+BGV005416,BGV005416,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Spain,Europe,39,,,,,,,,,
+BGV005436,BGV005436,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,38,,,,,,,,,
+BGV005495,BGV005495,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,40,,,,,,,,,
+BGV005628,BGV005628,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,38,,,,,,,,,
+BGV005655,BGV005655,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,,,B,B,B,B,B,A,,
+BGV005860,BGV005860,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV005873,BGV005873,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV005895,BGV005895,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-4,,,,,,,,,
+BGV005912,BGV005912,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_3,SLC,SLC,Ecuador,Ecuador_I3,-3,,,,,,,,,
+BGV006084,BGV006084,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Ecuador,Ecuador_M3,-3,,,,,,,,,
+BGV006087,BGV006087,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Ecuador,Ecuador_M3,-3,,,,,,,,,
+BGV006129,BGV006129,COMAV,COMAV,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M3,Ecuador,Ecuador_M3,-3,,,,,,,,,
+BGV006187,BGV006187,COMAV,COMAV,SP,SP_Montane,SP_Montane_1,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+BGV006225,BGV006225,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC,Ecuador,Ecuador_I3,-3,,,,,,,,,
+BGV006233,BGV006233,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006274,BGV006274,COMAV,COMAV,mixture,mixture,mixture,SLL,SLL_vintage,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV006277,BGV006277,COMAV,COMAV,mixture,mixture,mixture,SLL,SLL_vintage,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV006327,BGV006327,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006328,BGV006328,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006331,BGV006331,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006333,BGV006333,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006336,BGV006336,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006341,BGV006341,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006343,BGV006343,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006344,BGV006344,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006345,BGV006345,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006347,BGV006347,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006360,BGV006360,COMAV,COMAV,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-5,,,,,,,,,
+BGV006369,BGV006369,COMAV,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006370,BGV006370,COMAV,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006452,BGV006452,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006457,BGV006457,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006468,BGV006468,COMAV,COMAV,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-5,,,,,,,,,
+BGV006476,BGV006476,COMAV,COMAV,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+BGV006478,BGV006478,COMAV,COMAV,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+BGV006484,BGV006484,COMAV,COMAV,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+BGV006492,BGV006492,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+BGV006504,BGV006504,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+BGV006507,BGV006507,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+BGV006514,BGV006514,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+BGV006639,BGV006639,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+BGV006640,BGV006640,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006642,BGV006642,COMAV,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+BGV006690,BGV006690,COMAV,COMAV,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M3,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV006691,BGV006691,COMAV,COMAV,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M3,Ecuador,Ecuador_M3,-4,,,,,,,,,
+BGV006692,BGV006692,COMAV,COMAV,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,Ecuador,Ecuador_M3,-3,,,,,,,,,
+BGV006712,BGV006712,COMAV,COMAV,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M3,Ecuador,Ecuador_M3,-3,,,,,,,,,
+BGV006753,BGV006753,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,0,,,,,,,,,
+BGV006756,BGV006756,COMAV,COMAV,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,0,,,,,,,,,
+BGV006767,BGV006767,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,0,,,,,,,,,
+BGV006769,BGV006769,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006775,BGV006775,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_3,SLC,SLC,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006777,BGV006777,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006778,BGV006778,COMAV,COMAV,SP,SP_mixture,SP_mixture,SLC,SLC,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006779,BGV006779,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006783,BGV006783,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006784,BGV006784,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006792,BGV006792,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006825,BGV006825,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006827,BGV006827,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I1,Ecuador,Ecuador_I1,-1,,,,,,,,,
+BGV006857,BGV006857,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006859,BGV006859,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006864,BGV006864,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006865,BGV006865,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006867,BGV006867,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006869,BGV006869,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006872,BGV006872,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-1,,,,,,,,,
+BGV006875,BGV006875,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006877,BGV006877,COMAV,COMAV,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006881,BGV006881,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006883,BGV006883,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006896,BGV006896,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006902,BGV006902,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006905,BGV006905,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006910,BGV006910,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV006931,BGV006931,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_3,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+BGV006932,BGV006932,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_3,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+BGV006934,BGV006934,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_3,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+BGV007023,BGV007023,COMAV,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_2,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+BGV007095,BGV007095,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007100,BGV007100,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,1,,,,,,,,,
+BGV007109,BGV007109,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007111,BGV007111,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007137,BGV007137,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_3,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007145,BGV007145,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007151,BGV007151,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007155,BGV007155,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007161,BGV007161,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007168,BGV007168,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+BGV007208,BGV007208,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP_Ecuador_C2,Ecuador,Ecuador_C2,0,,,,,,,,,
+BGV007222,BGV007222,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP_Ecuador_C2,Ecuador,Ecuador_C2,0,,,,,,,,,
+BGV007225,BGV007225,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP_Ecuador_C2,Ecuador,Ecuador_C2,0,,,,,,,,,
+BGV007339,BGV007339,COMAV,COMAV,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+BGV007348,BGV007348,COMAV,COMAV,SP,SP_Montane,SP_Montane_1,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+BGV007355,BGV007355,COMAV,COMAV,SP,SP_Montane,SP_Montane_1,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+BGV007366,BGV007366,COMAV,COMAV,SP,SP_Montane,SP_Montane_1,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+BGV007637,BGV007637,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Bolivia,South America,-19,,,,,,,,,
+BGV007642,BGV007642,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Bolivia,South America,-19,,,,,,,,,
+BGV007702,BGV007702,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_2,SLL,SLL,Bolivia,South America,-18,,,,,,,,,
+BGV007791,BGV007791,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Bolivia,South America,-19,,,,,,,,,
+BGV007854,BGV007854,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007859,BGV007859,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007861,BGV007861,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007867,BGV007867,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007869,BGV007869,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007885,BGV007885,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007888,BGV007888,COMAV,COMAV,SLC,SLC_1,SLC_1,SLL,SLL,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007892,BGV007892,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007894,BGV007894,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007895,BGV007895,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007896,BGV007896,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007898,BGV007898,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007899,BGV007899,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007900,BGV007900,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007901,BGV007901,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007905,BGV007905,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+BGV007906,BGV007906,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007907,BGV007907,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007912,BGV007912,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007913,BGV007913,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007918,BGV007918,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+BGV007923,BGV007923,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007924,BGV007924,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+BGV007927,BGV007927,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Sinaloa,SLC,SLC_Sinaloa,Mexico,Sinaloa,24,,,,,,,,,
+BGV007928,BGV007928,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Sinaloa,SLC,SLC_Sinaloa,Mexico,Sinaloa,25,,,,,,,,,
+BGV007929,BGV007929,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Sinaloa,SLC,SLC_Sinaloa,Mexico,Sinaloa,25,,,,,,,,,
+BGV007931,BGV007931,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Sinaloa,SLC,SLC_Sinaloa,Mexico,Sinaloa,26,,,,,,,,,
+BGV007932,BGV007932,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,24,,,,,,,,,
+BGV007937,BGV007937,COMAV,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,19,,,,,,,,,
+BGV007939,BGV007939,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,19,,,,,,,,,
+BGV007942,BGV007942,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,19,,,,,,,,,
+BGV007947,BGV007947,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+BGV007979,BGV007979,COMAV,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-9,,,,,,,,,
+BGV007985,BGV007985,COMAV,COMAV,mixture,mixture,mixture,SLCxSP,SLCxSP,Peru,Peru_I4,-13,,,,,,,,,
+BGV007988,BGV007988,COMAV,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-9,,,,,,,,,
+BGV007992,BGV007992,COMAV,COMAV,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+BGV012618,LA1483,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Saipan,Asia,15,,,,,,,,,
+BGV012625,PI 127805,USDA,COMAV,mixture,mixture,mixture,SLCxSP,SLCxSP,Peru,Peru_I4,-12,,,,,,,,,
+BGV012626,PI 129062,USDA,COMAV,mixture,mixture,mixture,SLC,SLC_Colombia,Colombia,Colombia,3,,,,,,,,,
+BGV012627,PI 129105,USDA,COMAV,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,5,,,,,,,,,
+BGV012634,BGV012634,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Thailand,Asia,15,,,,,,,,,
+BGV012635,PI 406890,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Honduras,Mesoamerica,14,,,,,,,,,
+BGV012641,BGV012641,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Laos,Asia,18,,,,,,,,,
+BGV013676,BGV013676,COMAV,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Spain,Africa,27,,,,,,,,,
+BGV013717,T006,IPK,COMAV,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-14,,,,,,,,,
+BGV013720,T011,IPK,COMAV,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-14,,,,,,,,,
+Black_From_Tula,Black From Tula,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage, ,,,,B,B,B,B,B,A,,A
+Black_Plum,Black Plum,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_cultivated_cherry,Russia,Europe,,,A,B,A,A,A,B,,A
+Brandywine,Brandywine (Sudduth/Quisenberry),OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,B,A,,A
+Burbank,Burbank,GLVWG,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,A,A,,A
+Campbell_28,LA3317,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+CATIE10965,CATIE10965,CATIE,COMAV,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_vintage,Costa Rica,Costa Rica,9,,,,,,,,,
+CATIE11106,CATIE11106,CATIE,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Honduras,Mesoamerica,14,,,,,,,,,
+CATIE11746,CATIE11746,CATIE,COMAV,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+CATIE18628,CATIE18628,CATIE,COMAV,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+CATIE19247,CATIE19247,CATIE,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+CATIE20249,CATIE20249,CATIE,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Costa Rica,Costa Rica,9,,,,,,,,,
+CATIE9073,CATIE9073,CATIE,COMAV,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Salvador,Mesoamerica,13,,,,,,,,,
+cc37-2,VIR933,VIR,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_vintage,Uzbekistan,Asia,,,,,,,,,,
+cc39-2,VIR347,VIR,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC_vintage,Mexico,Mesoamerica,,,A,B,A,A,A,A,,A
+cc4,LA2706,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,,,,,,,,,,,
+cc7,LA0147,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_Mesoamerica,Honduras,Mesoamerica,,,,,,,,,,
+cc9,VIR1011,VIR,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Guatemala,,,,,,,,,,,
+Cherokee,Cherokee,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,B,A,,A
+Cherokee_Purple,Cherokee Purple,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,,,,,,,,,,
+Chih-mu-tao-se,PI 158760,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,China,Asia,,,B,B,B,B,A,A,,A
+CL145,BGV002168,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+CL198,BGV002221,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+CL247,BGV002270,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+CL94,BGV002117,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+Costoluto_Genovese,Costoluto Genovese,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,B,B,B,B,B,A,,A
+Cotaxtla_I,PI 268107,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,,,B,B,B,B,A,A,,A
+CR001,Cervil,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR002,Levovil,INRA,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL,,,,,,,,,,,,
+CR003,Ferum,INRA,INRA,SLL,SLL_1,SLL_1,SLL,SLL,,,,,A,B,B,,A,A,,
+CR005,Mospomorist,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,A,B,B,,A,A,,
+CR006,Apeline,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,B,B,B,,A,,,
+CR011,Rodade,INRA,INRA,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL,,,,,B,B,B,,,A,,
+CR017,Philippino nÃáš2,INRA,INRA,SLC,SLC_non_Andean,SLC_Asia,SLL,SLL,Philippines,Asia,,,B,B,B,,B,,,
+CR020,San Marzano,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,A,B,A,B,A,B,,A
+CR021,LA3343,TGRC,INRA,SLL,SLL_1,SLL_1,SLL,SLL,,,,,A,B,B,,A,,,
+CR022,Marmande,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,B,B,B,,B,A,,
+CR027,Plovdivska Konserva,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,B,,,A,,
+CR030,Severianin,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_early_breed,,,,,B,B,B,B,A,A,,A
+CR031,Microtom,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,B,B,B,,A,A,,
+CR049,Read Pear,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,B,A,,A,B,,
+CR051,Vesuvio,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR052,Sweetie,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,A,B,,,A,,
+CR055,LA2838A,TGRC,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,,,,,,,,,,,,
+CR056,Wva700,INRA,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,,,,,A,A,A,,A,A,,
+CR057,LA1269,TGRC,INRA,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,-11,,,,,,,,,
+CR058,Wva106,INRA,INRA,SLC,SLC_Wva106,SLC_Wva106,SLC,SLC,,,,,B,A,A,,A,A,,
+CR060,LA0121,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+CR062,LA1478,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+CR064,66083,INRA,INRA,SLC,SLC_mixture,SLC_mixture,SP,SP,,,,,,,,,,,,
+CR065,64316,INRA,INRA,mixture,mixture,mixture,SP,SP,,,,,A,A,A,,A,,,
+CR067,VIR1018,VIR,INRA,mixture,mixture,mixture,SP,SP,Italy,Europe,,,A,B,A,,A,A,,
+CR068,VIR108,VIR,INRA,SP,SP_Peru,SP_non_Andean,SP,SP,USA,North America,,,A,A,A,,,A,,
+CR069,VIR2863,VIR,INRA,SP,SP_Peru,SP_Peru_7,SP,SP,Czechoslovakia,Europe,,,,A,A,,A,A,,
+CR070,VIR2909,VIR,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Argentina,South America,,,A,A,A,A,A,B,,A
+CR071,VIR2920,VIR,INRA,SP,SP_Peru,SP_non_Andean,SP,SP,Argentina,South America,,,A,A,A,,A,A,,
+CR072,VIR2921,VIR,INRA,SP,SP_Peru,SP_non_Andean,SP,SP,Argentina,South America,,,A,A,A,,A,A,,
+CR073,VIR3101,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Czechoslovakia,Europe,,,A,A,A,,A,A,,
+CR074,VIR4053,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Argentina,South America,,,,A,A,,A,A,,
+CR075,VIR4156,VIR,INRA,SLL,SLL_vintage,SLL_Mesoamerica,SP,SP,Czechoslovakia,Europe,,,A,A,A,,A,A,,
+CR076,VIR135,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Germany,Europe,,,A,B,A,,,A,,
+CR077,VIR1565,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Peru,Peru,,,B,B,A,A,A,A,,A
+CR078,VIR2759,VIR,INRA,SLL,SLL_vintage,SLL_vintage_2,SLC,SLC,Argentina,South America,,,B,B,A,B,A,A,,A
+CR079,VIR933,VIR,INRA,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC,Uzbekistan,Asia,,,B,B,B,,A,A,,
+CR080,VIR914,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,India,Asia,,,,B,A,,A,A,,
+CR081,VIR342,VIR,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Mexico,Mesoamerica,,,B,,A,,A,A,,
+CR082,VIR362,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Guatemala,Mesoamerica,,,,,,,,,,
+CR083,VIR749,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Peru,Peru,,,B,A,A,,A,A,,
+CR084,VIR939,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Peru,Peru,,,B,B,A,,,A,,
+CR085,VIR996,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Guatemala,Mesoamerica,,,A,A,A,,A,A,,
+CR086,VIR364,VIR,INRA,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Guatemala,Mesoamerica,,,B,A,A,,A,A,,
+CR087,VIR350,VIR,INRA,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC,Mexico,Mesoamerica,,,B,B,A,,A,A,,
+CR088,VIR697,VIR,INRA,SLC,SLC_mixture,SLC_mixture,SLC,SLC,Tunisia,Africa,,,B,B,A,,A,A,,
+CR089,VIR859,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Denmark,Europe,,,A,B,A,,A,A,,
+CR090,VIR2448,VIR,INRA,SLC,SLC_mixture,SLC_mixture,SLC,SLC,Germany,Europe,,,B,B,A,,A,A,,
+CR091,VIR416,VIR,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Turkey,Europe,,,,B,A,,A,A,,
+CR092,VIR2277,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Russia,Europe,,,A,,B,,,A,,
+CR094,VIR1011,VIR,INRA,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Guatemala,Mesoamerica,,,,,,,,,,
+CR095,VIR746,VIR,INRA,mixture,mixture,mixture,SLC,SLC,Peru,Peru,,,B,A,A,,A,A,,
+CR096,VIR797 ,VIR,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC,USA,North America,,,A,B,B,,A,A,,
+CR097,VIR347,VIR,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Mesoamerica,,,,,,,,,,,,
+CR099,VIR744,VIR,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru,,,B,A,A,,A,A,,
+CR100,VIR341,VIR,INRA,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Cuba,Mesoamerica,,,B,B,A,,A,A,,
+CR103,LA0148,TGRC,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Honduras,Mesoamerica,14,,,,,,,,,
+CR104,LA0292,TGRC,INRA,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),0,,,,,,,,,
+CR105,LA1025,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Hawaii,USA,Hawaii,21,,,,,,,,,
+CR107,LA1228,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+CR109,LA1268,TGRC,INRA,mixture,mixture,mixture,SLC,SLC_Peru_C5,Peru,Peru_C5,-11,,,,,,,,,
+CR111,LA1312,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+CR112,LA1314,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+CR115,LA1338,TGRC,INRA,SLC,SLC_Ecuador,SLC_Ecuador_1,SLC,SLC,Ecuador,Ecuador_I1,-1,,,,,,,,,
+CR116,LA1385,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+CR119,LA1425,TGRC,INRA,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,6,,,,,,,,,
+CR120,LA1429,TGRC,INRA,SP,SP_Ecuador,SP_Ecuador_2,SLC,SLC,Ecuador,Ecuador_C2,0,,,,,,,,,
+CR121,LA1453,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Hawaii,USA,Hawaii,21,,,,,,,,,
+CR126,LA0126,TGRC,INRA,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Ecuador,Ecuador_M1,0,,,,,,,,,
+CR129,LA0147,TGRC,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_Mesoamerica,Honduras,Mesoamerica,14,,,,,,,,,
+CR133,LA0409,TGRC,INRA,mixture,mixture,mixture,SLL,SLL,Ecuador,Ecuador_C3,-2,,,,,,,,,
+CR135,LA0468,TGRC,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,Chile,South America,-20,,,,,,,,,
+CR136,LA0473,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLL,SLL,Peru,Peru_C8,-17,,,,,,,,,
+CR137,LA0477,TGRC,INRA,mixture,mixture,mixture,SLL,SLL,Peru,Peru_C5,-13,,,,,,,,,
+CR138,LA1021,TGRC,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,Brazil,South America,-23,,,,,,,,,
+CR139,LA1162,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLL,SLL_cultivated_cherry,USA,North America,,,A,B,A,,A,B,,
+CR142,LA1509,TGRC,INRA,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_Asia,Malaysia,Asia,4,,,,,,,,,
+CR144,LA1542,TGRC,INRA,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+CR145,LA1543,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_South America,Brazil,South America,-23,,,,,,,,,
+CR146,LA1620,TGRC,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_South America,Brazil,South America,-12,,,,,,,,,
+CR147,LA1622,TGRC,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Zambia,Africa,-15,,,,,,,,,
+CR148,LA2078,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Brazil,South America,-31,,,,,,,,,
+CR149,LA2095,TGRC,INRA,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Ecuador_M3,Ecuador,Ecuador_M3,-3,,,,,,,,,
+CR150,LA2131,TGRC,INRA,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+CR151,LA2137,TGRC,INRA,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+CR152,LA2307,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+CR153,LA2308,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+CR154,LA2392,TGRC,INRA,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Indonesia,Asia,-6,,,,,,,,,
+CR155,LA2402,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_South America,Brazil,South America,-27,,,,,,,,,
+CR156,LA2619,TGRC,INRA,mixture,mixture,mixture,SLC,SLC_Peru_I3,Peru,Peru_I3,-7,,,,,,,,,
+CR157,LA2670,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Peru,Peru,Peru,-14,,,,,,,,,
+CR158,LA2675,TGRC,INRA,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+CR161,LA2709,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SLC,SLC,India,India,,,,,,,,,,
+CR163,LA0400,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+CR169,LA1371,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,-11,,,,,,,,,
+CR173,LA1547,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador,Ecuador_M1,0,,,,,,,,,
+CR181,LA1602,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,-11,,,,,,,,,
+CR186,LA1689,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+CR199,tomate Richter's,INRA,INRA,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_cultivated_cherry,,,,,A,A,A,,A,A,,
+CR202,CGN18399,INRA,INRA,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,,,,,A,B,A,A,A,A,,A
+CR203,LA1589,TGRC,INRA,conflicting classification,conflicting classification,conflicting classification,SP,SLC_Peru,Peru,Peru,-8,,,,,,,,,
+CR205,L,,,,,,,,,,,,,,,,,,,
+CR234,Atom,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,B,,A,A,,
+CR235,Blondkpchen,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR236,PI 365923,USDA,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+CR237,PI 365925,USDA,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+CR238,PI 129088,USDA,INRA,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,4,,,,,,,,,
+CR239,Chello yellow Cherry,INRA,INRA,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_cultivated_cherry,,,,,B,A,B,,A,A,,
+CR240,L285,INRA,INRA,mixture,mixture,mixture,SLC,SLC,,,,,A,A,B,,A,A,,
+CR241,SVS nº1,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,B,B,A,,A,A,,
+CR242,Cerise (-),INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,A,B,,A,,,
+CR243,Yellow Pico,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR244,Yellow Pear,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR246,Zucker Kleinfruchtige Rote,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,,A,,A,A,,
+CR247,Cerise Jaune,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,B,,A,A,,
+CR248,Cerise Rouge,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,B,,A,A,,
+CR249,Cherry Gold,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,B,B,B,,A,A,,
+CR250,LA1221,TGRC,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,A,,
+CR252,Droplet,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR253,Monplaisir,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,B,,A,A,,
+CR254,Farthest North,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,,A,,A/B,A,,
+CR255,Florida Petite,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,B,B,B,,A,A,,
+CR256,Minibel,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,B,B,A,,A,A,,
+CR257,NC2C,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,,,,,,,,
+CR258,Ohmiya Suncherry,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,B,,A,A,,
+CR259,Oregon Cherry,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,A,,A,A,,
+CR260,Osu 4014-4,INRA,INRA,SLC,SLC_1,SLC_1,SLC,SLC,,,,,,,B,,A,A,,
+CR261,Parteno (Italie),INRA,INRA,mixture,mixture,mixture,SLC,SLC,,,,,,B,B,,A,,,
+CR262,Prachtlow,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,B,A,,A,A,,
+CR263,Red Cherry Small,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,A,,
+CR264,Red Plum,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR265,Red robin,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,B,B,B,,A,,,
+CR266,Sub arctic Cherry,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,A,,A,A,,
+CR267,TiNYtim,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,B,B,B,,A,A,,
+CR268,Willamette Cherry,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,B,,A,A,,
+CR269,Yellow Plum,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,A,A,,,A
+CR270,Monita,INRA,INRA,SLL,SLL_vintage,SLL_early_breed,SLL,SLL,,,,,B,B,B,,A,A,,
+CR271,Celsior,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR272,Peruvianum,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,B,B,B,,A,A,,
+CR273,Orange Cocktail,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,,,,,,,,
+CR274,Marpha nº2,INRA,INRA,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,,,,,B,B,A,,A,A,,
+CR275,Cerise Ildi,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,B,,A,B,,
+CR276,Banjul 2,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,B,B,A,,A,A,,
+CR277,Mirabella,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR278,Uovetto di Grossetto,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR279,Cerise Orange d'UzÃÂs,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,A,,
+CR280,Cerise du sud ouest nÃáš 2,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,A,,
+CR281,Cerise du sud ouest nÃáš 1,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR282,Cherry Belle,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR283,Cerise Brillante,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR284,Cerise rose,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,A,,A,A,,
+CR285,Tondo Rossa Grappoli,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR286,Poc-poc,INRA,INRA,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR287,Cisterno,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,A,,
+CR288,Criollo,INRA,INRA,SLC,SLC_mixture,SLC_mixture,SLC,SLC_cultivated_cherry,,,,,B,B,A,,A,A,,
+CR289,Piguti Tamagoshi Nadi,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR290,Luteum,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR291,Pyriforme,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,,A,B,,
+CR292,8 bis,INRA,INRA,mixture,mixture,mixture,SLC,SLC,,,,,A,B,A,,A,A,,
+CR293,Costa Rica,INRA,INRA,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,,,,,,,,,,
+CR294,Phyra,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,A,A,B,,A,A,,
+CR295,Poire rouge,INRA,INRA,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR302,Santa Cruz Samano,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,,,,,,,,
+CR308,Ping Pong,INRA,INRA,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+CR317,LA4345,TGRC,INRA,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL,,,,,,,,,,,,
+CR319,Rutgers,INRA,INRA,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,,,,,B,B,B,B,A,A,,A
+CR324,Fenhong Tianrou,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,,,,,,,,
+CR341,Cra 66,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,B,B,B,,A,,,
+CR351,Nesthckchen,INRA,INRA,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,,,,,,,,
+CR354,Stupicke Polni Rane,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,A,B,B,,B,A,,
+CR360,Allong de Cornichon,INRA,INRA,mixture,mixture,mixture,SLL,SLL,,,,,,,,,,,,
+CULBPT04-1_,CULBPT04-1 ,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT04-2_,CULBPT04-2 ,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT04-3_,CULBPT04-3 ,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,
+CULBPT04-4,CULBPT04-4,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT04-5,CULBPT04-5,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,
+CULBPT-05-10,CULBPT-05-10,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-05-11,CULBPT-05-11,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-05-15,CULBPT-05-15,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-05-18,CULBPT-05-18,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,B,,A
+CULBPT-05-20,CULBPT-05-20,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,
+CULBPT-05-21,CULBPT-05-21,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-05-22,CULBPT-05-22,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-05-9,CULBPT-05-9,Cornell,OSU,SLL,SLL_processing_2,SLL_processing_2,SLL,SLL_processing_NY,USA,NY,,,A,B,B,B,A,A,,A
+CULBPT-A46-2,CULBPT-A46-2,Cornell,OSU,SLL,SLL_1,SLL_1,SLL,SLL_processing,USA,North America,,,A,B,B,B,A,A,,A
+D'_Olvia_x_Industria,D' Olvia x Industria,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_cultivated_cherry,Italy,Europe,,,A,B,,,A,B,,A
+Devon_Surprise,PI 294638,USDA,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,United Kingdom,Europe,,,A,B,B,B,A,A,,A
+Druzba,Druzba,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,A,A,,A
+E3259,E3259,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+E6203,LA4024,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_CA,USA,CA,,,A,B,B,B,A,A,,A
+ECU1781,ECU1781,COMAV,COMAV,SP,SP_mixture,SP_mixture,SP,SP,Ecuador,Ecuador_C2,0,,,,,,,,,
+ECU284_2,BGV006071,COMAV,COMAV,SLC,SLC_1,SLC_1,SLL,SLL,Ecuador,Ecuador_I3,-3,,,,,,,,,
+ECU376BIS,BGV006148,COMAV,COMAV,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_M3,Ecuador,Ecuador_M3,-3,,,,,,,,,
+F02-7530,F02-7530,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F03-6331,F03-6331,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+F03-7463,F03-7463,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F06-1013-1,F06-1013-1,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+F06-1014-1,F06-1014-1,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F06-2041,F06-2041,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_3,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F06-2054,F06-2054,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F06-2058,F06-2058,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_3,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+F8-RIL1_2007,F8-RIL1 2007,Pennsylvannia State University,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,USA,North America,,,,,,,,,,
+F8-RIL2_2007,F8-RIL2 2007,Pennsylvannia State University,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,USA,North America,,,,,,,,,,
+F8-RIL3_2007,F8-RIL3 2007,Pennsylvannia State University,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,USA,North America,,,,,,,,,,
+F8-RIL4_2007,F8-RIL4 2007,Pennsylvannia State University,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,USA,North America,,,,,,,,,,
+F8-RIL6_2007,F8-RIL6 2007,Pennsylvannia State University,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,USA,North America,,,,,,,,,,
+Favorite,PI 636262,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,A,A,,A
+FG02-188,FG02-188,OSU,OSU,mixture,mixture,mixture,SLL,SLL_processing,USA,North America,,,A,B,B,B,A,A,,A
+FG06-B431,FG06-B431,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_hybrid,USA,OH,,,,,,,,,,
+FILIPINAS2,BGV012344,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Philippines,Asia,,,A,B,B,,,B,,
+Fla._678,,,,,,,,,,,,,,,,,,,,
+Fla._701,,,,,,,,,,,,,,,,,,,,
+Fla._7060,,,,,,,,,,,,,,,,,,,,
+Fla._726,,,,,,,,,,,,,,,,,,,,
+Fla._7481,,,,,,,,,,,,,,,,,,,,
+Fla._7547,,,,,,,,,,,,,,,,,,,,
+Fla._7600,,,,,,,,,,,,,,,,,,,,
+Fla._7770,,,,,,,,,,,,,,,,,,,,
+Fla._7771,,,,,,,,,,,,,,,,,,,,
+Fla._7775,,,,,,,,,,,,,,,,,,,,
+Fla._7776,,,,,,,,,,,,,,,,,,,,
+Fla._7781,,,,,,,,,,,,,,,,,,,,
+Fla._7804,,,,,,,,,,,,,,,,,,,,
+Fla._7907B,,,,,,,,,,,,,,,,,,,,
+Fla._7946,,,,,,,,,,,,,,,,,,,,
+Fla._8000,,,,,,,,,,,,,,,,,,,,
+Fla._8044,,,,,,,,,,,,,,,,,,,,
+Fla._8059,,,,,,,,,,,,,,,,,,,,
+Fla._8083,,,,,,,,,,,,,,,,,,,,
+Fla._8109,,,,,,,,,,,,,,,,,,,,
+Fla._8111BH,,,,,,,,,,,,,,,,,,,,
+Fla._8124C,,,,,,,,,,,,,,,,,,,,
+Fla._8233,,,,,,,,,,,,,,,,,,,,
+Fla._8249,,,,,,,,,,,,,,,,,,,,
+Fla._8293,,,,,,,,,,,,,,,,,,,,
+Fla._8344,,,,,,,,,,,,,,,,,,,,
+Fla._8383,,,,,,,,,,,,,,,,,,,,
+Fla._8476,,,,,,,,,,,,,,,,,,,,
+Fla._8516,,,,,,,,,,,,,,,,,,,,
+Fla._8539,,,,,,,,,,,,,,,,,,,,
+Fla._8543,,,,,,,,,,,,,,,,,,,,
+Fla._8561B-6,,,,,,,,,,,,,,,,,,,,
+Fla._8599,,,,,,,,,,,,,,,,,,,,
+Fla._8608,,,,,,,,,,,,,,,,,,,,
+Fla._8624,,,,,,,,,,,,,,,,,,,,
+Fla._8626,,,,,,,,,,,,,,,,,,,,
+Fla._8646,,,,,,,,,,,,,,,,,,,,
+Fla._8653,,,,,,,,,,,,,,,,,,,,
+Fla._8737,,,,,,,,,,,,,,,,,,,,
+Flora-Dade,Flora-Dade,OSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_FL,USA,FL,,,B,B,B,B,,,,A
+Globe,PI 270186,USDA,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,,,B,B,B,B,A,A,,A
+GLP44,BGV009320,COMAV,COMAV,SG,SG,SG,SG,SC_Galapagos Islands (Coast),Ecuador,Galapagos Islands (Coast),0,,,,,,,,,
+Gold_Ball,Gold Ball,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_cultivated_cherry,USA,North America,,,A,B,A,B,A,B,,A
+Gold_Nugget,Gold Nugget,OSU,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,USA,North America,,,,A,A,B,A,,,A
+Grushovka,Grushovka,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Russia,Europe,,,B,B,B,B,A,A,,B
+Heinz_1370,PI 341134,USDA,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,USA,North America,,,B,B,B,B,A,A,,A
+Heinz_1706,LA4345,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,B,,A
+Heinz1439,Heinz1439,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,,,,,B,B,B,B,A,A,,A
+Hong_Kong,PI 291337,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,China,Asia,,,B,B,B,B,A,A,,A
+Howard_German,Howard German,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,A,A,,B
+Hunt_100,LA3144,TGRC,OSU,mixture,mixture,mixture,SLL,SLL_processing,USA,North America,,,B,B,B,B,A,A,,A
+Juane_Flammee,Juane Flammee,OSU,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,France,Europe,,,A,B,B,B,A,A,,A
+King_Humbert,LA0025,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,,,,,,,,
+Kiyosu_No._2,,,,,,,,,,,,,,,,,,,,
+L00167,LA1425,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,2,,,,,,,,,
+L00177,LA1461,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_Asia,Philippines,Asia,14,,,,,,,,,
+LA0373_inra,LA0373,TGRC,INRA,SP,SP_Peru,SP_Peru_5,SP,SP_Peru_C4,Peru,Peru_C4,-9,,,,,,,,,
+LA0397,LA0397,TGRC,INRA,mixture,mixture,mixture,SP,SP_Peru_C3,Peru,Peru_C3,-6,,,,,,,,,
+LA0400,LA0400,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+LA0410,LA0410,TGRC,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_vintage,Ecuador,Ecuador_C3,-2,,,,,,,,,
+LA0442,LA0442,TGRC,INRA,mixture,mixture,mixture,SP,SP_Peru_C4,Peru,Peru_C4,-9,,,,,,,,,
+LA0530,LA0530,TGRC,OSU,SG,SG,SG,SG,SG_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),0,,,,,,,,,
+LA0533,LA0533,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_vintage,,,,,,,,,,,,
+LA0722,LA0722,TGRC,OSU,SP,SP_Peru,SP_Peru_5,SP,SP,Peru,Peru_C3,-8,,,,,,,,,
+LA0767,LA0767,TGRC,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Guatemala,Mesoamerica,14,,,,,,,,,
+LA0797,LA0797,TGRC,OSU,SLC,SLC_1,SLC_1,SLC,SLC,,,,,,,,,,,,
+LA0925,LA0925,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,,,,,,,,
+LA1208,LA1208,TGRC,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Colombia,Colombia,10,,,,,,,,,
+LA121_1,LA121_1,TGRC,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1231,LA1231,TGRC,INRA,mixture,mixture,mixture,SLL,SLL,Ecuador,Ecuador_I1,0,,,,,,,,,
+LA1245,LA1245,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP_Ecuador_M2,Ecuador,Ecuador_M2,-3,,,,,,,,,
+LA1246,LA1246,TGRC,INRA,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M3,Ecuador,Ecuador_M3,-3,,,,,,,,,
+LA1263,LA1263,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_C3,Ecuador,Ecuador_C3,-2,,,,,,,,,
+LA1269,LA1269,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP_Peru_C5,Peru,Peru_C5,-11,,,,,,,,,
+LA1291,LA1291,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-11,,,,,,,,,
+LA1301,LA1301,TGRC,OSU,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,-13,,,,,,,,,
+LA1301_inra,LA1301,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,-13,,,,,,,,,
+LA1307,LA1307,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_3,SLL,SLL_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+LA1312,LA1312,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+LA1322,LA1322,TGRC,COMAV,SN,SN,SN,SN,SN,,,,,,A,V,A,A,A,,
+LA1330,LA1330,TGRC,COMAV,Schm,Schm,Schm,Schm,Schm,,,,,,A,B,,A,A,B,A
+LA1371,LA1371,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,-11,,,,,,,,,
+LA1388,LA1388,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,-11,,,,,,,,,
+LA1388_inra,LA1388,TGRC,INRA,SLC,SLC_Peru,SLC_Peru_2,SLL,SLL,Peru,Peru_I2,-11,,,,,,,,,
+LA1420,LA1420,TGRC,INRA,SLC,SLC_Ecuador,SLC_Ecuador_1,SLL,SLL_Ecuador_I1,Ecuador,Ecuador_I1,0,,,,,,,,,
+LA1429,LA1429,TGRC,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP,Ecuador,Ecuador_C2,0,,,,,,,,,
+LA1455,LA1455,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Mexico,Mesoamerica,25,,,,,,,,,
+LA1457,LA1457,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,18,,,,,,,,,
+LA1464,LA1464,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Honduras,Mesoamerica,15,,,,,,,,,
+LA1478,LA1478,TGRC,OSU,conflicting classification,conflicting classification,conflicting classification,SP,SP_Peru,Peru,Peru,-5,,,,,,,,,
+LA1504,LA1504,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,,,,,,,,
+LA1512,LA1512,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Salvador,Mesoamerica,13,,,,,,,,,
+LA1521,LA1521,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,-12,,,,,,,,,
+LA1542,LA1542,TGRC,OSU,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+LA1545,LA1545,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,18,,,,,,,,,
+LA1547,LA1547,TGRC,OSU,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador,Ecuador_M1,0,,,,,,,,,
+LA1547_comav,LA1547,TGRC,COMAV,conflicting classification,conflicting classification,conflicting classification,SP,SP_Ecuador,Ecuador,Ecuador,0,,,,,,,,,
+LA1547_inra,LA1547,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_M1,Ecuador ,Ecuador_M1,0,,,,,,,,,
+LA1549,LA1549,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,-10,,,,,,,,,
+LA1549_comav,LA1549,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Peru,Peru_I2,-10,,,,,,,,,
+LA1569,LA1569,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,19,,,,,,,,,
+LA1576,LA1576,TGRC,INRA,SP,SP_Peru,SP_Peru_7,SP,SP_Peru_C6,Peru,Peru_C6,-12,,,,,,,,,
+LA1578,LA1578,TGRC,OSU,SP,SP_mixture,SP_mixture,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+LA1582,LA1582,TGRC,OSU,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+LA1582_inra,LA1582,TGRC,INRA,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+LA1584,LA1584,TGRC,INRA,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C2,Peru,Peru_C2,-6,,,,,,,,,
+LA1586,LA1586,TGRC,INRA,SP,SP_Peru,SP_Peru_3,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1588,LA1588,TGRC,INRA,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1589,LA1589,TGRC,OSU,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1589_koenig,LA1589,TGRC,Koenig et al.,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1590,LA1590,TGRC,INRA,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1593,LA1593,TGRC,INRA,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-8,,,,,,,,,
+LA1595,LA1595,TGRC,INRA,SP,SP_Peru,SP_Peru_5,SP,SP_Peru_C4,Peru,Peru_C4,-9,,,,,,,,,
+LA1599,LA1599,TGRC,INRA,SP,SP_Peru,SP_Peru_5,SP,SP_Peru_C4,Peru,Peru_C4,-10,,,,,,,,,
+LA1606,LA1606,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,-13,,,,,,,,,
+LA1617,LA1617,TGRC,OSU,SP,SP_Montane,SP_Montane_2,SP,SP_Ecuador_M2,Peru,Ecuador_M2,-3,,,,,,,,,
+LA1620,LA1620,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_South America,Brazil,South America,-12,,,,,,,,,
+LA1621,LA1621,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,21,,,,,,,,,
+LA1622,LA1622,TGRC,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Africa,Zambia,Africa,-15,,,,,,,,,
+LA1623,LA1623,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+LA1632,LA1632,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_2,SLC,SLC_Peru_I5,Peru,Peru_I5,-12,,,,,,,,,
+LA1654,LA1654,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+LA1655,LA1655,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_2,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA1659,LA1659,TGRC,INRA,SP,SP_Peru,SP_Peru_5,SP,SP_Peru_C4,Peru,Peru_C4,-9,,,,,,,,,
+LA1668,LA1668,TGRC,OSU,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,16,,,,,,,,,
+LA1682,LA1682,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP_Peru_C7,Peru,Peru_C7,-13,,,,,,,,,
+LA1683,LA1683,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_C1,Peru,Peru_C1,-4,,,,,,,,,
+LA1684,LA1684,TGRC,INRA,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+LA1689,LA1689,TGRC,COMAV,SP,SP_Peru,SP_Peru_2,SP,SP_Peru_C1,Peru,Peru_C1,-5,,,,,,,,,
+LA1701,LA1701,TGRC,OSU,mixture,mixture,mixture,SLC,SLC,Peru,Peru_C4,-8,,,,,,,,,
+LA1703,LA1703,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,22,,,,,,,,,
+LA1712,LA1712,TGRC,OSU,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC_Costa Rica,Costa Rica,Costa Rica,9,,,,,,,,,
+LA172,LA172,TGRC,COMAV,SLL,SLL_vintage,SLL_vintage_2,SLC,SLC,Bolivia,South America,-17,,,,,,,,,
+LA1909,LA1909,TGRC,COMAV,mixture,mixture,mixture,SLCxSP,SLCxSP,Peru,Peru_I4,-12,,,,,,,,,
+LA1923,LA1923,TGRC,COMAV,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-14,,,,,,,,,
+LA1933,LA1933,TGRC,COMAV,conflicting classification,conflicting classification,conflicting classification,SP,SP_Peru,Peru,Peru,-15,,,,,,,,,
+LA1933_inra,LA1933,TGRC,INRA,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-15,,,,,,,,,
+LA1936,LA1936,TGRC,COMAV,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-15,,,,,,,,,
+LA1950,LA1950,TGRC,INRA,SP,SP_Peru,SP_Peru_9,SP,SP_Peru_C8,Peru,Peru_C8,-16,,,,,,,,,
+LA1953,LA1953,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_C8,Peru,Peru_C8,-17,,,,,,,,,
+LA1996,LA1996,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,,,42,,,,,,,,,
+LA2076,PI 387854,USDA,OSU,conflicting classification,conflicting classification,conflicting classification,SLC,SLC,Bolivia,Bolivia,,,,,,,,,,
+LA2077,LA2077,TGRC,OSU,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,Bolivia,South America,-16,,,,,,,,,
+LA2078,LA2078,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC,Brazil,South America,-31,,,,,,,,,
+LA2079,LA2079,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Hawaii,USA,Hawaii,20,,,,,,,,,
+LA2085,LA2085,TGRC,COMAV,mixture,mixture,mixture,SLC,SLC,South Africa,Africa,-26,,,,,,,,,
+LA2093,LA2093,TGRC,OSU,SP,SP_Montane,SP_Montane_1,SP,SP,Ecuador,Ecuador_M2,-3,,,,,,,,,
+LA2126A,LA2126A,TGRC,OSU,SLC,SLC_Ecuador,SLC_Ecuador_3,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+LA2131,LA2131,TGRC,OSU,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_Ecuador_I3,Ecuador,Ecuador_I3,-3,,,,,,,,,
+LA2135,LA2135,TGRC,OSU,SLC,SLC_LA2135,SLC_LA2135,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+LA2137,LA2137,TGRC,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Ecuador_I2,Ecuador,Ecuador_I2,-2,,,,,,,,,
+LA2173,LA2173,TGRC,INRA,SP,SP_Peru,SP_Peru_4,SP,SP,Peru ,,,,,,,,,,,
+LA2180,LA2180,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2181,LA2181,TGRC,OSU,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2181_inra,LA2181,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP,Peru ,Peru_M4,-5,,,,,,,,,
+LA2182,LA2182,TGRC,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2183,LA2183,TGRC,INRA,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2184,LA2184,TGRC,OSU,SP,SP_Peru,SP_Peru_1,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2188,LA2188,TGRC,COMAV,SP,SP_Montane,SP_Montane_2,SP,SP,Peru,Peru_M4,-5,,,,,,,,,
+LA2208,LA2208,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-5,,,,,,,,,
+LA2251,LA2251,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2254,LA2254,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2263,LA2263,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2265,LA2265,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2278,LA2278,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+LA2308,LA2308,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+LA2309,LA2309,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-6,,,,,,,,,
+LA2312,LA2312,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-5,,,,,,,,,
+LA2312_comav,LA2312,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-5,,,,,,,,,
+LA2371,LA2371,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_3,SLL,SLL,,,,,,,,,,,,
+LA2378,PI 290858,USDA,OSU,mixture,mixture,mixture,SLL,SLL_fresh,,,,,,,,,,,,
+LA2392,LA2392,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC,Indonesia,Asia,-6,,,,,,,,,
+LA2393,LA2393,TGRC,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC,Costa Rica,Costa Rica,9,,,,,,,,,
+LA2401,LA2401,TGRC,INRA,SP,SP_Peru,SP_Peru_5,SP,SP,Peru,Peru_C4,-9,,,,,,,,,
+LA2411,LA2411,TGRC,OSU,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Peru_I3,Peru,Peru_I3,-14,-69,,,,,,,,
+LA2533,LA2533,TGRC,INRA,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,-11,,,,,,,,,
+LA2533_A,LA2533,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,-11,,,,,,,,,
+LA2533_Pool,LA2533,TGRC,OSU,SP,SP_Peru,SP_Peru_6,SP,SP,Peru,Peru_C5,-11,,,,,,,,,
+LA2626,LA2626,TGRC,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC,Peru,Peru_I3,-12,,,,,,,,,
+LA2632,LA2632,TGRC,OSU,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC,Peru,Peru_I3,-12,,,,,,,,,
+LA2633,LA2633,TGRC,OSU,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC,Peru,Peru_I3,-13,,,,,,,,,
+LA2660,LA2660,TGRC,OSU,SP,SP_Peru,SP_Peru_1,SLC,SLC_South America,Bolivia,South America,-14,,,,,,,,,
+LA2664,LA2664,TGRC,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Peru_I3,Peru,Peru_I3,-14,,,,,,,,,
+LA2670,LA2670,TGRC,COMAV,SLC,SLC_mixture,SLC_mixture,SLC,SLC_Peru_I3,Peru,Peru_I3,-14,,,,,,,,,
+LA2675,LA2675,TGRC,OSU,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+LA2675_comav,LA2675,TGRC,COMAV,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+LA2686,LA2686,TGRC,COMAV,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-16,,,,,,,,,
+LA2688,LA2688,TGRC,COMAV,SLC,SLC_SP_Peru,SLC_SP_Peru,SLC,SLC_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+LA2690,LA2690,TGRC,OSU,SLC,SLC_SP_Peru,SLC_SP_Peru,SLL,SLL,Peru,Peru_I3,-12,,,,,,,,,
+LA2692_1,LA2692,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-13,,,,,,,,,
+LA2702,LA2702,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_Asia,Sri Lanka,Asia,7,,,,,,,,,
+LA2709,LA2709,TGRC,COMAV,mixture,mixture,mixture,SLC,SLC_Asia,India,Asia,12,,,,,,,,,
+LA2725,LA2725,TGRC,COMAV,SP,SP_Peru,SP_Peru_8,SP,SP,Peru,Peru_C7,-13,,,,,,,,,
+LA2783,LA2783,TGRC,COMAV,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Colombia,Colombia,Colombia,6,,,,,,,,,
+LA2792,LA2792,TGRC,OSU,SLC,SLC_LA2792,SLC_LA2792,SLC,SLC_Colombia,Colombia,Colombia,5,,,,,,,,,
+LA2836,LA2836,TGRC,INRA,SP,SP_Peru,SP_Peru_9,SP,SP,Peru,Peru_C8,-14,,,,,,,,,
+LA2843_r1,LA2843,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2843_r2,LA2843,TGRC,COMAV,SLC,SLC_Peru,SLC_Peru_1,SLC,SLC_Peru_I1,Peru,Peru_I1,-6,,,,,,,,,
+LA2845,LA2845,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_1,SLL,SLL,Peru,Peru_I1,-6,,,,,,,,,
+LA2852,LA2852,TGRC,INRA,SP,SP_mixture,SP_mixture,SP,SP,Ecuador,Ecuador_C2,0,,,,,,,,,
+LA2854,LA2854,TGRC,COMAV,SP,SP_Ecuador,SP_Ecuador_2,SP,SP,Ecuador,Ecuador_C2,-1,,,,,,,,,
+LA2915,LA2915,TGRC,INRA,SP,SP_Peru,SP_Peru_3,SP,SP,Peru,Peru_C2,-5,,,,,,,,,
+LA2974,LA2974,TGRC,INRA,SP,SP_Peru,SP_Peru_4,SP,SP,Peru,Peru_C3,-8,,,,,,,,,
+LA2983,LA2983,TGRC,INRA,SP,SP_Peru,SP_Peru_8,SP,SP,Peru,Peru_C7,-12,,,,,,,,,
+LA3136,LA3136,TGRC,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Cuba,Mesoamerica,20,,,,,,,,,
+LA3137,LA3137,TGRC,OSU,mixture,mixture,mixture,SLC,SLC,Cuba,Mesoamerica,20,,,,,,,,,
+LA3163,LA3163,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_fresh,,,,,,,,,,,,
+LA3238,LA3238,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,,,,,,,,
+LA3243,LA3243,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,,,,,,,,
+LA373,LA373,TGRC,OSU,SP,SP_Peru,SP_Peru_5,SP,SP_Peru_C4,Peru,Peru_C4,-9,,,,,,,,,
+LA4425_,LA4425 ,TGRC,OSU,mixture,mixture,mixture,SLL,SLL_fresh,,,,,B,B,B,B,A,A,,A
+LA483,LA483,TGRC,COMAV,mixture,mixture,mixture,SG,SG_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),-21,,,,,,,,,
+LA483_1,LA483,TGRC,COMAV,mixture,mixture,mixture,SG,SG_Galapagos Islands (Inland),Ecuador,Galapagos Islands (Inland),-21,,,,,,,,,
+Large_German_Cherry,Large German Cherry,OSU,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,USA,North America,,,,B,A,B,A,A,,A
+LC116,LC116,PAS016019,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+LC127,LC127,PAS016030,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+Legend,Legend,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+LYC1888,LYC1888,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A,B,B,B,B,A,,A
+LYC1891,LYC1891,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A,B,B,B,A,A,,A
+LYC1903,LYC1903,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A,B,B,B,B,A,,B
+LYC281,LYC281,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,B,B,B,B,B,A,,A
+LYC440,LYC440,IPK,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_vintage,Italy,Europe,,,B,B,B,B,B,A,,A
+LYC473,LYC473,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,B,B,B,B,A,A,,A
+M82,LA3475,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,A,B,B,B,A,A,,A
+Marglobe,LA0502,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,USA,North America,,,A/B,B,B,B,A,A,,A
+Marveille_des_Marches,Marveille des Marches,OSU,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,France,Europe,,,,B,B,B,A,,,A
+Medford_,Medford ,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+MERLIN,MERLIN,commercial,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,,,40,,,,,,,,,
+MLE334,PAS016798,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,A,,B,A,A,B,A,A
+MLE335,PAS016799,COMAV,COMAV,SLC,SLC_1,SLC_1,SLL,SLL,,,,,A,A,A,B,A,A,A,A
+MLE336,PAS016800,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,B,B,B,B,A,A,A,A
+MLE337,PAS016801,COMAV,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL,,,,,B,B,B,B,A,A,A,A
+MLE344,PAS016802,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL,,,,,A,A,B,,A,B,B,A
+MLE345,PAS016803,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,,,,,A,B,B,B,A,B,A,A
+Mogeor_1,Mogeor_1,commercial,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL,,,,,,,,,,,,
+Money_0,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,,,,,,,,,,,
+money_1,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,,,,,,,,,,
+money_2,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,,,,,,,,,,
+money_3,LA2706,TGRC,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,,,,,,,,,,
+Moneymaker,LA2706,TGRC,OSU,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_early_breed,Netherlands,Europe,,,,,,,,,,
+NC_1_CELBR_,NC 1 CELBR ,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+NC_13E-1_95_,NC 13E-1(95),NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+NC_13G,NC 13G,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+NC_7_P_rep-8__2006__-_96,NC 7 P rep-8 (2006) - 96,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+NC123S,NC123S,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,B,B,B,A,A,,A
+NC140,NC140,NCSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+NC161L-1W_2007_,NC161L-1W(2007),NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC1CS,NC1CS,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,B,B,B,,,,A
+NC23E-2__93_,NC23E-2 (93),NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC265-1_93_-3-4,LA3625,TGRC,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+NC2C,NC2C,NCSU,OSU,mixture,mixture,mixture,SLL,SLL,USA,North America,,,,A,B,A,A,A,,A
+NC2Y,NC2Y,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+NC33EB-1,NC33EB-1,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC47NC2,NC47NC2,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC50-7,NC50-7,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC714-3B_2007_,NC714-3B(2007),NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC8276,NC8276,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC8288,NC8288,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NC84173,NC84173,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,,,A
+NC860-1_2008_,NC860-1(2008),NCSU,OSU,mixture,mixture,mixture,SLC,SLC,USA,North America,,,A,A,B,A,A,B,,A
+NC98248,NC98248,NCSU,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+NC99471-3,NC99471-3,NCSU,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,A,B,B,B,A,,,A
+NCEBR-1,NCEBR-1,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NCEBR-2,NCEBR-2,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NCEBR-3,NCEBR-3,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NCEBR-4,NCEBR-4,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,B,B,B,B,A,A,,A
+NCEBR-5,LA3845,TGRC,OSU,SLC,SLC_1,SLC_1,SLC,SLC_cultivated_cherry,USA,North America,,,,,,,,,,
+NCEBR-6,LA3846,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+NCEBR-7,NCEBR-7,NCSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,A,B,B,B,A,A,,A
+NCEBR-8,NCEBR-8,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,A,B,B,B,A,A,,A
+NCHS-1,LA3847,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+OH03-6439,OH03-6439,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_3,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8018,OH05-8018,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8022,OH05-8022,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8025,OH05-8025,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8027,OH05-8027,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8028,OH05-8028,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8030,OH05-8030,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8036,OH05-8036,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8040,OH05-8040,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,A/B,B,B,A,A,,
+OH05-8044,OH05-8044,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8046,OH05-8046,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8048,OH05-8048,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,A/B,B,B,A,A,,A
+OH05-8053,OH05-8053,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8059,OH05-8059,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8062,OH05-8062,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8064,OH05-8064,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8068,OH05-8068,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8069,OH05-8069,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8070,OH05-8070,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8072,OH05-8072,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8074,OH05-8074,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8078,OH05-8078,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8079,OH05-8079,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8087,OH05-8087,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8090,OH05-8090,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,,,A
+OH05-8095,OH05-8095,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8104,OH05-8104,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8109,OH05-8109,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8117,OH05-8117,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8124,OH05-8124,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8139,OH05-8139,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8142,OH05-8142,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8144,OH05-8144,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8151,OH05-8151,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8162,OH05-8162,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8163,OH05-8163,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8165,OH05-8165,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8171,OH05-8171,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8175,OH05-8175,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8179,OH05-8179,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8185,OH05-8185,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8186,OH05-8186,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8187,OH05-8187,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8188,OH05-8188,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,,,
+OH05-8192,OH05-8192,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8193,OH05-8193,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8197,OH05-8197,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8206,OH05-8206,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH05-8210,OH05-8210,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH05-8214,OH05-8214,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5201,OH08-5201,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5202,OH08-5202,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5203,OH08-5203,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5204,OH08-5204,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5205,OH08-5205,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5206,OH08-5206,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH08-5207,OH08-5207,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,,,B,B,B,B,A,A,,
+OH08-5210,OH08-5210,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH08-5211,OH08-5211,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5213,OH08-5213,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5215,OH08-5215,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-5216,OH08-5216,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-6405,OH08-6405,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+OH08-7438,OH08-7438,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7439,OH08-7439,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7454,OH08-7454,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7457,OH08-7457,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH08-7458,OH08-7458,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7459,OH08-7459,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7460,OH08-7460,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7466,OH08-7466,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,B,,A
+OH08-7469,OH08-7469,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH08-7470,OH08-7470,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH2641,OH2641,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH3614,OH3614,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH5-8127,OH5-8127,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,
+OH5-8157,OH5-8157,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH5-8164,OH5-8164,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH7536,OH7536,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,,,,,,,,,,,,
+OH7814,OH7814,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH7870,OH7870,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH7983,OH7983,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH8243,OH8243,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_3,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH8245,OH8245,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,,,,,,,,
+OH832,OH832,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH8446,OH8446,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OH,USA,OH,,,A,B,A,B,A,A,,A
+OH8556,OH8556,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH86120,OH86120,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH8614-1,OH8614-1,OSU,OSU,mixture,mixture,mixture,SLL,SLL_processing,USA,North America,,,A,B,B,B,A,A,,A
+OH87160,OH87160,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH88119,OH88119,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH9241,OH9241,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH9242,OH9242,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH97L97,OH97L97,OSU,OSU,SLL,SLL_1,SLL_1,SLL,SLL_processing,,,,,,,,,,,,
+OH981049,OH981049,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH981067,OH981067,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,,,,,,,,
+OH981136,OH981136,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,A,B,B,B,A,A,,A
+OH981205,OH981205,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+OH987034,OH987034,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_OH,USA,OH,,,A,B,B,B,A,A,,A
+Ohio_MR13,Ohio MR13,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+Ohio11,Ohio11,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+Old_Brooks,Old_Brooks,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,B,A,,A
+Opalka,Opalka,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Poland,Europe,,,B,B,B,B,A,A,,B
+OR11,OR11,OSU,OSU,SLC,SLC_1,SLC_1,SLC,SLC_cultivated_cherry,USA,North America,,,B,A,B,A,A,A,,A
+Orange_Strawberry,Orange Strawberry,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,B,A,,A
+Oregon_Spring,Oregon Spring,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,,,A
+Oregon_Star,Oregon Star,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_fresh_OR,USA,OR,,,B,B,B,B,A,A,,B
+Oroma_,Oroma ,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OR,USA,OR,,,A,B,B,B,A,A,,A
+OX325,OX325,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,USA,OH,,,,,,,,,,
+Oxheart,Oxheart,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,B,A,,A
+P20-3-1,P20-3-1,OSU,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,,,,B,B,B,A,A,,A
+PARAGON,PI 451990,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,A/B,B,B,B,A,A,,A
+PAS10723,BGV010723,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,France,Europe,,,B,B,B,B,A,A,A,A
+PAS11512,BGV011512,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Portugal,Europe,38,,,,,,,,,
+PAS12594,BGV012594,COMAV,COMAV,SLL,SLL_vintage,SLL_early_breed,SLL,SLL_vintage,France,Europe,,,,B,B,B,A,A,,
+PAS12597,BGV012597,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,France,Europe,,,B,,B,,A,A,,
+PAS12934,BGV912851,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Portugal,Europe,,,B,B,B,B,A,A,A/B,A
+pas16398,BGV015365,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,France,Europe,43,,,,,,,,,
+pas16401,BGV015368,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Asia,SLL,SLL_vintage,France,Europe,,,B,B,B,A,B,A,A,A
+PAS16651,PAS16651,COMAV,COMAV,SLL,SLL_1,SLL_1,SLL,SLL,Salvador,Mesoamerica,13,,,,,,,,,
+PAS16653,PAS16653,COMAV,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Salvador,Mesoamerica,13,,,,,,,,,
+PAS16667,PAS16667,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Salvador,Mesoamerica,13,,,,,,,,,
+PAS4207,BGV004207,COMAV,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,Portugal,Europe,37,,,,,,,,,
+PAS9488,BGV009488,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,France,Europe,,,B,B,B,B,B,A,,
+PE9,BGV007946,COMAV,COMAV,SP,SP_Peru,SP_Peru_4,SP,SP_Peru_C3,Peru,Peru_C3,-7,,,,,,,,,
+Pearson,LA0012,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_processing,USA,North America,39,,,,,,,,,
+Peron,Peron,GLVWG,OSU,SLC,SLC_non_Andean,SLC_world,SLL,SLL_vintage,,,,,B,B,A,B,B,A,,A
+Peto_460,PI 600920,USDA,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,USA,North America,36,,,,,,,,,
+Peto95-43,LA3528,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,USA,North America,,,,,,,,,,
+PI_379051,LA1338,TGRC,OSU,conflicting classification,conflicting classification,conflicting classification,SLC,SLC_Ecuador,Ecuador,Ecuador,-1,,,,,,,,,
+PI_114490,PI 114490,USDA,OSU,mixture,mixture,mixture,SLC,SLC,United Kingdom,Europe,51,,,,,,,,,
+PI_124035,PI 124035,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Peru,Peru_C5,-12,,,,,,,,,
+PI_124037,PI 124037,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Chile,South America,-39,,,,,,,,,
+PI_127820,PI 127820,USDA,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_South America,Bolivia,South America,-16,,,,,,,,,
+PI_128216,PI 128216,USDA,OSU,SP,SP_Peru,SP_non_Andean,SP,SP_South America,Bolivia,South America,-16,,,,,,,,,
+PI_128586,PI 128586,USDA,OSU,mixture,mixture,mixture,SLC,SLC_Costa Rica,Costa Rica,Costa Rica,-32,,,,,,,,,
+PI_128592,PI 128592,USDA,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_vintage,Chile,South America,-33,,,,,,,,,
+PI_129026,PI 129026,USDA,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_vintage,Ecuador,Ecuador_C3,-2,,,,,,,,,
+PI_129033,PI 129033,USDA,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_vintage,Ecuador,Ecuador_C3,-2,,,,,,,,,
+PI_129084,PI 129084,USDA,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_vintage,Colombia,Colombia,4,,,,,,,,,
+PI_129128,PI 129128,USDA,OSU,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC_Mesoamerica,Panama,Mesoamerica,9,,,,,,,,,
+PI_129142,PI 129142,USDA,OSU,SLC,SLC_Peru,SLC_Peru_2,SLL,SLL_vintage,Ecuador,Ecuador_M2,-3,,,,,,,,,
+PI_155372,PI 155372,USDA,OSU,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC,Peru,Peru_I2,-9,,,,,,,,,
+PI_159009,PI 159009,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Peru,Peru_C5,-12,,,,,,,,,
+PI_196297,PI 196297,USDA,OSU,SLC,SLC_Ecuador,SLC_vintage,SLL,SLL_Mesoamerica,Nicaragua,Mesoamerica,12,,,,,,,,,
+PI_270408,PI 270408,USDA,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Mexico,Mesoamerica,20,,,,,,,,,
+PI_270430,PI 270430,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Mexico,Mesoamerica,18,,,,,,,,,
+PI_272703,PI 272703,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Guatemala,Mesoamerica,15,,,,,,,,,
+PI_281553,PI 281553,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,Japan,Asia,,,,,,,,,,
+PI_340906,PI 340906,USDA,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC_cultivated_cherry,USA,North America,,,,,,,,,,
+PI_365914,PI 365914,USDA,OSU,SP,SP_mixture,SP_mixture,SP,SP_Ecuador_C2,Ecuador,Ecuador_C2,-1,,,,,,,,,
+PI_378997,LA1290,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_2,SLC,SLC_Peru_I2,Peru,Peru_I2,-11,,,,,,,,,
+PI_379003,LA1314,TGRC,OSU,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I3,Peru,Peru_I3,-12,,,,,,,,,
+PI_406759,PI 406759,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_Costa Rica,Costa Rica,Costa Rica,9,,,,,,,,,
+PI_470262,PI 470262,USDA,OSU,SLC,SLC_non_Andean,SLC_Asia,SLC,SLC_Asia,Indonesia,Asia,-3,,,,,,,,,
+PI_564169,PI 564169,USDA,OSU,mixture,mixture,mixture,SLL,SLL_fresh,USA,North America,43,,,,,,,,,
+PI_647532,PI 647532,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+PI_65023,PI 65023,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,Spain,Europe,39,,,,,,,,,
+PI126942,PI126942,USDA,OSU,SLC,SLC_Peru,SLC_Peru_3,SLC,SLC_Peru_I2,Peru,Peru_I2,-9,,,,,,,,,
+PI375937_1,PI 375937,USDA,OSU,mixture,mixture,mixture,SP,SP,Mexico,Mesoamerica,,,,,,,,,,
+PI387854,PI387854,USDA,COMAV,SLC,SLC_Ecuador,SLC_vintage,SLC,SLC_South America,Bolivia,South America,-20,,,,,,,,,
+PI406761,PI406761,USDA,COMAV,SLC,SLC_non_Andean,SLC_Costa_Rica,SLC,SLC_Costa Rica,Costa Rica,Costa Rica,10,,,,,,,,,
+PI406781,PI406781,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Costa Rica,Costa Rica,Costa Rica,11,,,,,,,,,
+PI406823,PI406823,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC_Mesoamerica,Salvador,Mesoamerica,13,,,,,,,,,
+PI406835,PI406835,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Salvador,Mesoamerica,13,,,,,,,,,
+PI406972,PI406972,USDA,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC_Mesoamerica,Nicaragua,Mesoamerica,12,,,,,,,,,
+PI438556,PI438556,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SLC,SLC,Belize,Mesoamerica,18,,,,,,,,,
+PI452284,PI452284,USDA,COMAV,SLC,SLC_non_Andean,SLC_Mesoamerica,SP,SP_Mesoamerica,Honduras,Mesoamerica,14,,,,,,,,,
+PI487625,PI 487625,USDA,COMAV,SLC,SLC_Ecuador,SLC_Ecuador_3,SP,SP_Costa Rica,Costa Rica,Costa Rica,9,,,,,,,,,
+PI92866,PI92866,USDA,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC_Asia,China,Asia,39,,,,,,,,,
+Piedmont,Piedmont,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+Pomodoro,PI 647486,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,B,B,,B,B,A,,A
+Ponderosa,PI 270206,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_vintage,USA,North America,,,A,B,A,B,A,A,,A
+Principe_Borghese,LA0089,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_cultivated_cherry,Italy,Europe,,,A,B,,A,A,B,,A
+Prospero,PI 157993,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,B,A/B,B,A/B,B,A,,A
+PS696,PS696,Seminis,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing,,,,,,,,,,,,
+PSPL153,PI 270443,USDA,OSU,SLC,SLC_non_Andean,SLC_Mesoamerica,SP,SP,Mexico,Mesoamerica,20,,,,,,,,,
+PT206,PAS014668,COMAV,COMAV,SLL,SLL_1,SLL_1,SLL,SLL,Peru,Peru_I1,-6,,,,,,,,,
+PT210BIS,BGV015382,COMAV,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_M4,Peru,Peru_M4,-5,,,,,,,,,
+PT234,PT234,COMAV,COMAV,SLL,SLL_1,SLL_1,SLL,SLL,Peru,Peru_C3,-7,,,,,,,,,
+PT53,PAS014528,COMAV,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_M4,Peru,Peru_M4,-5,,,,,,,,,
+PT61,BGV015381,COMAV,COMAV,SP,SP_Peru,SP_Peru_1,SP,SP_Peru_M4,Peru,Peru_M4,-5,,,,,,,,,
+Purple_Clabash,PI 290857,USDA,OSU,SLC,SLC_non_Andean,SLC_Asia,SLL,SLL_vintage,USA,North America,,,,,,,,,,
+R001,R001,Ridgetown,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_Ontario,Canada,Ontario,,,A,B,B,B,A,A,,A
+R9812,R9812,Ridgetown,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_Ontario,Canada,Ontario,,,A,B,B,B,A,A,,
+R996,R996,Ridgetown,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_Ontario,Canada,Ontario,,,A,B,B,B,A,A,,A
+R997,R997,Ridgetown,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_Ontario,Canada,Ontario,,,A,B,A,B,A,A,,A
+Rinon_PI_118783,PI 118783,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_vintage,Venezuela,South America,10,,,,,,,,,
+Rinon_PI_98097,PI 98097,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Cuba,Mesoamerica,22,,,,,,,,,
+RioGrande,LA3343,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL,USA,North America,,,,,,,,,,
+RioGrande_david,LA3343,TGRC,OSU,SLL,SLL_1,SLL_1,SLL,SLL_vintage,USA,North America,,,,,,,,,,
+ROD271,BGV011178,COMAV,COMAV,mixture,mixture,mixture,SLL,SLL,Poland,Europe,,,B,A,B,B,B,A,A,A
+RomaVF,RomaVF,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,A,B,B,B,A,B,,A
+Rosa_o_Monserrat,PI 647305,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,41,,,,,,,,,
+RP75/59,RP75/59,COMAV,COMAV,mixture,mixture,mixture,SLL,SLL_fresh,,,,,,,,,,,,
+Rumi_Banjan,PI 125831,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_vintage,Afganistan,Asia,34,,,,,,,,,
+Rutgers,LA1090,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,,,,,,,,
+San_Marzano,LA3008,TGRC,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,,,,,,,,
+Sao_Paulo,PI 117563,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_vintage,Brazil,South America,-22,,,,,,,,,
+Saucy,Saucy,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_1,SLL,SLL_processing_OR,USA,OR,,,A,B,B,B,A,A,,A
+Severianin,Severianin,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+SG07-318,SG07-318,OSU,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,,,,,,,,,,,,
+SG07-320,SG07-320,OSU,OSU,mixture,mixture,mixture,SLLxSP,SLLxSP,,,,,,,,,,,,
+SG07-328,SG07-328,OSU,OSU,mixture,mixture,mixture,SLL,SLL_hybrid,USA,North America,,,,,,,,,,
+SG07-335,SG07-335,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_hybrid,USA,North America,,,,,,,,,,
+SG07-338,SG07-338,OSU,OSU,mixture,mixture,mixture,SLL,SLL_hybrid,USA,North America,,,,,,,,,,
+SG08-423,SG08-423,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_hybrid,USA,OH,,,,,,,,,,
+SG08-426,SG08-426,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_hybrid,USA,OH,,,,,,,,,,
+SG09-403,SG09-403,OSU,OSU,mixture,mixture,mixture,SLLxSpenelli,SLLxSpenelli,,,,,,,,,,,,
+Siletz,Siletz,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+SLL_koenig,LA3475,TGRC,Koenig et al.,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,,,,,,,,,,,,
+Sponzillo,Sponzillo,OSU,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,Italy,Europe,,,A,A,B,A,A,B,,A
+Stupice,PI 250436,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Chzech Republic,Europe,50,,,,,,,,,
+SUDL14,BGV004584,COMAV,COMAV,SLC,SLC_non_Andean,SLC_Colombia,SLC,SLC,Colombia,Colombia,5,,,,,,,,,
+Summit,Summit,NCSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh_NC,USA,NC,,,,,,,,,,
+Sun1642,Sun1642,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,A,B,B,B,A,A,,B
+T1003,T1003,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A,B,A,B,A,A,,A
+T1173,T1173,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,A,B,B,B,B,B,,A
+T1693,T1693,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A,B,B,B,A,B,,A
+T1697,T1697,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,,,A/B,B,A,B,A,A,,A
+T1708,T1708,IPK,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,,,,,B,B,B,B,B,A,,A
+T-5,LA2399,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+T-9,LA2590,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+T909,T909,IPK,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,,,,,B,,,,A,A,,A
+T984,T984,IPK,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,A,B,B,B,A,A,,A
+Tainan,PI 647556,USDA,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,Taiwan,Asia,23,,,,,,,,,
+Tomate,PI 99782,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Peru,Peru_C5,-11,,,,,,,,,
+Tomate_del_lugar,PI 647447,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Bolivia,South America,-11,-68,,,,,,,,
+Tres_Cantos,Tres Cantos,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Spain,Europe,,,B,B,B,B,A,A,,A
+Tropic,Tropic,OSU,OSU,SLL,SLL_fresh,SLL_fresh_1,SLL,SLL_fresh,,,,,B,B,B,B,A,A,,A
+Turrialba,PI 212062,USDA,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Costa Rica,Mesoamerica,10,,,,,,,,,
+UC-204B,LA4437,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,B,B,B,B,,A,,A
+UC-82,UC-82,TGRC,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,,,,,,,,
+UC-82_comav,LA1706,TGRC,COMAV,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL,,,,,,,,,,,,
+UC-MR20,LA2937,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+UC-N28,LA2938,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+UC-T338,LA2939,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+UC-TR51,LA2941,TGRC,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,,,,,,,,
+Unilever265,Unilever265,OSU,OSU,SLL,SLL_processing_1,SLL_processing_1_2,SLL,SLL_processing_CA,USA,CA,,,A,B,B,B,A,A,,A
+UPV23616,BGV007104,COMAV,COMAV,SP,SP_Ecuador,SP_Ecuador_1,SP,SP_Ecuador_C1,Ecuador,Ecuador_C1,0,,,,,,,,,
+UPV2909,UPV2909,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,42,,,,,,,,,
+UPV29739,PAS015573,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,China,Asia,23,,,,,,,,,
+UPV29812,BGV015359,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,42,,,,,,,,,
+UPV29814,PAS015648,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,42,,,,,,,,,
+UPV29815,PAS015649,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,42,,,,,,,,,
+UPV29816,PAS015650,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,42,,,,,,,,,
+UPV29817,PAS015651,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Italy,Europe,43,,,,,,,,,
+UPV7757,BGV014911,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Spain,Europe,,,B,B,B,B,A,A,A,A
+VERDI,VERDI,commercial,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL,,,,,B,B,B,B,A,A,,
+VFNT_Cherry,LA1221,TGRC,OSU,mixture,mixture,mixture,SLC,SLC_cultivated_cherry,,,,,,,,,,,,
+VIR3180,VIR3180,VIR,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Cuba,Mesoamerica,23,,,,,,,,,
+VIR3291,VIR3291,VIR,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_early_breed,Estonia,Europe,,,B,B,B,B,A,A,A,A
+VIR3474,VIR3474,VIR,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Sudan,Africa,,,B,B,B,B,A,A,A,A
+VIR3479,VIR3479,VIR,COMAV,SLC,SLC_non_Andean,SLC_world,SLC,SLC,Guinea-Bissau,Africa,12,,,,,,,,,
+VIR3494,VIR3494,VIR,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Cuba,Mesoamerica,23,,,,,,,,,
+VIR3507,VIR3507,VIR,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,Cuba,Mesoamerica,23,,,,,,,,,
+VIR3644,VIR3644,VIR,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_early_breed,Pakistan,Asia,,,A,B,B,,A,,,
+VIR3847,VIR3847,VIR,COMAV,SLL,SLL_vintage,SLL_Mesoamerica,SLC,SLC,Burundi,Africa,-3,,,,,,,,,
+VIR4197,VIR4197,VIR,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC,Ethiopia,Africa,8,,,,,,,,,
+VIR4611,VIR4611,VIR,COMAV,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_vintage,Zimbaue,Africa,,,B,B,B,B,A,A,,
+Voyage,Voyage,OSU,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL,,,,,,,,,,,,
+W-C_1050,PI 390510,USDA,OSU,SLC,SLC_mixture,SLC_mixture,SLC,SLC,Ecuador,Ecuador_C3,-2,,,,,,,,,
+W-C_1537,PI 406952,USDA,OSU,SLL,SLL_vintage,SLL_vintage_1,SLC,SLC_Mesoamerica,Nicaragua,Mesoamerica,12,,,,,,,,,
+White_Queen,White Queen,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,USA,North America,,,B,B,B,B,B,A,,A
+Willamette_VF,Willamette VF,OSU,OSU,SLL,SLL_fresh,SLL_vintage/fresh,SLL,SLL_fresh,USA,North America,,,B,B,B,B,A,A,,A
+WIR3595,BGV008361,COMAV,COMAV,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,Russia,Europe,,,A,A,A,B,A,B,A,A
+Yellow_Pear,Yellow Pear,OSU,OSU,SLC,SLC_non_Andean,SLC_world,SLC,SLC_cultivated_cherry,,,,,A,B,A,A,A,B,,A
+Yellow_Stuffer,Yellow_Stuffer,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,,,,,,,,
+Yellow_Stuffer_david,Yellow_Stuffer,OSU,OSU,SLL,SLL_vintage,SLL_vintage_1,SLL,SLL_vintage,,,,,B,B,B,B,A,A,,A
+Zapotec_Pink_Ribbed,Zapotec_Pink_Ribbed,OSU,OSU,SLL,SLL_vintage,SLL_Mesoamerica,SLL,SLL_Mesoamerica,,Mesoamerica,,,A,B,B,B,B,A,,A
+Zhongza_No._4,,,,,,,,,,,,,,,,,,,,

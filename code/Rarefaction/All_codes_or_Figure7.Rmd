@@ -6,26 +6,28 @@ output: html_document
 ---
 ---
 ```{r}
-library(tidyverse)
+library(dplyr)
 library(ggplot2)
 library(gridExtra)
 library(grid)
+library(tidyr)
 ```
 
 # Data inspection
-## Two SNP dataset will be used in the following analysis
+Two SNP dataset will be used in the following analysis
 ```{r}
-geno_full_ori <- read.csv("final_data.csv") #3341 SNPs included after filtering
-geno_ld_ori <- read.csv("rarefaction_LD_data.csv") # 6471 SNPs included without filtering by position 
+geno_full_ori <- read.csv("../../data/final_data.csv") #2959 SNPs included after filtering
+geno_ld_ori <- read.csv("../../data/rarefaction_LD_data.csv") # 6471 SNPs included without filtering by position 
 unique(geno_full_ori$solcap_snp_sl_100003)
 unique(geno_ld_ori$solcap_snp_sl_100003)
 ```
 
-# Re-coding
-## Software `adze` will be used for rarefaction calculation. Data need to be recoded for specific format (same as used in `STRUCTURE`)
+# Re-coding  
+  
 ### For small SNP dataset with 3341 SNPs
-#### Na:-9
-#### AA-11 TT-22 CC-33 GG-44 
+- Software `adze` will be used for rarefaction calculation. Data need to be recoded for specific format (same as used in `STRUCTURE`)
+- Na:-9
+- AA-11 TT-22 CC-33 GG-44 
 ```{r}
 geno_full_ori[]=lapply(geno_full_ori,as.character)
 geno_full_ori[is.na(geno_full_ori)] <- -9 # missing data coded as `-9`
@@ -97,7 +99,6 @@ geno_ld_copy1 <- geno_ld_ori %>%
   replace(geno_ld_copy1 == "GA",4) %>%
   replace(geno_ld_copy1 == "GT",4) %>%
   replace(geno_ld_copy1 == "GC",4) 
-unique(geno_ld_copy1$solcap_snp_sl_100003)
 
 geno_ld_copy2 <- geno_ld_ori 
 geno_ld_copy2 <- geno_ld_ori  %>%
@@ -118,18 +119,18 @@ geno_ld_copy2 <- geno_ld_ori  %>%
   replace(geno_ld_copy2 == "GA",1) %>%
   replace(geno_ld_copy2 == "GT",2) %>%
   replace(geno_ld_copy2 == "GC",3) 
- unique(geno_ld_copy2$solcap_snp_sl_100003)
  
 formatted_geno_ld <- rbind(geno_ld_copy1,geno_ld_copy2) %>% arrange(Sample)
 write.table(formatted_geno_ld,"formatted_geno_ld.txt")
 
 ```
 
-# Grouping
-## Group samples based on their genetic group information. 
-## Six subgroups are to be analyzed here, and we manually labelled them based on their passport information.
+# Grouping  
+
+- Group samples based on their genetic group information. 
+- Six subgroups are to be analyzed here, and we manually labelled them based on their passport information.
 ```{r}
-passport <- read.csv("./12864_2015_1444_MOESM1_ESM.csv")
+passport <- read.csv("../../data/12864_2015_1444_MOESM1_ESM.csv")
 match_infor <- select(passport,`Sample`,`group1`)
 unique(match_infor$group1)
 
@@ -151,9 +152,11 @@ others_sample <- subset(match_infor,group1 %in% others)
 
 ```
 
-# Labelling samples with group together with genotype information
-## For small SNP dataset with 3341 SNPs
-### Label with By subgroup
+# Labelling samples with group together with genotype information  
+
+### For small SNP dataset with 3341 SNPs  
+
+- Label with By subgroup
 ```{r}
 SP_geno_full <- subset(formatted_geno_full, Sample %in% SP_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SP")
 SLC_Andean_geno_full <- subset(formatted_geno_full, Sample %in% SLC_Andean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_Andean")
@@ -164,17 +167,16 @@ SLL_processing_geno_full <- subset(formatted_geno_full, Sample %in% SLL_processi
 #others_geno_full <- subset(formatted_geno_full, Sample %in% others_sample$Sample) %>% arrange(Sample) %>% mutate(group = "others")
 ```
 
-### combine six subgroups together
+- combine six subgroups together
 ```{r}
 geno_plus_group_full <- rbind(SP_geno_full,SLC_Andean_geno_full) %>% rbind(SLC_non_Andean_geno_full) %>% rbind(SLL_vintage_geno_full) %>% rbind(SLL_fresh_geno_full) %>% rbind(SLL_processing_geno_full) 
-adze_full <- geno_plus_group_full[,c(1,3343,2:3342)] 
-head(adze_full,20)
+adze_full <- geno_plus_group_full[,c(1,2961,2:2960)]
 
 write.table(adze_full,"adze_full.txt")
 write.csv(adze_full,"adze_full.csv")
 ```
 
-## For large SNP dataset with 6471 SNPs
+### For large SNP dataset with 6471 SNPs
 ```{r}
 SP_geno_ld <- subset(formatted_geno_ld, Sample %in% SP_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SP")
 SLC_Andean_geno_ld <- subset(formatted_geno_ld, Sample %in% SLC_Andean_sample$Sample) %>% arrange(Sample) %>% mutate(group = "SLC_Andean")
@@ -185,21 +187,20 @@ SLL_processing_geno_ld <- subset(formatted_geno_ld, Sample %in% SLL_processing_s
 #others_geno_ld <- subset(formatted_geno_ld, Sample %in% others_sample$Sample) %>% arrange(Sample) %>% mutate(group = "others")
 ```
 
-### combine six subgroups together
+- combine six subgroups together
 ```{r}
 geno_plus_group_ld <- rbind(SP_geno_ld,SLC_Andean_geno_ld) %>% rbind(SLC_non_Andean_geno_ld) %>% rbind(SLL_vintage_geno_ld) %>% rbind(SLL_fresh_geno_ld) %>% rbind(SLL_processing_geno_ld)
 adze_ld <- geno_plus_group_ld[,c(1,6473,2:6472)] 
-head(adze_ld,20)
 write.table(adze_ld,"adze_ld.txt")
 write.csv(adze_ld,"adze_ld.csv")
 ```
 
-#With the output files from above, we got rarefaction analysis result from `adze` software. Next, we load these output file again in R and visualize them with ggplot
+- With the output files from above, we got rarefaction analysis result from `adze` software. Next, we load these output file again in R and visualize them with ggplot
 ```{r}
-full_result_r_ori <- read.table("./adze_r.txt")
-full_result_p_ori <- read.table("./adze_p.txt")
-filtered_result_r_ori <- read.table("./adze_filtered_r.txt")
-filtered_result_p_ori <- read.table("./adze_filtered_p.txt")
+full_result_r_ori <- read.table("../../data//adze_r.txt")
+full_result_p_ori <- read.table("../../data//adze_p.txt")
+filtered_result_r_ori <- read.table("../../data/adze_filtered_r.txt")
+filtered_result_p_ori <- read.table("../../data//adze_filtered_p.txt")
 
 full_result_r <- select(full_result_r_ori,c(1,2,4)) # column 1 - group name ; column 2- number of individual ;column 4 - statitics from adze
 full_result_p <- select(full_result_p_ori,c(1,2,4)) 
@@ -210,6 +211,8 @@ filtered_result_p <- select(filtered_result_p_ori,c(1,2,4))
 colnames(filtered_result_r) <- c("Group","num_indv","num_allele_per_loci")
 colnames(filtered_result_p) <- c("Group","num_indv","f_per_allele")
 
+full_result_r <- filter(full_result_r,`Group`!="others")
+full_result_p <- filter(full_result_p,`Group`!="others")
 full_result_r[,2] <- full_result_r[,2]/2 #each individual has two lines in data
 full_result_p[,2] <- full_result_p[,2]/2
 filtered_result_r <- filter(filtered_result_r,`Group`!="others")
@@ -218,12 +221,9 @@ filtered_result_r[,2] <- filtered_result_r[,2]/2
 filtered_result_p[,2] <- filtered_result_p[,2]/2
 
 
-head(full_result_r)
-head(full_result_p)
-
 ```
 
-#Visualization
+# Visualization
 
 ```{r}
 A <- ggplot(data = filtered_result_r) + 
@@ -248,7 +248,7 @@ print(D)
 
 ```
 
-#Save Image
+# Save Image
 ```{r}
 pdf("Figure7.pdf",width = 1000,height = 1000)
 grid.arrange(A,B,C,D,nrow = 2, ncol = 2)
