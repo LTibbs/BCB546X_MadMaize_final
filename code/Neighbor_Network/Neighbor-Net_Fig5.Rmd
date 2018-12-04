@@ -1,17 +1,13 @@
 ---
-title: "Figure5"
+title: "MadMaize (Blanca et al. 2015): Figure5"
 author: "Qi Mu"
 date: "December 3, 2018"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
-## R Markdown
-
 This is an R Markdown file for reproducing analysis of Figure 5 from Blanca et al. 2015 BMC Genomics paper - neighbor net analysis.
+
+### Load libraries
 
 ```{r load libraries}
 library("tidyverse")
@@ -20,7 +16,7 @@ library("hierfstat")
 library("phangorn")
 ```
 
-# Read the data
+### Read the data
 ```{r read data}
 Geno <- read_csv("../../data/final_data.csv")
 #Geno
@@ -31,7 +27,7 @@ info <- read_csv("../../data/Suppl_Table_1.csv")
 dim(info) # 1008 individuals
 ```
 
-# Process and format the data. 
+### Process and format the data. 
 Combine the group information with SNP data, and filtering out any groups with less 5 individuals.
 ```{r join info$group2 with Geno, filtering NA and indivudals<6/group}
 # subsetting sampleID and group2 information into group
@@ -62,10 +58,12 @@ Geno_group_filtered <- Geno_group %>%
   select(- sample_counts) # sample_counts column has to be removed after joining.
 
 Geno_group_filtered # after joining and removing, there are 760 rows (individuals). Total 2959 columns.
+
+write_csv(Geno_group_filtered, 'Figure5_Output/Geno_group_filtered.csv', col_names = T) # save the file in folder
 ```
 
-# Convert to `genind` and `hierfstat` objects
-To work with the data, we need to convert the dataset to a “genind” object. To achieve this, we create a matrix with only genotypes, and keep only a subset of the first 11 SNP loci (to make calculations faster). The result can then be converted to a “genind” object (for package adegent). The “genind” object can then easily be converted into a “hierfstat” (package hierfstat) object.
+### Convert to `genind` and `hierfstat` objects
+To work with the data, we need to convert the dataset to a “genind” object.The result can then be converted to a “genind” object (from package adegent). The “genind” object can then easily be converted into a “hierfstat” (package hierfstat) object.
 `genind` is used to store individual genotypes,`hierfstat` is used to estimate hierarchical F-statistics for any number of hierarchical levels using the method described in Yang, R.C. (1998) Estimating hierarchical F-statistics. Evolution 52(4):950-956. It also contains functions allowing to test the significance of population differentiation.
 ```{r convert data}
 Geno_set <- Geno_group_filtered [, -c(1,2)] # Remove the first two colums and leave only SNP data
@@ -84,7 +82,7 @@ dim(Geno_set2)
 #Geno_set2_tb
 ```
 
-# Genetic diversity (observed and expected heterozygosity)
+### Genetic diversity (observed and expected heterozygosity)
 `summary` information related to compute genetic diversity. This chunck is for myself's understanding, not the data shown in the paper.
 ```{r Geno_set1 with adegenet library functions}
 div <- summary(Geno_set1)
@@ -100,9 +98,9 @@ plot(div$Hobs,div$Hexp, xlab="Hobs", ylab="Hexp",
 
 bartlett.test(list(div$Hexp, div$Hobs)) # a test : H0: Hexp = Hobs
 ```
-We observed that heterozygosity varies among loci. We observed there is significant differences between expected and observed heterozygosity. The observed heterozygosity is significantly lower than the expected, meaning different groups are quite homogenous among themselves.
+I observed that heterozygosity varies among loci. I observed there is significant differences between expected and observed heterozygosity. The observed heterozygosity is significantly lower than the expected, meaning different groups are quite homogeneous among themselves.
 
-# Observed and expected heterozygosity: Fst based on locus
+### Observed and expected heterozygosity: Fst based on locus
 These statistics come from the package hierfstat. All the parameters are caclulated based on a single SNP site across groups `perloc` and `overall` SNP sites. This chunck is also for myself's understanding, not the data shown in the paper.
 ```{r}
 stats <- basic.stats(Geno_set1) # Dest per locus is also included in the output
@@ -111,19 +109,19 @@ stats$overall # only checking the overall stats, as the per locus result is too 
 #wc(Geno_set1) # Weir and Cockerham's estimate for Fst and Fis. No need to use this method
 ```
 
-# Pairwise Fst: produce pairwise Fst matrix 
+### Pairwise Fst: produce pairwise Fst matrix 
 `genet.dist` estimates one of several genetic distances among all pairs of populations, including Fst. The method of calculation is determined by the argument `method`. Estimate pairwise FSTs according to Nei, M. (1987) Molecular Evolutionary Genetics. Columbia University Press. **This calculation will take ~35mins to run.**
 ```{r pairwise Fst matrix}
 FstMatrix <- genet.dist(Geno_set1, method = "Nei87")
 ```
 
-# Generate nexus file for constructing neighbor-net
+### Generate nexus file for constructing neighbor-net
 The output file will be used in SplitsTree4 (v 4.14.6) to generate the figure. 
 ```{r use phangorn package to convert to nexus file format}
-write.nexus.dist(FstMatrix, file = "Figure5/FstMatrix.nxs")
+write.nexus.dist(FstMatrix, file = "Figure5_Output/FstMatrix.nxs")
 ```
 
-# Contruct an unrooted Neighbor-Net (D. Bryant and Moulton 2004) using `phangorn` package in R
+### Contruct an unrooted Neighbor-Net (D. Bryant and Moulton 2004) using `phangorn` package in R
 We can still generate the figure by R, but it is not nicely looking. Instead, I used the SplitsTree4 method suggested by the paper to generate the final figure using the nexus file generated above.
 ```{r phangorn}
 nnet <- neighborNet(FstMatrix)
