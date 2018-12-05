@@ -42,9 +42,7 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 	- Counted number of occurrences of each base. Divided largest count by the total length of the concatenated string. If result was >0.95, SNP was removed. 
 	- Authors state that 1137 SNPs were removed in this way (6343 remaining). We removed 998 (6471 remaining). 
 
-4. Removed SNPs separated by less than 0.1 cM.
-
-4a. Created consensus map.
+4. Created consensus map.
 	- According to the authors, "genetic distances were based on the genetic maps of Sim et al." (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563)." However, that reference has eight different genetic maps, and the authors don't state which one(s) they used.
 		1. The genetic map (Table S8) seemed the most complete, so it was used as the basis of our code. Table 8 contains the pre-existing genetic maps of two panels of tomato crosses.
 		2. The authors would have had to create a consensus map from this genetic map, but they don't state how they did. We used the package LPmerge (Jeffrey Endelman, "Merging Linkage Maps by Linear Programming, 2018). 
@@ -54,7 +52,7 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 		1. Manually inspected and chose consensus maps based on the lowest mean RMSE, and broke ties using the lowest sd for RMSE (https://potatobreeding.cals.wisc.edu/wp-content/uploads/sites/161/2014/01/LPmerge_tutorial.pdf).
 		2. Used rbind to merge the consensus maps for each chromosome into one consensus map for the entire genome with 5296 SNPs.
 
-4b. Rectified discrepancies between SNPs listed in raw dataset and those in the consensus map.
+5. Rectified discrepancies between SNPs listed in raw dataset and those in the consensus map.
 	- 4206 SNPs were shared between the raw dataset and the consensus map.
 		1. Additionally, the consensus map had 1090 unique SNPs, and the raw dataset had 2265 unique SNPS.
 	- The 1090 unique SNPs in the consensus map were actually SNPs in the raw dataset, but they were given different names by by Sim et al.
@@ -62,7 +60,7 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 	- However, because we were using the most complete tomato genetic maps, the 2265 unique SNPs in the raw dataset were determined to simply be SNPs that had never been mapped.
 		1. Because the authors stated that "SNPs that mapped closer than 0.1 cM were removed", it was decided that the unmapped SNPs would be retained as they were never mapped and so could not be known to be separated by less than 0.1 cM.
 
-4c. Removed SNPs separated by less than 0.1 cM
+6. Removed SNPs separated by less than 0.1 cM
 	- The authors did not state how they decided which SNPs to remove.
 		1. Therefore, we first calculated the distances between each SNP.
 		2. Kept the first SNP found and marked all SNPs within the next 0.1 cM for removal.
@@ -72,10 +70,10 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 	- Finally, filtered out all SNPs marked for removal. 
 	- Authors state that 4030 SNPs were removed (processed dataset of 2313 SNPs). We removed 3510 (processed dataset of 2961 SNPs).
 
-5. Transposed the processed dataset.
+7. Transposed the processed dataset.
 	- Had to remove duplicate accessions, so accessions were transposed to rows.
 		
-6. Removed duplicate accessions (lines that were genotyped twice) using passport information to decide which of each duplicate to remove.
+8. Removed duplicate accessions (lines that were genotyped twice) using passport information to decide which of each duplicate to remove.
 	- Imported passport information (12864_2015_1444_MOESM1_ESM.txt in the Data directory).
 	- Changed accession names in the passport information to match accession names in the raw dataset.
 	- According to the authors, an accession which was duplicated was removed completely "unless it was clear based on the passport information, which genotype was correct."
