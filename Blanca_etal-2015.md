@@ -277,8 +277,44 @@ Comparing our results with those in the published paper, they look generally sim
 2. SLL processing and SLL vintage have low number of alleles per loci.
 3. Speaking of frequecy of private alleles, SP group shows obvious much higher result while the other groups all have similar frequencies which are lower than 0.05. This makes sense considering that SP group is the most ancient group with has high diversity. 
   
-Howerver, there are some differences which are also obvious. 
+However, there are some differences which are also obvious. 
 1. The most difference comes from SLC_non_Andean group, which has similar result in figureA,C with SLL vintage group, but in our result, it turns out to have much higher number of alleles per loci. The reason for this could be mainly due to the grouping issue in my opinion, which I mentioned above that I grouped the individuals manually. Their might be some heterozygous individuals misgroupped to SLC_non_Andean group.
 2. The x and y axis scale are a little different between the results. Our individual number are less than theirs while the number of alleles per loci has higher level. I considered two reasons for this. First of all, of course, our filtered SNP data are not exactly the same as theirs, especially when filtered by position. Secondly, there was one critical step in rarefaction analysis when we adjusted the parameter of missing data rate. This step affected the final individual numbers a lot when I ran the program. They didn't mention in detail about the parameter setting in the paper, so I could not guarantee that I used the same threshold as they did. Plus, in terms of the number of individuals, the outputs of ADZE use individual as line, which is half of the number of samples; in my figures, I use individuals to mean samples, which makes more sense to me. In this way, if their plot used directly the number from outputs (without dividing by 2), we can have some differences in scale. 
 
 To sum up, the result of this section are reproducible.
+<<<<<<< HEAD
+
+## Figure 8. Comparing frequencies of ancestral and derived alleles for 6 fruit weight and shape genes among accession groups: Ben Cortes
+The annotated code for this section is located in the Weight_Shape directory as a README.Rmd file. Additionally, a .jpg of Figure 8 is also in this directory.
+
+Figure 8 shows gene frequencies for the weight and shape phenotypes across the genetic groups.
+
+1. Extracting accessions by group fro the passport information file.
+	- In the passport information (12864_2015_1444_MOESM1_ESM.txt in the Data directory), each accession has a column with the allele for each of the 6 weight and shape genes.
+		- These alleles are listed as "A," "B," or "C," but the authors don't state which one(s) are ancestral or derived.
+		- Each accession also has a column "species," "group1," and "group2."
+		- In Figure 8, 15 groups of accessions were analyzed for allele frequency. These 15 groups, and the number of accessions in them, are listed in Table 2.
+	- Separated accessions out by species using filter (all 15 groups belonged to one of the 3 species, SP, SLC, or SLL).
+	- Further separated into an individual tibble for each individual group based first on the group1 column and then the group2 column.
+		- In many cases, had to look at the passport information file to find criteria to filter by.
+		- For each tibble for each group, the number of accessions was less than 10 off from the number of accessions per group in the authors' data (Table 2).
+		- Added an additional column to each tibble populated at each row with the name of the group.
+	- Merged these tibbles into one large tibble.
+		- Essentially created long format data.
+		- Removed all columns except the group name column and the 6 weight and shape genes columns.
+		- Made group name column into a column of 15 factors (1 for each group name) so as to be able to arrange it later during plotting.
+		- Separated this tibble into 6 tibbles, one for each gene, creating tibbles with one column for the allele for the gene and the other for the group name.
+		- For each of the 6 tibbles, removed accessions where the allele was either missing or anything other than "A" or "B."
+
+2. Created a stacked barplot for each gene.
+	- Made as a function to make replication easier.
+	- Calculated binomial confidence intervals for each group.
+		- Counted number of accessions per group.
+		- Counted number of "A"s in each group (A was determined by later plotting to be the ancestral allele).
+		- Used binconf from the Hmisc package to calculate the upper and lower binomial confidence intervals for each group.
+	- Plotted data.
+		- 15 groups names were ordered along the X axis according to the order in the original figure.
+		- Stacked barplot filled with the counts of A. Standardize to 100%.
+		- Added lines using linearrange to show binomial confidence intervals using those calculated above.
+	
+3. Use grid.arrange from gridExtra package to combine the 6 plots into one figure.
