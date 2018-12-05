@@ -44,7 +44,7 @@ tran_tomatosnps <- mutate(tran_tomatosnps, NA_count = rowSums(is.na(tran_tomatos
 
 ```
 
-Remove SNPs with greater than 10% missing data (more than 10% of row is NA). Authors removed 240, reducing the original total from 7720 to 7480. Remove NA count column afterwards. For some reason the following code reduces the original SNP count down to 7469.
+Remove SNPs with greater than 10% missing data (more than 10% of row is NA). Authors removed 240, reducing the original total from 7720 to 7480. Remove NA count column afterwards. The following code reduces the original SNP count down to 7469.
 
 ```{r}
 
@@ -210,7 +210,7 @@ consensus.map <- as.tibble(do.call("rbind", consensus.map.list))
 
 ```
 
-However, the SNPs in the consensus map don't correspond perfectly with the SNPs in the dataset. There are 6471 SNPs in my data but only 5296 SNPs in the consensus map. These discrepancies arose from the fact that different names were used for the SNPs in the author's paper and in the SIm paper. The following code rectifies the discrepancies between those SNPs in the dataset and those in the consensus map.
+However, the SNPs in the consensus map don't correspond perfectly with the SNPs in the dataset. There are 6471 SNPs in my data but only 5296 SNPs in the consensus map. These discrepancies arose from the fact that different names were used for the SNPs in the author's paper and in the SIm paper. The following code rectifies the discrepancies between those SNPs in the dataset and those in the consensus map. It then removes all SNPs separated by less than 0.1 cM. Authors state that 4030 SNPs were removed, but this code removes 3510.
 
 ```{r}
 

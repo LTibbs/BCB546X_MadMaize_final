@@ -8,7 +8,7 @@
  
  In this paper, the authors began by genotyping a wide variety of 1008 tomato accessions (952 of which were unique) using the Tomato Infinium Array. This array probed for 8784 biallelic SNPs, 7720 of which passed quality control and were used for the raw dataset.
  SNPs which would not have been helpful for differentiating the genomes of the 1008 accessions were removed. The removed SNPs included those with greater than 10% missing data and those with a major allelic frequency of 0.95. 
- Additionally, SNPs which mapped too closely together to be distinguishable (0.1 cM or closer) were filtered out, resulting in a final dataset of 2313 SNPs. Duplicate accessions were also corrected, and 8 with inconsistent data were removed as well.
+ Additionally, SNPs which mapped too closely together to be distinguishable (separated by a distance of less than 0.1 cM) were filtered out, resulting in a final dataset of 2313 SNPs. Duplicate accessions were also corrected, and 8 with inconsistent data were removed as well.
  
  For each of the three species, principal component analyses were conducted using the final dataset to separate the accessions into genetic groups. Further PCAs broke these genetic groups down into subgroups. 
  By comparing the characteristics of these groups and subgroups to the geographical metadata of the accessions, the authors determined that classifying the accessions into groups and subgroups matched the results of classification of the accessions based on native location. 
@@ -25,10 +25,74 @@
 # Overview of analysis and comparison to original results
 
 ## Pre-processing data: Laura Tibbs and Ben Cortes
-The code associated with this section is found in `code/Processing_Data`. 
-### BEN--do you want to finish this section? what we did and how it compares?
+This step was done in R. The code associated with this section 'FinalREADME.Rmd' is found in `code/Processing_Data`. 
 
-## Principal Component Analysis: Laura Tibbs
+Starting with a raw dataset of 7720 SNPs, the authors stated that for all analyses, SNPs where >10% of the accessions had missing data were removed. SNPs where the major allelic frequency was >0.95 were removed as well. 
+Additionally, for all analyses except for the rarefaction and LD analyses, SNPs that were separated by a distance of less than 0.1 cM were removed. During the PCA analyses, the authors noticed that some accessions were duplicated or had inconsistent data, and these were rectified as well.
+
+1. Imported and transposed raw dataset (Suppl_Table_2.csv in the Data directory).
+	- Raw dataset had SNPs as columns. It is much easier to filter rows of data, so the dataset was transposed.
+
+2. Removed SNPs with >10% missing data.
+	- Counted NAs per row and removed the row if >10% of the elements were NAs.
+	- Authors state that 240 SNPs were removed in this way (7480 remaining). We removed 251 (7469 remaining).
+
+3. Removed SNPs with >0.95 allelic frequency.
+	- Used unite to concatenate all the elements in a row into a single string, then removed NAs with str_replace_all.
+	- Counted number of occurrences of each base. Divided largest count by the total length of the concatenated string. If result was >0.95, SNP was removed. 
+	- Authors state that 1137 SNPs were removed in this way (6343 remaining). We removed 998 (6471 remaining). 
+
+4. Removed SNPs separated by less than 0.1 cM.
+	4a. Created consensus map.
+		- According to the authors, "genetic distances were based on the genetic maps of Sim et al." (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563)." However, that reference has eight different genetic maps, and the authors don't state which one(s) they used.
+			- The genetic map (Table S8) seemed the most complete, so it was used as the basis of our code. Table 8 contains the pre-existing genetic maps of two panels of tomato crosses.
+			- The authors would have had to create a consensus map from this genetic map, but they don't state how they did. We used the package LPmerge (Jeffrey Endelman, "Merging Linkage Maps by Linear Programming, 2018). 
+		- Sorted through Table S8 and formatted it into 2 tables, one for the genetic map of each tomato cross.
+			- Separated the 2 tables out by chromosome, creating a list of chromosomes. Each chromosome in turn was a list of SNPs and genetic map information for that chromosome.
+		- Ran LPmerge with the parameters that it create four consensus maps for each chromosome.
+			- Manually inspected and chose consensus maps based on the lowest mean RMSE, and broke ties using the lowest sd for RMSE (https://potatobreeding.cals.wisc.edu/wp-content/uploads/sites/161/2014/01/LPmerge_tutorial.pdf).
+			- Used rbind to merge the consensus maps for each chromosome into one consensus map for the entire genome with 5296 SNPs.
+	
+	4b. Rectified discrepancies between SNPs listed in raw dataset and those in the consensus map.
+		- 4206 SNPs were shared between the raw dataset and the consensus map.
+			- Additionally, the consensus map had 1090 unique SNPs, and the raw dataset had 2265 unique SNPS.
+		- The 1090 unique SNPs in the consensus map were actually SNPs in the raw dataset, but they were given different names by by Sim et al.
+			- Names and naming scheme in consensus map SNPs were changed to match raw dataset.
+		- However, because we were using the most complete tomato genetic maps, the 2265 unique SNPs in the raw dataset were determined to simply be SNPs that had never been mapped.
+			- Because the authors stated that "SNPs that mapped closer than 0.1 cM were removed", it was decided that the unmapped SNPs would be retained as they were never mapped and so could not be known to be separated by less than 0.1 cM.
+	
+	4c. Removed SNPs separated by less than 0.1 cM
+		- The authors did not state how they decided which SNPs to remove.
+			- Therefore, we first calculated the distances between each SNP.
+			- Kept the first SNP found and marked all SNPs within the next 0.1 cM for removal.
+		- The algorithm we used does not account for many consecutive SNPs separated by less than 0.1 cM but that span a total distance of 0.1 cM or greater.
+			- To account for this, we searched for SNPs separated by less than 0.1 cM but more than 0 cM.
+			- Only 17 of these SNPs were found, and after manual inspection, 5 SNPs where the above problematic scenario occurred were removed. 
+		- Finally, filtered out all SNPs marked for removal. 
+		- Authors state that 4030 SNPs were removed (processed dataset of 2313 SNPs). We removed 3510 (processed dataset of 2961 SNPs).
+
+5. Transposed the processed dataset.
+	- Had to remove duplicate accessions, so accessions were transposed to rows.
+		
+6. Removed duplicate accessions (lines that were genotyped twice) using passport information to decide which of each duplicate to remove.
+	- Imported passport information (12864_2015_1444_MOESM1_ESM.txt in the Data directory).
+	- Changed accession names in the passport information to match accession names in the raw dataset.
+	- According to the authors, an accession which was duplicated was removed completely "unless it was clear based on the passport information, which genotype was correct."
+	- What exactly this means could vary from the provided example depending on the situation, so was not amenable to coding. We decided that the best thing to do would be to go through and inspect the duplicate data manually after arranging it. The following workflow was used in Excel.
+		1. The file used (`duplicate_accessions.csv`) was generated in R (below) by filtering for duplicated accessions in the passport.data tibble.
+		2. The accession duplicates were checked for inconsistencies in the columns that contain information from the PCA; that is, the species, group1, and group2 columns.
+		3. If there were no inconsistencies found, one sample was chosen at random (using a random number generator) for that accession to keep. The other samples for the accession were marked to delete.
+		4. If inconsistencies were found, the passport and geographic data columns were assessed to determine which accession was "correct." We took "conflicting classification" to indicate that a given sample was not the correct sample for that accession. However, if it was not clear which sample was correct, we removed the accession entirely.
+		5. Also removed the entire accession if the passport information between the duplicates was inconsistent.
+		6. We saved the file with the lines to delete and keep marked as `duplicate_accessions_new.csv`.
+	- Authors state they removed 8 duplicate accessions with inconsistent information and had 952 unique accessions in the final dataset. We also removed 8 duplicate accessions with inconsistent information, but our final number of unique accessions was 950.
+	- Also removed duplicate accessions for the rarefaction and LD analysis data.
+	
+Final dataset
+	Ours - 950 accessions, 2961 SNPs
+	Authors - 952 accessions, 2313 SNPs
+
+	## Principal Component Analysis: Laura Tibbs
 The annotated code associated with this section is found in `code/PCA`, and the resulting figures are found in `code/PCA/figures`. The analysis corresponds to Fig. 1-2 in Blanca, et al. 
 
 See `1_Tibbs final assignment writeup.md` for a detailed overview of this section, and the files `2_Eigensoft_geno_format.Rmd` and `4_PCA_plotting_code.Rmd` (as well as the associated `.html` files) for detailed overviews of steps within this section.
