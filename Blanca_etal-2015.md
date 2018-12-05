@@ -88,8 +88,8 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 	- Also removed duplicate accessions for the rarefaction and LD analysis data.
 	
 Final dataset
-	Ours - 950 accessions, 2961 SNPs
-	Authors - 952 accessions, 2313 SNPs
+	- Ours - 950 accessions, 2961 SNPs
+	- Authors - 952 accessions, 2313 SNPs
 
 	## Principal Component Analysis: Laura Tibbs
 The annotated code associated with this section is found in `code/PCA`, and the resulting figures are found in `code/PCA/figures`. The analysis corresponds to Fig. 1-2 in Blanca, et al. 
