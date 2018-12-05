@@ -318,3 +318,6 @@ Figure 8 shows gene frequencies for the weight and shape phenotypes across the g
 		- Added lines using linearrange to show binomial confidence intervals using those calculated above.
 	
 3. Use grid.arrange from gridExtra package to combine the 6 plots into one figure.
+
+Our figure is similar to the authors' figure. In both figures, the ancestral allelic frequency decreases going along from the ancestral SP groups to the intermediate SLC groups to finally the fully domesticated SLL groups.
+There is one discrepancy, however. In the our sun plot for the SP Peru group, the derived allele is at an extremely high level, unlike in the authors' figure. No idea why this might be, as all the other plots look similar.
