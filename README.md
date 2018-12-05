@@ -19,6 +19,9 @@ Contains code used to pre-process data as described in the Methods of Blanca, et
 #### PCA directory: 
 Contains code used to process data for and run PCA analysis, then to make figures for this. The output figures are found in the subdirectory `figures`. Also contains intermediate files from this process; these were associated with the Eigensoft v3.0 program, so the files are found in `eigensoft`. This analysis corresponds to Fig 1-2 in Blanca, et al. Code written by Laura Tibbs.
 
+### Classification_Comparison directory:
+Contains code used to process classification data so that the Passport and Genetic Classifications could be compared between samples. To do this the data was converted into a pandas data frame, filtered and sorted. Counts were taken on how many times a pare of classifications occurred. This processed data was then used to create a plot graph showing the linear comparison between the two classifications. Written and coded by Andy Herr
+
 #### Neighbor_Network directory: 
 Contains code (R markdown file) used to process data for and run Neighbor network analysis. The output files and intermediate files can be found in the sub-directory `Figure5_Output`. Explicit annotations can be found inside the R markdown code file. The R code was used to generate the stats for neighbor network, and the actual figure was produced by interface software SplitsTree4 (v 4.14.6) as indicated by the paper. A similar figure can be generated in R, however, without proper available package, the quality was low so I did not include it in results. This analysis corresponds to Fig 5 (A and B) in Blanca, et al. Code written and annotated by Qi Mu.
 
