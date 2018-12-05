@@ -91,7 +91,7 @@ Final dataset
 	- Ours - 950 accessions, 2961 SNPs
 	- Authors - 952 accessions, 2313 SNPs
 
-	## Principal Component Analysis: Laura Tibbs
+## Principal Component Analysis: Laura Tibbs
 The annotated code associated with this section is found in `code/PCA`, and the resulting figures are found in `code/PCA/figures`. The analysis corresponds to Fig. 1-2 in Blanca, et al. 
 
 See `1_Tibbs final assignment writeup.md` for a detailed overview of this section, and the files `2_Eigensoft_geno_format.Rmd` and `4_PCA_plotting_code.Rmd` (as well as the associated `.html` files) for detailed overviews of steps within this section.
