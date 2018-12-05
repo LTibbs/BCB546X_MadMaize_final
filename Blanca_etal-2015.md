@@ -43,33 +43,34 @@ Additionally, for all analyses except for the rarefaction and LD analyses, SNPs 
 	- Authors state that 1137 SNPs were removed in this way (6343 remaining). We removed 998 (6471 remaining). 
 
 4. Removed SNPs separated by less than 0.1 cM.
-	4a. Created consensus map.
-		- According to the authors, "genetic distances were based on the genetic maps of Sim et al." (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563)." However, that reference has eight different genetic maps, and the authors don't state which one(s) they used.
-			- The genetic map (Table S8) seemed the most complete, so it was used as the basis of our code. Table 8 contains the pre-existing genetic maps of two panels of tomato crosses.
-			- The authors would have had to create a consensus map from this genetic map, but they don't state how they did. We used the package LPmerge (Jeffrey Endelman, "Merging Linkage Maps by Linear Programming, 2018). 
-		- Sorted through Table S8 and formatted it into 2 tables, one for the genetic map of each tomato cross.
-			- Separated the 2 tables out by chromosome, creating a list of chromosomes. Each chromosome in turn was a list of SNPs and genetic map information for that chromosome.
-		- Ran LPmerge with the parameters that it create four consensus maps for each chromosome.
-			- Manually inspected and chose consensus maps based on the lowest mean RMSE, and broke ties using the lowest sd for RMSE (https://potatobreeding.cals.wisc.edu/wp-content/uploads/sites/161/2014/01/LPmerge_tutorial.pdf).
-			- Used rbind to merge the consensus maps for each chromosome into one consensus map for the entire genome with 5296 SNPs.
-	
-	4b. Rectified discrepancies between SNPs listed in raw dataset and those in the consensus map.
-		- 4206 SNPs were shared between the raw dataset and the consensus map.
-			- Additionally, the consensus map had 1090 unique SNPs, and the raw dataset had 2265 unique SNPS.
-		- The 1090 unique SNPs in the consensus map were actually SNPs in the raw dataset, but they were given different names by by Sim et al.
-			- Names and naming scheme in consensus map SNPs were changed to match raw dataset.
-		- However, because we were using the most complete tomato genetic maps, the 2265 unique SNPs in the raw dataset were determined to simply be SNPs that had never been mapped.
-			- Because the authors stated that "SNPs that mapped closer than 0.1 cM were removed", it was decided that the unmapped SNPs would be retained as they were never mapped and so could not be known to be separated by less than 0.1 cM.
-	
-	4c. Removed SNPs separated by less than 0.1 cM
-		- The authors did not state how they decided which SNPs to remove.
-			- Therefore, we first calculated the distances between each SNP.
-			- Kept the first SNP found and marked all SNPs within the next 0.1 cM for removal.
-		- The algorithm we used does not account for many consecutive SNPs separated by less than 0.1 cM but that span a total distance of 0.1 cM or greater.
-			- To account for this, we searched for SNPs separated by less than 0.1 cM but more than 0 cM.
-			- Only 17 of these SNPs were found, and after manual inspection, 5 SNPs where the above problematic scenario occurred were removed. 
-		- Finally, filtered out all SNPs marked for removal. 
-		- Authors state that 4030 SNPs were removed (processed dataset of 2313 SNPs). We removed 3510 (processed dataset of 2961 SNPs).
+
+4a. Created consensus map.
+	- According to the authors, "genetic distances were based on the genetic maps of Sim et al." (https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563)." However, that reference has eight different genetic maps, and the authors don't state which one(s) they used.
+		1. The genetic map (Table S8) seemed the most complete, so it was used as the basis of our code. Table 8 contains the pre-existing genetic maps of two panels of tomato crosses.
+		2. The authors would have had to create a consensus map from this genetic map, but they don't state how they did. We used the package LPmerge (Jeffrey Endelman, "Merging Linkage Maps by Linear Programming, 2018). 
+	- Sorted through Table S8 and formatted it into 2 tables, one for the genetic map of each tomato cross.
+		1. Separated the 2 tables out by chromosome, creating a list of chromosomes. Each chromosome in turn was a list of SNPs and genetic map information for that chromosome.
+	- Ran LPmerge with the parameters that it create four consensus maps for each chromosome.
+		1. Manually inspected and chose consensus maps based on the lowest mean RMSE, and broke ties using the lowest sd for RMSE (https://potatobreeding.cals.wisc.edu/wp-content/uploads/sites/161/2014/01/LPmerge_tutorial.pdf).
+		2. Used rbind to merge the consensus maps for each chromosome into one consensus map for the entire genome with 5296 SNPs.
+
+4b. Rectified discrepancies between SNPs listed in raw dataset and those in the consensus map.
+	- 4206 SNPs were shared between the raw dataset and the consensus map.
+		1. Additionally, the consensus map had 1090 unique SNPs, and the raw dataset had 2265 unique SNPS.
+	- The 1090 unique SNPs in the consensus map were actually SNPs in the raw dataset, but they were given different names by by Sim et al.
+		1. Names and naming scheme in consensus map SNPs were changed to match raw dataset.
+	- However, because we were using the most complete tomato genetic maps, the 2265 unique SNPs in the raw dataset were determined to simply be SNPs that had never been mapped.
+		1. Because the authors stated that "SNPs that mapped closer than 0.1 cM were removed", it was decided that the unmapped SNPs would be retained as they were never mapped and so could not be known to be separated by less than 0.1 cM.
+
+4c. Removed SNPs separated by less than 0.1 cM
+	- The authors did not state how they decided which SNPs to remove.
+		1. Therefore, we first calculated the distances between each SNP.
+		2. Kept the first SNP found and marked all SNPs within the next 0.1 cM for removal.
+	- The algorithm we used does not account for many consecutive SNPs separated by less than 0.1 cM but that span a total distance of 0.1 cM or greater.
+		1. To account for this, we searched for SNPs separated by less than 0.1 cM but more than 0 cM.
+		2. Only 17 of these SNPs were found, and after manual inspection, 5 SNPs where the above problematic scenario occurred were removed. 
+	- Finally, filtered out all SNPs marked for removal. 
+	- Authors state that 4030 SNPs were removed (processed dataset of 2313 SNPs). We removed 3510 (processed dataset of 2961 SNPs).
 
 5. Transposed the processed dataset.
 	- Had to remove duplicate accessions, so accessions were transposed to rows.
