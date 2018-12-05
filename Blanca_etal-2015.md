@@ -125,6 +125,35 @@ In general, this section ran principal component analysis on both the full datas
 
 When compared with the results in the published paper, Fig 1-2 appeared quite similar. The overall layout of the groups in each of the PC graphs was quite close to those in the paper, though they did not match exactly. However, the percent of variation explained by each of the first two principal components was higher in my analysis than in their published paper in all cases. Any discrepancies are probably due to differences in data used; after data processing, they used 952 accessions and 2313 markers, while our processed data included 950 accessions and 2959 markers despite our best efforts to replicate their processing methods (described above). 
 
+## Classification Comparison Analysis: Andy Herr
+This section was on the recreation of Figure 4. The annotated code can be found in `code/Classification_Comparison`. The code used is written in a Jupyter notebook. Figure 4 is a comparison between the given Passport Classification and the collected PCA based Genetic Classification. This figure is unique in that it is comparing two string values and the size of the marker changes based on how many occurrences each combination had.
+
+1. Figure Outline
+Figure 4 is a comparison between the given Passport Classification and the collected PCA based Genetic Classification. The goal of this figure is to show the accuracy of both the Passport and PCA. If these classifications match we should see a linear plot. If there are variations in the linear plot they can be used to see which group had the most issues and what group's classifications matched most tightly.  
+
+2. Issues
+The issues I started with were plentiful. The only information given into how this figure was made was through the source data. The paper gave no indication of what program was used to create this plot or what filters and processing was needed. Because of this I searched or similar comparison plots. I was unable to find anything matching the figure of the paper. Moving forward I looked for a plotting program that fit the needs of what I needed to do to recreate the figure. I needed something that could compare two string values and change the marker size based on occurrence. I found that using `.relplot` was the most practical.
+
+3. Workflow
+This was carried out using Python 3 in Jupyter Notebook.
+
+- The first step in recreating this figure is to import all of the needed packages to run the analysis. Packages used include: `seq`, `SeqIO`, `pandas`, `seaborn`, `pyplot`, and `urllib.request`.
+
+- I then imported the needed data file from the `data` directory using `urllib.request`
+
+- `pd.read_table` to save the original tab delimited file as a readable/usable data frame. I saved this new configuration as `Data_df`.
+
+- For this comparison there are two columns of interest. We want to compare the Genetic PCA Classification (group 2) with the PCA Passport Classification. To do this I need to isolate only the needed columns (group 2 and Passport Classification); however, I descovered that to properly sort the table `species` and `Passport species` must be included. Python makes this easy.  I use square brackets to pull the desired columns and place them in a new data frame labeled `Filtered_df`. Note that `.copy()` is used to prevent the original `Data_df` from being altered.
+
+- The original Figure 4 had a third dimension to the comparison. Along with comparing genetic and passport classifications, the occurrence of each combination of classification was shown. To show this in a graph the data frame must be compressed so that all identical samples are compressed into one line and a count is then included in the table. `.groupby`, `.columns.tolist`, `.size` are used to complete this task. This code also adds a new column to the data frame named `Size`. The count of each classification comparison is then placed in the size column. `.sort_values` was used to place the table in an order that was apealing when put in a plot. I found that the best order to sort the table is 'species', 'Passport Species','group2', and finally 'Passport Classification'. All of this is saved to `Ordered_df`.
+
+- I cut down the data to only include samples with 2 or more occurrences. To do this I use the `.loc` function to isolate the `size` column and include values only larger than 1. This is then saved as `Reduced_df`.
+
+- The data is now ready to be graphed. I used seaborn `.relplot` to create a graph as close to the original as I can get. First I used `.set_style` to set a thyme that fits well. I was unable to find a way to change the color of the background based on the classification of the sample but I was still able to implement a gridded background using the `darkgrid` theme. I then used `.relplot` to create the graph. I identified both my x and y axis as the two classifications being compared and then identify the data source as the manipulated data set from earlier, `Reduced_df`.  To change the shape of the markers to square I identified `marker` as `s`. To change the size of the markers to show occurrence of a sample I used the `size` column and linked it to the `size` function of `.relplot`. I then used `sizes` to adjust the ratio of marker size to fit a more appealing look. To improve ascetics, I used `height` and `aspect` to make a more appealing looking graph. Finally, I modified the labels of the axes and the tick labels to fit a more comfortable look.
+
+4. Reproducibility
+It was very difficult to reproduce this plot based on the information given in the paper and through the given material. It was clear once I had started that there was a lot more to the development of this plot than had been lead on in the paper. There were certain samples that were removed from this plot that do not fit with the filtering used in other figures. samples were selectively removed from the dataset used to plot the figure and I do not know what that criteria was or why it was done. 
+
 ## Neighbor Network Analysis: Qi Mu  
 This part is associate with the reconstruction of Figure 5 in Blanca et al. 2015 paper. The annotated code can be found in `code/Neighbor_Network` folder. The code is written in R markdown file. The R project and knitted R markdown files are also included. Please note that, knitted R markdown file cannot be viewed properly directly from Github, they have to cloned or downloaded first. The output files are stored in `code/Neighbor_Network/Figure5_Output` folder. Two intermediate files (trimmed individuals and groups `Geno_group_filtered.csv` and pairwise genetic distances `FstMatrix.nxs` are also included in this folder. The R markdown code itself is well annotated, so here I will summarized the meaning of figure 5, reasons I used this method, overall flow, some technical details, and reproducibility of the original paper.   
 
