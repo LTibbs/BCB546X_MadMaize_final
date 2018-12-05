@@ -1,5 +1,27 @@
 # Overview of original paper: Blanca, et al. 2015
 
+ In agronomy, comparative genomics is used to elucidate the many questions of how domestication events shaped the genotypes and phenotypes of crop species. What phenotypes did the ancestor possess, and what phenotypes were selected for during domestication?
+ How do the modern lineages differ from their ancestor? When and where did the domestications occur, and what is the overall phylogenetic relationship between modern lines of cultivated crops and their wild-type ancestors? 
+ In this paper, the authors sought to answer these questions as they pertained to tomatoes and to provide a description of the evolutionary history and domestication of the domesticated tomato, Solanum lycopersicum, from its closest wild ancestor, Solanum pimpinellifolium (SP).
+ There are two botanical varieties of S. lycopersicum, S. l. cerasiforme (SLC) and S. l. lycopersicum (SLL), and it is hypothesized that SLC was domesticated from SP before SLL originated as a further domestication of SLC. 
+ The authors sought to confirm this hypothesis, as well as to determine the location of domestication events in tomato and the ancestral characteristics of genes which affect the weight and shape of the tomato fruit. 
+ 
+ In this paper, the authors began by genotyping a wide variety of 1008 tomato accessions (952 of which were unique) using the Tomato Infinium Array. This array probed for 8784 biallelic SNPs, 7720 of which passed quality control and were used for the raw dataset.
+ SNPs which would not have been helpful for differentiating the genomes of the 1008 accessions were removed. The removed SNPs included those with greater than 10% missing data and those with a major allelic frequency of 0.95. 
+ Additionally, SNPs which mapped too closely together to be distinguishable (0.1 cM or closer) were filtered out, resulting in a final dataset of 2313 SNPs. Duplicate accessions were also corrected, and 8 with inconsistent data were removed as well.
+ 
+ For each of the three species, principal component analyses were conducted using the final dataset to separate the accessions into genetic groups. Further PCAs broke these genetic groups down into subgroups. 
+ By comparing the characteristics of these groups and subgroups to the geographical metadata of the accessions, the authors determined that classifying the accessions into groups and subgroups matched the results of classification of the accessions based on native location. 
+ The relationships between these groups and subgroups were further elucidated through the construction of neighbor networks and a phylogenetic tree. These figures further demonstrated the relatedness and evolutionary history of the tomato accessions.
+ GPS and climate data for the native location of each accession was also analyzed, further corresponding with the aforementioned PCA and phylogenetic tree data. The authors also determined heterozygosity and diversity for the accessions, comparing them between the ancestral and domesticated populations.
+ As expected, domestication of the wild-type resulted in the higher heterozygosity and diversity of the wild type decreasing, resulting in significantly more homozygosity in domesticated accessions. Rarefaction and LD analysis were used to confirm the absence of bias in the heterozygosity/diversity analysis.
+ Finally, the authors genotyped 6 genes involved in fruit weight and shape using PCR. Comparing the frequency of the derived allele to the ancestral allele in each group demonstrated that, in the most domesticated groups, alleles became fixed for domesticated fruit and weight traits, shifting from the ancestral trait. 
+ 
+ The authors' analysis supported the currently accepted hypothesis that SP is the closest wild ancestor of domestic tomatoes, as evidenced by the phylogenetic tree and neighbor networks, higher genetic diversity, and ancestral fruit weight and shape genotypes. Additionally, the authors conclude that the first tomato domestication occurred in S. America.
+ Supporting this conclusion, N. Ecuadorian SP accessions appear to be the closest relatives to the SLC group in terms of phylogenetic data, being especially closely related to the more ancestral SLC accessions found in N. Ecuador. However, the N. Ecuador SLC group has significantly higher diversity than the N. Ecuador SP group. 
+ Thus, the authors admit that the transition from SP to SLC during domestication is probably more complicated, possibly resulting from secondary gene flow. More confidently, however, it appears that the Peru SLC group is highly related to the most ancestral SLL group.
+ Therefore, the authors conclude that a second domestication event delineating SLC from SLL occurred in Mesoamerica. 
+
 # Overview of analysis and comparison to original results
 
 ## Pre-processing data: Laura Tibbs and Ben Cortes
