@@ -28,6 +28,9 @@ Contains code used to process data for phylogenetic analysis, then to make figur
 #### Rarefaction_Analysis directory: 
 Contains code used to process data for rarefaction analysis, then to make figures for this. The output figures can be found in the subdirectory `figures`. ADZE1.0 software was used for analysis as indicated by the paper; input and output files of it can be found in `ADZE`. This analysis corresponds to Fig 7 in Blanca, et al. Code written by Jialu Wei.
 
+#### Weight_Shape directory:
+Contains code used to replicate Figure 8. This involved first organizing accessions by species then by group, then plotting the standardized percentage of ancestral and derived alleles in a group for each weight and shape locus, and finally calculating binomial confidence intervals. Code is annotated and writen in the file README.Rmd. Written and annotated by Ben Cortes
+
 ### Data directory: 
 Contains original data from the tables in Blanca, et al. (`12864_2015_1444_MOESM1_ESM.txt` /`12864_2015_1444_MOESM1_ESM.csv`/ `Suppl_Table_1.csv` and `Suppl_Table_2.csv`) as well as a paper it referenced (Sim, Sung-Chur, et al. "Development of a large SNP genotyping array and generation of high-density genetic maps in tomato." PloS one 7.7 (2012): e40563; found at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563) (these files are `S1_SNPs_Sim_etal.xlsx` and `S8_Map_Sim_etal.csv`. Also contains data processed using a script in the `code/Processing_Data` directory (`final_data.csv` and `rarefaction_LD_data.csv`).
 
