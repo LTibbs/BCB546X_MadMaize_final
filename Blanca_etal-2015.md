@@ -43,7 +43,7 @@ When compared with the results in the published paper, Fig 1-2 appeared quite si
 ## Rarefaction Analysis: Jialu Wei
 The annotated code associated with this section is found in `code/Rarefaction_Analysis`, and the resulting figures are found in `code/Rarefaction_Analysis/figures`. The analysis corresponds to Fig. 7 in Blanca, et al. 
 
-In general, this section ran rarefaction analysis with two sets of markers. The first set included one marker every 0.1 cM (2959 SNPs, SNP data can be found in `data/final_data.csv`) and the second set included 6471 SNPs (SNP data can be found in `data/rarefaction_ld_data.csv`) after removing monomorphic SNPs and with 10% missing. ADZE1.0 was used for analysis and R was used for visualizing. The steps were:
+This section ran rarefaction analysis with two sets of markers. The first set included one marker every 0.1 cM (2959 SNPs, SNP data can be found in `data/final_data.csv`) and the second set included 6471 SNPs (SNP data can be found in `data/rarefaction_ld_data.csv`) after removing monomorphic SNPs and with 10% missing. ADZE1.0 was used for analysis and R was used for visualizing. The steps were:
 
 1. ADZE1.0
 	- The paper said that they used ADZE1.0 to conduct rarefaction analysis. 
@@ -79,7 +79,7 @@ In general, this section ran rarefaction analysis with two sets of markers. The 
 	- All codes used above were saved in `Code_for_Figure7.Rmd` and `Code_for_Figrue7.html`, which can be found under `Rarefaction_Analysis` repository.
 
 
-Compared our results with those in the published paper, they look generally similar.  
+Comparing our results with those in the published paper, they look generally similar.  
 
 1. SLC Andean has the highest number of alleles per loci and SP also has high one.
 2. SLL processing and SLL vintage have low number of alleles per loci.
@@ -90,3 +90,50 @@ Howerver, there are some differences which are also obvious.
 2. The x and y axis scale are a little different between the results. Our individual number are less than theirs while the number of alleles per loci has higher level. I considered two reasons for this. First of all, of course, our filtered SNP data are not exactly the same as theirs, especially when filtered by position. Secondly, there was one critical step in rarefaction analysis when we adjusted the parameter of missing data rate. This step affected the final individual numbers a lot when I ran the program. They didn't mention in detail about the parameter setting in the paper, so I could not guarantee that I used the same threshold as they did. Plus, in terms of the number of individuals, the outputs of ADZE use individual as line, which is half of the number of samples; in my figures, I use individuals to mean samples, which makes more sense to me. In this way, if their plot used directly the number from outputs (without dividing by 2), we can have some differences in scale. 
 
 To sum up, the result of this section are reproducible.
+
+
+## Phylogenetic Analysis: Jialu Wei
+The annotated code associated with this section is found in `code/Phylogenetic_Analysis`, and the resulting figures are found in `code/Phylogenetic_Analysis/figures`. The analysis corresponds to Fig.6 in Blanca, et al. 
+
+Based on the published paper, they conducted phylogenetic analysis with SNAPP package in Beast software, which was build up based on a recently developed method with finite-sites model likelihood algorithm. However, this software is sort of complicated to play with which require specific java environment; I could not be able to figure it out. Then I looked for similar packages in R but it turned out that there was no package using the same algorithm with SNAPP. To make things easier, I decided to use the traditional Neighbor Joining Clustering method for phylogenetic analysis. The steps are:
+
+1. Beast2 and SNAPP
+	- I downloaded Beast2 in UNIX environment and loaded SNAPP package inside it.
+	- Read manual and figured out the input format.
+		- I found that the examples provided by BEAST were all single character for each site coded with ATCG, while our data were diallelic. To format our data correctly, I looked into the python custum script provided by the authors and recoded our data with same rules.
+		- SNAPP has high computational demands, so they selected one accession per genetic subgroup in analysis.
+		- I manually selected the accessions based on their figure from total SNP datasat in R.
+		- Also, the software requirs input file to be .nex or .xml format. R package was used to convert that as well.
+	- However, after struggling for a long time with the preparing my data and figuring out the SNAPP instruction. I realized I couldn't run the .xml file with error popping out. (even with their examples)
+	- At last, I had to decide leaving this software and looked for other way instead with limited time left.
+
+2. Run phylogenetic analysis in TASSEL
+	- I firstly tried to look for package with same algorithm in R but had no result.
+	- Considering the time spending in the last step, TASSEL with friendly interface was a easy way to do the phylogenetic analysis.
+	- Some data preparation had already done from first step. Here R was used again to have .fasta file (`figure6_sample.fasta`) for TASSEL.
+	- Neighbor Joining method was used in TASSEL for clustering.
+	- The output of analysis was saved as `figure6_tree.nwk`, which included the clustering information like nodes and branch.length.
+
+4. Plot Figures 6 in R
+	- R ggtree pachage was used to read in and tidy the output files from the TASSEL.
+	- `figure6_tree.nwk` was read in as basic tree. More adjustments were done to be alike with their results as much as possible.
+		- branch placemnet was adjusted to be the same as theirs with flip() function.
+		- each branch was labelled with species name followed by sample name.
+		- clustered groups were highlighted with different colors, and group names were placed aside.
+	- Save figures as `Figure6.png` and `Figure6.pdf`. 
+5. Tidy repository:
+	- Intermediate files were moved to `./TASSEL` folder and final figures were moved to `./figures` .
+	- All codes used above were saved in `Figure6.Rmd` and `Figrue6.html`, which can be found under `Phylogenetic_Analysis` repository.
+
+Comparing our result with theirs:  
+1. Individuals in group SLC and SP were clustered together respectively. (well replicated)
+2. Peruvian SP showed more basal status than others in our result; in their result, Peruvian SP was the basal group of the red-fruited species. (kind of different but not conflicted)
+3. Ecuadorian SP was phylogenetically closest to SLC. (Well replicated)
+4. SLC Ecuador1 was basal to the entire SLC group. (Well replicated)
+5. SG clustered very close to Ecuadorian SP in their result, while in ours it was basal of Ecuadorian SLC and SP groups. (different but still not conflicted with PCA result)
+
+Considering that we used different algorithms for analysis, the above results were acceptable. So, this section is reproducible as well.
+
+ 
+
+
