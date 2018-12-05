@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="author" content="Ben Cortes" />
+<meta name="author" content="Ben Cortes and Laura Tibbs" />
 
 
 <title>FinalREADME</title>
@@ -122,19 +122,19 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">FinalREADME</h1>
-<h4 class="author"><em>Ben Cortes</em></h4>
+<h4 class="author"><em>Ben Cortes and Laura Tibbs</em></h4>
 <h4 class="date"><em>December 3, 2018</em></h4>
 
 </div>
 
 
 <pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## -- Attaching packages -------------------------------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
-<pre><code>## v ggplot2 3.1.0     v purrr   0.2.5
-## v tibble  1.4.2     v dplyr   0.7.8
-## v tidyr   0.8.2     v stringr 1.3.1
+<pre><code>## -- Attaching packages --------------------------------------------------------------------------------------- tidyverse 1.2.1 --</code></pre>
+<pre><code>## v ggplot2 3.0.0     v purrr   0.2.5
+## v tibble  1.4.2     v dplyr   0.7.6
+## v tidyr   0.8.1     v stringr 1.3.1
 ## v readr   1.1.1     v forcats 0.3.0</code></pre>
-<pre><code>## -- Conflicts ----------------------------------------------------------------------------------------- tidyverse_conflicts() --
+<pre><code>## -- Conflicts ------------------------------------------------------------------------------------------ tidyverse_conflicts() --
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <pre class="r"><code>library(readxl)</code></pre>
@@ -165,7 +165,7 @@ tran_tomatosnps &lt;- transpose_headed_file(&quot;../../data/Suppl_Table_2.csv&q
 <p>SNP source file lacked a header for column 1, so gave it one for downstream purposes. Mutate to add a new column called NA_count. Sum up the number of NAs per row, and set that value as NA_count for that row</p>
 <pre class="r"><code>colnames(tran_tomatosnps)[1] &lt;- &quot;X1&quot;
 tran_tomatosnps &lt;- mutate(tran_tomatosnps, NA_count = rowSums(is.na(tran_tomatosnps)))</code></pre>
-<p>Remove SNPs with greater than 10% missing data (more than 10% of row is NA). Authors removed 240, reducing the original total from 7720 to 7480. Remove NA count column afterwards. For some reason the following code reduces the original SNP count down to 7469.</p>
+<p>Remove SNPs with greater than 10% missing data (more than 10% of row is NA). Authors removed 240, reducing the original total from 7720 to 7480. Remove NA count column afterwards. The following code reduces the original SNP count down to 7469.</p>
 <pre class="r"><code>tomato_snps_no_missing.L &lt;- tran_tomatosnps %&gt;%
   filter(NA_count &lt;= (0.1 * (ncol(tran_tomatosnps) - 2)))
 tomato_snps_no_missing.L &lt;- tomato_snps_no_missing.L[,-1010]</code></pre>
@@ -298,8 +298,7 @@ library(LPmerge)</code></pre>
 <pre><code>## The following object is masked from 'package:tidyr':
 ## 
 ##     expand</code></pre>
-<pre class="r"><code># Make a function to run LPMerge:
-# based on Ben's function to run LPmerge, but using the df already loaded rather than writing and then reading in files:
+<pre class="r"><code># Make a function to run LPMerge on the df already loaded:
 map_merger.L &lt;- function(EXPEN.df, EXPIM.df) {
   
   # make into data frames:
@@ -874,7 +873,7 @@ for (i in 1:length(merged_maps.L)) {
 
 # as one dataframe:
 consensus.map &lt;- as.tibble(do.call(&quot;rbind&quot;, consensus.map.list))</code></pre>
-<p>However, the SNPs in the consensus map don’t correspond perfectly with the SNPs in the dataset. There are 6471 SNPs in my data but only 5296 SNPs in the consensus map. These discrepancies arose from the fact that different names were used for the SNPs in the author’s paper and in the SIm paper. The following code rectifies the discrepancies between those SNPs in the dataset and those in the consensus map.</p>
+<p>However, the SNPs in the consensus map don’t correspond perfectly with the SNPs in the dataset. There are 6471 SNPs in my data but only 5296 SNPs in the consensus map. These discrepancies arose from the fact that different names were used for the SNPs in the author’s paper and in the SIm paper. The following code rectifies the discrepancies between those SNPs in the dataset and those in the consensus map. It then removes all SNPs separated by less than 0.1 cM. Authors state that 4030 SNPs were removed, but this code removes 3510.</p>
 <pre class="r"><code># compare SNPs in consensus map with those in our dataset
 map.markers &lt;- S8_map.L$marker
 my.markers &lt;- tomato_snps_first_cull.L$marker

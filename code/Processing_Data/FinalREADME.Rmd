@@ -1,6 +1,6 @@
 ---
 title: "FinalREADME"
-author: "Ben Cortes"
+author: "Ben Cortes and Laura Tibbs"
 date: "December 3, 2018"
 output: html_document
 ---
@@ -161,8 +161,7 @@ LPmerge creates multiple consensus maps and outputs them as dataframes in a list
 
 library(LPmerge)
 
-# Make a function to run LPMerge:
-# based on Ben's function to run LPmerge, but using the df already loaded rather than writing and then reading in files:
+# Make a function to run LPMerge on the df already loaded:
 map_merger.L <- function(EXPEN.df, EXPIM.df) {
   
   # make into data frames:
