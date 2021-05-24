@@ -36,31 +36,3 @@ Contains code used to replicate Figure 8. This involved first organizing accessi
 
 ### Data directory: 
 Contains original data from the tables in Blanca, et al. (`12864_2015_1444_MOESM1_ESM.txt` /`12864_2015_1444_MOESM1_ESM.csv`/ `Suppl_Table_1.csv` and `Suppl_Table_2.csv`) as well as a paper it referenced (Sim, Sung-Chur, et al. "Development of a large SNP genotyping array and generation of high-density genetic maps in tomato." PloS one 7.7 (2012): e40563; found at https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0040563) (these files are `S1_SNPs_Sim_etal.xlsx` and `S8_Map_Sim_etal.csv`. Also contains data processed using a script in the `code/Processing_Data` directory (`final_data.csv` and `rarefaction_LD_data.csv`).
-
-## NOTES on required parts of the project/GitHub formatting (delete later):
-
-### Required parts:
-1. Downloading, inspecting, and describing the data utilized in the study.
-2. Processing the data if necessary to format them for the analysis the group has chosen to
-reproduce.
-3. Rerunning the analysis described in the manuscript using your personal computers or ISU HPC
-resources.
-4. Providing visual summaries (e.g., ggplot figures) of your results.
-
-## Required GitHub format:
-1. A top README.md file that describes the contents of your directory.
-2. An author(s)-YEAR.md file that introduces the original paper, explains the technical details of your
-replication of analyses and summarizes your replication of the original results.
-3. A code directory that contains the commented code for the replication.
-4. A data directory that contains links to data necessary to run your code.
-
-## Presentation details:
-Each group will have ~20 minutes to present their work on either December 5th or 7th. Each
-presentation should include:
-1. Background on the biological question being investigated.
-2. A description of the workflow carried out by the group.
-3. An overview of the group's documentation.
-4. Presentation of results including comparison to results from the published paper.
-
-# DUE DATE: Wednesday, Dec. 5 -- even if we don't present until Dec 7! 
-
